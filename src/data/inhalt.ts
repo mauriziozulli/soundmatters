@@ -32,7 +32,7 @@ export type Abschnitt = {
 export const ABSCHNITTE: Abschnitt[] = [
   {
     bild: 'intro',
-    nummer: 'soundmatters.ch',
+    nummer: 'soundmatters.audio',
     einordnung: 'Luzern',
     griff: 'kontur',
     passung: 0.98,

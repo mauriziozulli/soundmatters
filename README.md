@@ -1,4 +1,4 @@
-# soundmatters.ch
+# soundmatters.audio
 
 Vier Welten, in denen Ton eine Rolle spielt — und eine Person, die in allen
 vieren steckt. Kein Portfolio: die Seite zeigt eine Haltung, die Aufträge
@@ -59,7 +59,7 @@ public/
    „Schliessen", unten eine Handlung. Keine Reiter, keine Unterpunkte.
 
 Dazu die Pfeil-Konvention: **↗ führt von der Seite weg, → öffnet die Ebene
-darüber.** So weiss man vorher, ob man soundmatters.ch verlässt.
+darüber.** So weiss man vorher, ob man soundmatters.audio verlässt.
 
 ## Wie die Detail-Ebenen funktionieren
 

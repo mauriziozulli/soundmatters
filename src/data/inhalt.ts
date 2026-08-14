@@ -142,7 +142,7 @@ export const EBENEN: Ebene[] = [
       { was: 'Aufbau', wert: 'zwanzig Minuten' },
       { was: 'Unterlagen', wert: 'Zeichnung und Teileliste, frei kopierbar' }
     ],
-    handlung: { text: 'Bau mir eins', ziel: 'mailto:' }
+    handlung: { text: 'Bau mir eins', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Rig%20bauen' }
   },
   {
     schluessel: 'aufnahmen',
@@ -172,12 +172,12 @@ export const EBENEN: Ebene[] = [
       { was: 'Zu haben', wert: 'einzeln oder als Paket, für alle' },
       { was: 'Auf Bestellung', wert: 'sag mir den Ort' }
     ],
-    handlung: { text: 'Aufnahme bestellen', ziel: 'mailto:' }
+    handlung: { text: 'Aufnahme bestellen', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Feldaufnahme' }
   }
 ];
 
 export const FUSS = {
   wer: 'Maurizio Zulli · Luzern',
   aufkleber: 'Die Aufkleber kleben an Festivals, im Studio und am Set.',
-  kontakt: { text: 'Schreib mir', ziel: 'mailto:' }
+  kontakt: { text: 'Schreib mir', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Sound%20Matters' }
 };

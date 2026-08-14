@@ -75,8 +75,9 @@ neu statt zu überblenden, aber nichts geht verloren.
       eher dunkel; je unschärfer das Motiv, desto besser trägt die Schrift.
       Datei unter `public/fotos/` gleichnamig ersetzen, fertig. Nur bei
       deutlich hellerem Bild `kontrast` in `src/data/bilder.ts` nachziehen.
-- [ ] Echte Mailadresse und Links in `src/data/inhalt.ts` (`mailto:` steht
-      noch leer, ebenso SoundCloud)
+- [x] Mailadresse gesetzt: `maurizio@mauriziozulli.com`, mit eigenem Betreff
+      je Abschnitt — so ist in der Mail sofort sichtbar, woher die Anfrage kam
+- [ ] Echte Links zu SoundCloud und Instagram in `src/data/inhalt.ts`
 - [ ] Foto fürs Teilen (Open Graph), 1200×630
 - [ ] Aufkleber drucken: drei Fassungen, je zweifarbig, siehe `FARBEN.md`
 

@@ -1,0 +1,49 @@
+/* =========================================================================
+   FARB- UND SCHRIFT-TOKENS — die einzige Quelle.
+   Werte nie im Code wiederholen, immer von hier holen.
+   Begründung der Palette steht in FARBEN.md.
+   ========================================================================= */
+
+@font-face {
+  font-family: 'Poster';
+  src: url('/schriften/poster.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Heavy';
+  src: url('/schriften/heavy.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* --- Palette: doppelkomplementär -------------------------------------
+     Grün gegen Pink, Hellblau gegen Orange. Alle vier gleich kräftig,
+     damit sie als Familie gelesen werden. Kontrast läuft immer über den
+     Hellwert: Tinte auf Farbe, Papier auf Dunkel. Nie Signal auf Signal. */
+  --tinte:    #0B0B12;
+  --papier:   #F7F3EA;
+  --gruen:    #B4FF2E;   /* die Marken-Konstante, kehrt überall wieder */
+  --pink:     #FF3D9A;
+  --hellblau: #35DFFF;
+  --orange:   #FFA51F;
+
+  /* gedämpftes Papier für Nebentext */
+  --leise: rgba(247, 243, 234, .66);
+
+  /* --- Schrift ---------------------------------------------------------
+     Poster = schmal und hoch, für Kontur und Sperrung.
+     Heavy  = fett und breit, für Flächen und Balken.
+     Body   = Systemschrift, nur für Fliesstext. */
+  --poster: 'Poster', 'Haettenschweiler', 'Arial Narrow', sans-serif;
+  --heavy:  'Heavy', 'Arial Black', 'Helvetica Neue', sans-serif;
+  --body:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* --- Masse ------------------------------------------------------------ */
+  --rand: 26px;
+  --lesebreite: 42ch;
+  --schwung: cubic-bezier(.22, 1, .36, 1);
+}

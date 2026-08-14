@@ -1,0 +1,49 @@
+---
+import type { Abschnitt } from '../data/inhalt';
+import { BEHANDLUNG } from '../data/bilder';
+
+interface Props { a: Abschnitt }
+const { a } = Astro.props;
+
+const eingriff = BEHANDLUNG[a.bild]?.eingriff ?? 'zugX';
+
+/* Den betonten Teil aus dem Satz herausschneiden, statt ihn im Inhalt mit
+   Markup zu verkleben — so bleibt inhalt.ts reiner Text. */
+const stelle = a.betont ? a.satz.indexOf(a.betont) : -1;
+const davor = stelle >= 0 ? a.satz.slice(0, stelle) : a.satz;
+const betont = stelle >= 0 ? a.betont! : '';
+const danach = stelle >= 0 ? a.satz.slice(stelle + a.betont!.length) : '';
+
+const pfeil = a.link?.art === 'extern' ? '↗' : '→';
+---
+
+<section class="abschnitt" data-eingriff={eingriff} style={`--akzent: ${a.akzent}`}>
+  <canvas class="abschnitt__flaeche" data-bild={a.bild} aria-hidden="true"></canvas>
+
+  <div class="abschnitt__oben">
+    <span>{a.nummer}</span>
+    <span>{a.einordnung}</span>
+  </div>
+
+  <div class="abschnitt__mitte">
+    <h2 class={`wort griff-${a.griff}`} data-passung={a.passung}>
+      {a.zeilen.map((z) => (
+        <span class={`zeile ${z.klasse ?? ''}`}>
+          {a.griff === 'balken' ? <span class="balken">{z.text}</span> : z.text}
+        </span>
+      ))}
+    </h2>
+    <p class="abschnitt__satz">{davor}{betont && <b>{betont}</b>}{danach}</p>
+  </div>
+
+  <div class="abschnitt__unten">
+    <span>{a.fussnote}</span>
+    {a.link && (
+      <a
+        class="abschnitt__link"
+        href={a.link.ziel}
+        rel={a.link.art === 'extern' ? 'noopener' : undefined}
+      >{a.link.text} {pfeil}</a>
+    )}
+  </div>
+</section>

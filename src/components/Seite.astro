@@ -1,0 +1,25 @@
+---
+/**
+ * Die ganze Seite. Startseite und Detail-Adressen rendern dasselbe — nur mit
+ * einer anderen offenen Ebene. Dadurch liegt hinter jeder Ebene immer das
+ * Plakat, egal ob man gescrollt oder die Adresse direkt aufgerufen hat.
+ */
+import Abschnitt from './Abschnitt.astro';
+import Ebene from './Ebene.astro';
+import { ABSCHNITTE, EBENEN, FUSS } from '../data/inhalt';
+
+interface Props { offen?: string | null }
+const { offen = null } = Astro.props;
+---
+
+<main>
+  {ABSCHNITTE.map((a) => <Abschnitt a={a} />)}
+</main>
+
+<footer class="fuss">
+  <span>{FUSS.wer}</span>
+  <span>{FUSS.aufkleber}</span>
+  <a href={FUSS.kontakt.ziel}>{FUSS.kontakt.text} →</a>
+</footer>
+
+{EBENEN.map((e) => <Ebene e={e} offen={e.schluessel === offen} />)}

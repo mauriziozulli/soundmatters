@@ -1,0 +1,24 @@
+---
+/**
+ * Zu jeder Detail-Ebene gibt es eine echte, vorgebaute Adresse (/rig,
+ * /aufnahmen). Wer sie direkt aufruft oder verschickt bekommt, sieht sofort
+ * die Ebene über dem Plakat — auch ohne JavaScript.
+ */
+import Basis from '../layouts/Basis.astro';
+import Seite from '../components/Seite.astro';
+import { EBENEN } from '../data/inhalt';
+
+export function getStaticPaths() {
+  return EBENEN.map((e) => ({
+    params: { ebene: e.schluessel },
+    props: { titel: `${e.titel} — Sound Matters`, beschreibung: e.vorspann }
+  }));
+}
+
+const { ebene } = Astro.params;
+const { titel, beschreibung } = Astro.props;
+---
+
+<Basis titel={titel} beschreibung={beschreibung}>
+  <Seite offen={ebene} />
+</Basis>

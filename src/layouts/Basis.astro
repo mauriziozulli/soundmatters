@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+interface Props { titel?: string; beschreibung?: string }
+const {
+  titel = 'Sound Matters',
+  beschreibung = 'Maurizio Zulli aus Luzern: Ton für Film und Video, selbst gebaute Recording-Rigs, Musik und Feldaufnahmen.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titel}</title>
+    <meta name="description" content={beschreibung} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={titel} />
+    <meta property="og:description" content={beschreibung} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Die zwei Schriften tragen die ganze Seite — vor allem anderen holen. -->
+    <link rel="preload" as="font" type="font/woff2" href="/schriften/poster.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/schriften/heavy.woff2" crossorigin />
+
+    <meta name="theme-color" content="#0B0B12" />
+  </head>
+
+  <body>
+    <div class="zeiger zeiger--ring" aria-hidden="true"></div>
+    <div class="zeiger zeiger--punkt" aria-hidden="true"></div>
+
+    <slot />
+
+    <script>
+      import { flaechenAufbauen, flaechenNeuZeichnen } from '../scripts/flaeche';
+      import { schriftPassen } from '../scripts/schrift';
+      import { ebenenAufbauen } from '../scripts/ebene';
+      import { zeigerAufbauen } from '../scripts/zeiger';
+
+      /* Schrift zuerst passen, damit nichts springt; Flächen kommen nach,
+         sobald die Fotos da sind. */
+      schriftPassen();
+      ebenenAufbauen();
+      zeigerAufbauen();
+      flaechenAufbauen();
+
+      /* Die geladene Schrift ist breiter als die Ersatzschrift — danach neu. */
+      document.fonts?.ready.then(schriftPassen);
+
+      let wartet: number;
+      addEventListener('resize', () => {
+        clearTimeout(wartet);
+        wartet = window.setTimeout(() => {
+          flaechenNeuZeichnen();
+          schriftPassen();
+        }, 200);
+      });
+    </script>
+  </body>
+</html>

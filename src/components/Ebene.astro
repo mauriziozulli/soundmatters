@@ -1,0 +1,46 @@
+---
+import type { Ebene } from '../data/inhalt';
+
+interface Props { e: Ebene; offen?: boolean }
+const { e, offen = false } = Astro.props;
+---
+
+<div
+  class="ebene"
+  data-ebene={e.schluessel}
+  data-offen={offen ? 'true' : 'false'}
+  role="dialog"
+  aria-modal="true"
+  aria-label={e.titel}
+  style={`--ef: ${e.farbe}`}
+>
+  <button class="ebene__zu" type="button">✕ Schliessen</button>
+
+  <div class="ebene__in">
+    <div class="ebene__kicker">{e.kicker}</div>
+    <h1 class="ebene__titel">{e.titel}</h1>
+    <p class="ebene__vorspann">{e.vorspann}</p>
+
+    {e.bild
+      ? <img class="ebene__bild" src={e.bild} alt="" loading="lazy" decoding="async" />
+      : <div class="ebene__platz">Hier kommt dein Foto hin</div>}
+
+    {e.bloecke.map((b) => (
+      <div class="ebene__block">
+        <h3>{b.titel}</h3>
+        <p>{b.text}</p>
+      </div>
+    ))}
+
+    <dl class="ebene__daten">
+      {e.daten.map((d) => (
+        <div class="ebene__zeile">
+          <dt>{d.was}</dt>
+          <dd>{d.wert}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <a class="ebene__handlung" href={e.handlung.ziel}>{e.handlung.text} →</a>
+  </div>
+</div>

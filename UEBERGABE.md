@@ -119,6 +119,11 @@ Nur bei deutlich hellerem Bild `kontrast` in `src/data/bilder.ts` nachziehen.
   in die Zeile darüber.
 - **Nach `document.fonts.ready` neu rechnen** — die Ersatzschrift ist schmaler
   als die geladene.
+- **Balken brauchen ungleiches Polster oben und unten.** Versalien stehen auf
+  der Grundlinie, der Raum für Unterlängen darunter bleibt leer — bei gleichem
+  Polster sitzt die Schrift sichtbar daneben. Die Werte in `.balken` sind
+  ausgemessen; wer die Zeilenhöhe ändert, muss sie neu messen. Dasselbe gilt
+  für den Aufkleber.
 - **Der Höhendeckel muss die gemessene Höhe deckeln, nicht den Schriftgrad.**
   Zeilenhöhe, Polster und Balken zählen mit: ein Schriftbild mit Zeilenhöhe
   über 1 sprengt sonst den Abschnitt, obwohl ein Deckel gesetzt ist. `schrift.ts`

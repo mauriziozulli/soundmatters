@@ -139,7 +139,11 @@ a { color: inherit; }
   background: var(--akzent); color: var(--tinte);
   border: .07em solid var(--tinte);
   border-radius: .1em;
-  padding: .16em .13em .1em;
+  /* Polster oben/unten ist ausgemessen, nicht geschätzt: Versalien stehen auf
+     der Grundlinie, der Raum für Unterlängen darunter bleibt leer. Bei
+     gleichem Polster sitzt die Schrift sichtbar daneben. Wer die Zeilenhöhe
+     ändert, muss diese zwei Werte neu messen. */
+  padding: .14em .13em .12em;
 }
 
 /* Gegenstimme: Antiqua mit starkem Strichkontrast. Bewusst gemischte

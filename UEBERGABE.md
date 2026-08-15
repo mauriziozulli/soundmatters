@@ -31,11 +31,11 @@ Fünf bildschirmfüllende Abschnitte, danach eine zweite Ebene für Vertiefungen
 
 | | Abschnitt | Schrift | Schriftbild | Leitfarbe |
 |---|---|---|---|---|
-| 00 | Sound is what matters. | Bebas Neue (kondensiert) | Kontur, ein Wort gefüllt | Zinnober |
-| 01 | Sound and Picture | Bodoni Moda (Antiqua) | zwei Zeilen, zweite kursiv | Bernstein |
-| 02 | Custom Gear | Space Mono | gesperrt, Tinte auf Balken | Stahlblau |
-| 03 | Musik | Archivo Black (fette Grotesk) | flächig gefüllt | Magenta |
-| 04 | Field Recording | Cormorant Garamond | nur Kontur | Eisweiss |
+| 00 | Sound is what matters. | Bebas Neue (kondensiert) | Kontur, ein Wort gefüllt | Knochen |
+| 01 | Sound and Picture | Bodoni Moda (Antiqua) | zwei Zeilen, zweite kursiv | Ocker |
+| 02 | Custom Gear | Space Mono | gesperrt, Tinte auf Balken | Staubblau |
+| 03 | Musik | Archivo Black (fette Grotesk) | flächig gefüllt | Rost |
+| 04 | Field Recording | Cormorant Garamond | nur Kontur | Verdigris |
 
 Jeder Abschnitt hat eine **eigene Schriftfamilie** und ein eigenes
 Schriftbild — das war eine ausdrückliche Forderung. Nicht vereinheitlichen.
@@ -69,10 +69,16 @@ Links, es lädt dann neu statt zu überblenden.
 
 ## Farben
 
-Ein Ton je Abschnitt, keine Farbe zweimal. **Kontrast läuft immer über den
-Hellwert** — Tinte auf Farbe, Papier auf Dunkel, nie Ton auf Ton. Höchstens
+**Der Aufkleber gibt die Farben vor, nicht die Seite.** Der Einstieg läuft
+über den Kleber, also bestimmt er die Palette. Wer Farben ändern will, fängt
+dort an.
+
+Die Familie ist entsättigt und ins Warme gezogen — aus Rot wird Rost, aus
+Weiss wird Knochen. So knallt sie auf dunklem Grund, ohne neon zu sein. Ein
+Ton je Abschnitt, keine Farbe zweimal. **Kontrast läuft immer über den
+Hellwert** — Tinte auf Farbe, Knochen auf Dunkel, nie Ton auf Ton. Höchstens
 drei Farben gleichzeitig. Alles Übergreifende (Zeiger, Fokus, Fuss) läuft auf
-Papier statt auf einer Signalfarbe.
+Knochen statt auf einer Leitfarbe.
 
 Ausführlich samt Herleitung in `FARBEN.md`. Werte stehen in
 `src/styles/tokens.css` und nirgends sonst.
@@ -132,7 +138,8 @@ inklusive Fotos und Schriften, kein externer Abruf.
       (aktuell `https://soundcloud.com` als Platzhalter)
 - [ ] Bild fürs Teilen (Open Graph), 1200 × 630
 - [ ] Netlify verbinden, Domain `soundmatters.audio` aufschalten
-- [ ] Aufkleber: drei Fassungen, je zweifarbig, siehe `FARBEN.md`
+- [ ] Aufkleber drucken: drei Fassungen, je zweifarbig, rund 80 mm, matt —
+      Farben und Fassungen stehen in `FARBEN.md`
 
 Kontakt ist gesetzt: `maurizio@mauriziozulli.com`, mit eigenem Betreff je
 Abschnitt, damit in der Mail steht, woher die Anfrage kam.

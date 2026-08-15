@@ -32,35 +32,40 @@
 }
 
 :root {
+  /* --- Die Familie -----------------------------------------------------
+     Abgeleitet vom Aufkleber, nicht umgekehrt: der Kleber ist der
+     Einstieg, also gibt er die Farben vor. Verdigris, Ocker und Knochen
+     sind die drei gedruckten Fassungen; Rost und Staubblau ergänzen sie
+     für die restlichen Abschnitte.
+
+     Alle fünf sind entsättigt und ins Warme gezogen — genau das ist der
+     Unterschied zwischen «knallt» und «Neon». Aus Rot wird Rost, aus
+     Weiss wird Knochen. Keine Farbe kommt zweimal vor. */
+  --knochen:   #EFE6D2;   /* 00 — und zugleich die Textfarbe der Seite */
+  --ocker:     #D9962B;   /* 01 */
+  --staubblau: #6E93A6;   /* 02 */
+  --rost:      #B4562E;   /* 03 */
+  --verdigris: #2F8F7A;   /* 04 — Hauptfassung des Aufklebers */
+
   /* --- Grundwerte ------------------------------------------------------- */
-  --tinte:  #0B0B12;
-  --papier: #F7F3EA;
+  --tinte:  #101014;
+  --papier: var(--knochen);
 
-  /* --- Ein Ton je Abschnitt --------------------------------------------
-     Keine Farbe kommt zweimal vor. Das ist der Punkt: es gibt keinen
-     wiederkehrenden Faden mehr, jeder Bildschirm steht für sich.
-     Kontrast läuft weiterhin über den Hellwert — Ton auf dunklem Grund,
-     Tinte auf Ton. Nie Ton auf Ton. */
-  --zinnober:  #FF3B1F;   /* 00 */
-  --bernstein: #FFB020;   /* 01 */
-  --stahl:     #6BB6F0;   /* 02 */
-  --magenta:   #FF2E88;   /* 03 */
-  --eis:       #E4F3FF;   /* 04 */
-
-  /* Der zugehörige Grund. Bestimmt zugleich den dunklen Pol des Fotos. */
-  --grund-00: #08080C;    /* Schwarz */
-  --grund-01: #0A1A33;    /* Tiefblau */
-  --grund-02: #24272D;    /* Beton */
-  --grund-03: #1A0A2E;    /* Nachtviolett */
-  --grund-04: #06333D;    /* Petrol */
+  /* Der zugehörige Grund. Bestimmt zugleich den dunklen Pol des Fotos.
+     Jeder trägt den Farbstich seines Abschnitts, bleibt aber fast schwarz. */
+  --grund-00: #101014;    /* Tinte */
+  --grund-01: #1A1712;    /* Russ, warm */
+  --grund-02: #1B2226;    /* Schiefer */
+  --grund-03: #1E1310;    /* Tiefbraun */
+  --grund-04: #102620;    /* Tiefgrün */
 
   /* Neutrales Signal für alles, was über den Abschnitten liegt: Mauszeiger,
      Fokusrahmen, Fuss. Bewusst farblos — sonst wäre über die Hintertür
      doch wieder eine Farbe der wiederkehrende Faden. */
-  --signal: var(--papier);
+  --signal: var(--knochen);
 
   /* gedämpftes Papier für Nebentext */
-  --leise: rgba(247, 243, 234, .66);
+  --leise: rgba(239, 230, 210, .66);
 
   /* --- Schrift ---------------------------------------------------------
      Eine Familie je Abschnitt, siehe @font-face oben. Body ist die

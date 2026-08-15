@@ -63,7 +63,7 @@ a { color: inherit; }
 .abschnitt::after {
   content: '';
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: radial-gradient(120% 92% at 50% 46%, rgba(11, 11, 18, .12) 0%, rgba(11, 11, 18, .72) 100%);
+  background: radial-gradient(120% 92% at 50% 46%, rgba(16, 16, 20, .12) 0%, rgba(16, 16, 20, .72) 100%);
 }
 
 .abschnitt__oben,
@@ -73,7 +73,7 @@ a { color: inherit; }
   font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase;
   color: var(--leise);
 }
-.abschnitt__unten { border-top: 1px solid rgba(247, 243, 234, .28); padding-top: 13px; }
+.abschnitt__unten { border-top: 1px solid rgba(239, 230, 210, .28); padding-top: 13px; }
 
 .abschnitt__link {
   color: var(--papier); text-decoration: none;
@@ -95,7 +95,7 @@ a { color: inherit; }
   font-size: clamp(1rem, 1.9vw, 1.28rem);
   line-height: 1.45;
   text-wrap: pretty;
-  text-shadow: 0 2px 18px rgba(11, 11, 18, .8);
+  text-shadow: 0 2px 18px rgba(16, 16, 20, .8);
 }
 .abschnitt__satz b { font-weight: 400; color: var(--akzent, var(--signal)); }
 
@@ -113,16 +113,17 @@ a { color: inherit; }
   .schmal { display: block; }
 }
 
-/* 00 — kondensierte Grotesk, Kontur, ein Wort in Zinnober gefüllt.
-   Grösster Grad der Seite: der Einstieg soll wie ein Plakat wirken. */
+/* 00 — kondensierte Grotesk. Kontur gegen Fläche, beides in Knochen: der
+   Einstieg kommt ohne Farbe aus, die Familie beginnt erst danach. Der
+   Unterschied liegt in der Silhouette, nicht im Ton. */
 .griff-kontur {
   font-family: var(--kondens); text-transform: uppercase;
   line-height: .88; letter-spacing: .01em;
   color: transparent; -webkit-text-stroke: 2.5px var(--papier);
 }
-.griff-kontur .gefuellt { color: var(--zinnober); -webkit-text-stroke: 0; }
+.griff-kontur .gefuellt { color: var(--knochen); -webkit-text-stroke: 0; }
 
-/* 01 — Antiqua mit starkem Strichkontrast, zweite Zeile kursiv in Bernstein.
+/* 01 — Antiqua mit starkem Strichkontrast, zweite Zeile kursiv in Ocker.
    Bewusst gemischte Gross-/Kleinschreibung: in Versalien brechen die
    Haarstriche weg, und genau der Strichkontrast ist hier der Bruch zu 00.
    Zeilenhöhe grosszügig, sonst stossen die Oberlängen aneinander. */
@@ -131,9 +132,9 @@ a { color: inherit; }
   line-height: 1.02; letter-spacing: -.015em;
   color: var(--papier);
 }
-.griff-serif .zweite { color: var(--bernstein); font-style: italic; }
+.griff-serif .zweite { color: var(--ocker); font-style: italic; }
 
-/* 02 — technische Mono, weit gesperrt, Tinte auf Stahlblau. Der Balken
+/* 02 — technische Mono, weit gesperrt, Tinte auf Staubblau. Der Balken
    macht den Kontrast unabhängig vom Foto darunter. */
 .griff-mono {
   font-family: var(--mono); text-transform: uppercase;
@@ -149,26 +150,26 @@ a { color: inherit; }
 .griff-mono .balken {
   display: inline-block;
   line-height: .82;
-  background: var(--stahl); color: var(--tinte);
+  background: var(--staubblau); color: var(--tinte);
   padding: .16em .12em .1em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-/* 03 — fette Grotesk, flächig gefüllt, Magenta. Dichtestes Schriftbild der
+/* 03 — fette Grotesk, flächig gefüllt, Rost. Dichtestes Schriftbild der
    Seite; die negative Laufweite schiebt die Buchstaben zur Fläche zusammen. */
 .griff-fett {
   font-family: var(--fett); text-transform: uppercase;
   line-height: .9; letter-spacing: -.05em;
-  color: var(--magenta);
+  color: var(--rost);
 }
 
-/* 04 — schmale Antiqua, nur Kontur, Eisweiss. Leichtestes Schriftbild,
+/* 04 — schmale Antiqua, nur Kontur, Verdigris. Leichtestes Schriftbild,
    bewusst als Gegenpol zum dichten 03 direkt davor. */
 .griff-hohl {
   font-family: var(--antiqua);
   line-height: 1.08; letter-spacing: .02em;
-  color: transparent; -webkit-text-stroke: 2px var(--eis);
+  color: transparent; -webkit-text-stroke: 2.4px var(--verdigris);
 }
 
 @media (max-width: 620px) {
@@ -187,7 +188,7 @@ a { color: inherit; }
   padding: 30px var(--rand) 44px;
   font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
   color: var(--leise);
-  border-top: 1px solid rgba(247, 243, 234, .16);
+  border-top: 1px solid rgba(239, 230, 210, .16);
 }
 .fuss a {
   color: var(--papier); text-decoration: none;
@@ -244,7 +245,7 @@ a { color: inherit; }
 /* Platzhalter, solange kein echtes Foto da ist */
 .ebene__platz {
   height: clamp(180px, 34vw, 300px);
-  border: 1px dashed rgba(247, 243, 234, .3);
+  border: 1px dashed rgba(239, 230, 210, .3);
   border-radius: 6px;
   display: grid; place-items: center;
   color: var(--leise);
@@ -259,15 +260,15 @@ a { color: inherit; }
   font-size: 1.15rem; letter-spacing: -.03em; margin-bottom: 9px;
   color: var(--ef, var(--signal));
 }
-.ebene__block p { line-height: 1.6; color: rgba(247, 243, 234, .86); }
+.ebene__block p { line-height: 1.6; color: rgba(239, 230, 210, .86); }
 
 .ebene__daten { display: grid; margin: 40px 0; }
 .ebene__zeile {
   display: grid; grid-template-columns: max-content 1fr; gap: 22px; align-items: baseline;
-  padding: 13px 2px; border-top: 1px solid rgba(247, 243, 234, .18);
+  padding: 13px 2px; border-top: 1px solid rgba(239, 230, 210, .18);
   font-size: 14.5px;
 }
-.ebene__zeile:last-child { border-bottom: 1px solid rgba(247, 243, 234, .18); }
+.ebene__zeile:last-child { border-bottom: 1px solid rgba(239, 230, 210, .18); }
 .ebene__zeile dt {
   font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--leise); white-space: nowrap;

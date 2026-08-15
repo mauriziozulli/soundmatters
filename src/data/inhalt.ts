@@ -36,7 +36,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     einordnung: 'Luzern',
     griff: 'kontur',
     passung: 0.98,
-    akzent: 'var(--zinnober)',
+    akzent: 'var(--knochen)',
     zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'gefuellt' }],
     satz: 'Hi, ich bin Maurizio. Darum versuche ich, Ton überall gut zu machen — im Kino, im Booth, auf dem Gletscher.',
     betont: 'Darum versuche ich, Ton überall gut zu machen',
@@ -48,7 +48,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     einordnung: 'Film · Video · Werbung',
     griff: 'serif',
     passung: 0.94,
-    akzent: 'var(--bernstein)',
+    akzent: 'var(--ocker)',
     zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'zweite' }],
     satz: 'Sounddesign, Schnitt und Mischung. Was ich draussen aufnehme, landet hier drin — meine Bibliothek besteht nicht aus gekauften Paketen.',
     betont: 'Was ich draussen aufnehme, landet hier drin',
@@ -61,7 +61,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     einordnung: 'Rigs · Mikrofone · Bühne',
     griff: 'mono',
     passung: 0.9,
-    akzent: 'var(--stahl)',
+    akzent: 'var(--staubblau)',
     zeilen: [{ text: 'Custom' }, { text: 'Gear' }],
     satz: 'Recording-Cases, die jedes Set am Festival mitschneiden — acht Kanäle aus dem Booth, die ganze Nacht. Gebaut, wie ich sie selber als DJ brauche.',
     betont: 'Gebaut, wie ich sie selber als DJ brauche.',
@@ -74,7 +74,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     einordnung: 'House · Techno · Festival',
     griff: 'fett',
     passung: 0.93,
-    akzent: 'var(--magenta)',
+    akzent: 'var(--rost)',
     zeilen: [{ text: 'Musik' }],
     satz: 'Ich lege auf und baue an einem Festival in den Bergen mit. Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert — und baue danach.',
     betont: 'Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert',
@@ -87,7 +87,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     einordnung: 'Gletscher · Seilbahn · leere Räume',
     griff: 'hohl',
     passung: 0.92,
-    akzent: 'var(--eis)',
+    akzent: 'var(--verdigris)',
     zeilen: [{ text: 'Field' }, { text: 'Recording' }],
     satz: 'Hydrophon in der Gletschermühle, Kontaktmikro am Tragseil, Stereopaar im leeren Club um zehn nach sechs. Sag mir den Ort, ich bringe das Zeug und die Geduld.',
     betont: 'Sag mir den Ort, ich bringe das Zeug und die Geduld.',
@@ -116,7 +116,7 @@ export type Ebene = {
 export const EBENEN: Ebene[] = [
   {
     schluessel: 'rig',
-    farbe: 'var(--stahl)',
+    farbe: 'var(--staubblau)',
     kicker: '02 — Custom Gear',
     titel: 'Das Bühnen-Rig',
     vorspann:
@@ -146,7 +146,7 @@ export const EBENEN: Ebene[] = [
   },
   {
     schluessel: 'aufnahmen',
-    farbe: 'var(--eis)',
+    farbe: 'var(--verdigris)',
     kicker: '04 — Field Recording',
     titel: 'Die Aufnahmen',
     vorspann:

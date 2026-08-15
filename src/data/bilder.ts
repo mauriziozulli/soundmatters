@@ -36,14 +36,14 @@ export type Behandlung = {
  * Abschnitts, rein leuchtet die Leitfarbe nur in der Schrift.
  */
 export const BEHANDLUNG: Record<string, Behandlung> = {
-  /* 00 Zinnober auf Schwarz — Rost als dunkle Verwandte */
-  intro: { eingriff: 'zugX',    staerke: 18, schatten: [8, 8, 12],   licht: [122, 36, 24],  kontrast: 1.28, breite: 460 },
-  /* 01 Bernstein auf Tiefblau — dunkler Ocker */
-  film:  { eingriff: 'zugY',    staerke: 16, schatten: [10, 26, 51], licht: [92, 74, 30],   kontrast: 1.3,  breite: 460 },
-  /* 02 Stahlblau auf Beton — abgedunkeltes Stahl */
-  gear:  { eingriff: 'raster',  staerke: 16, schatten: [36, 39, 45], licht: [62, 90, 112],  kontrast: 1.35, breite: 420 },
-  /* 03 Magenta auf Nachtviolett — Pflaume */
-  club:  { eingriff: 'versatz', staerke: 16, schatten: [26, 10, 46], licht: [74, 22, 56],   kontrast: 1.24, breite: 460 },
-  /* 04 Eisweiss auf Petrol — dunkles Teal, damit die Kontur stehen bleibt */
-  ice:   { eingriff: 'zugX',    staerke: 18, schatten: [6, 51, 61],  licht: [62, 110, 126], kontrast: 1.22, breite: 460 }
+  /* 00 Knochen auf Tinte — warmes Grau, damit die Kontur trägt */
+  intro: { eingriff: 'zugX',    staerke: 18, schatten: [16, 16, 20], licht: [74, 69, 60],  kontrast: 1.28, breite: 460 },
+  /* 01 Ocker auf Russ — abgedunkelter Ocker */
+  film:  { eingriff: 'zugY',    staerke: 16, schatten: [26, 23, 18], licht: [107, 78, 24], kontrast: 1.3,  breite: 460 },
+  /* 02 Staubblau auf Schiefer — abgedunkeltes Staubblau */
+  gear:  { eingriff: 'raster',  staerke: 16, schatten: [27, 34, 38], licht: [58, 84, 96],  kontrast: 1.35, breite: 420 },
+  /* 03 Rost auf Tiefbraun — tiefes Kupfer */
+  club:  { eingriff: 'versatz', staerke: 16, schatten: [30, 19, 16], licht: [92, 42, 24],  kontrast: 1.24, breite: 460 },
+  /* 04 Verdigris auf Tiefgrün — abgedunkeltes Verdigris */
+  ice:   { eingriff: 'zugX',    staerke: 18, schatten: [9, 22, 19],  licht: [22, 56, 48],  kontrast: 1.3,  breite: 460 }
 };

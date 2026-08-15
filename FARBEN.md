@@ -1,37 +1,63 @@
 # Farbpalette Sound Matters
 
-Gebaut nach den üblichen Regeln, nicht nach Gefühl — damit sie auf dem Schirm,
-im Druck und auf dem Aufkleber gleich gut funktioniert.
+## Der Aufkleber gibt die Farben vor, nicht die Seite
 
-## Das Prinzip: ein Ton je Abschnitt
+Das ist die tragende Entscheidung, und sie ist herum gedreht worden: Der
+Einstieg in die Seite läuft über runde Aufkleber an Cases, Racks und
+Filmsets. Also bestimmt der Aufkleber die Palette, und die Seite folgt ihm —
+nicht umgekehrt. Wer die Farben ändern will, muss beim Kleber anfangen.
 
-**Keine Farbe kommt zweimal vor.** Das ist die tragende Entscheidung. Vorher
-lief Giftgrün als wiederkehrender Faden über drei von fünf Bildschirmen — das
-band die Seite zwar zusammen, liess aber mehrere Abschnitte gleich aussehen.
-Jetzt steht jeder Abschnitt für sich, und zusammengehalten wird die Seite über
-Aufbau und Schriftbild statt über eine Signalfarbe.
+Die Anforderung an den Kleber: er soll knallen, aber nicht neon sein, und er
+soll auf fremdem Gerät aussehen, **als gehöre er genau dorthin** — nicht als
+hätte ihn jemand draufgepappt.
 
-| | Abschnitt | Leitfarbe | Hex | Grund | Hex |
-|---|---|---|---|---|---|
-| 00 | Sound is what matters | Zinnober | `#FF3B1F` | Schwarz | `#08080C` |
-| 01 | Sound and Picture | Bernstein | `#FFB020` | Tiefblau | `#0A1A33` |
-| 02 | Custom Gear | Stahlblau | `#6BB6F0` | Beton | `#24272D` |
-| 03 | Musik | Magenta | `#FF2E88` | Nachtviolett | `#1A0A2E` |
-| 04 | Field Recording | Eisweiss | `#E4F3FF` | Petrol | `#06333D` |
+## Wie «knallt, aber nicht neon» gebaut wird
 
-Dazu zwei Grundwerte: Tinte `#0B0B12` und Papier `#F7F3EA`.
+Entsättigen und ins Warme ziehen. **Aus Rot wird Rost, aus Weiss wird
+Knochen.** Alle Werte liegen unter voller Sättigung und sind warm
+verschoben. Dadurch bleibt die Leuchtkraft auf dunklem Grund erhalten, ohne
+dass etwas fluoresziert.
+
+Dazu die Regeln für den Druck: **helle Grafik auf dunklem Untergrund**, matt
+statt glänzend (matt lässt kleine Schrift schärfer wirken), zwei Farben, keine
+Verläufe, keine Schatten. Kein Weiss als Fläche — Weiss vergilbt am Case und
+im Regen.
+
+## Die Familie
+
+| Name | Hex | Rolle |
+|---|---|---|
+| Knochen | `#EFE6D2` | Abschnitt 00, zugleich Textfarbe der ganzen Seite |
+| Ocker | `#D9962B` | Abschnitt 01 |
+| Staubblau | `#6E93A6` | Abschnitt 02 |
+| Rost | `#B4562E` | Abschnitt 03 |
+| Verdigris | `#2F8F7A` | Abschnitt 04, Hauptfassung des Aufklebers |
+| Tinte | `#101014` | Schrift auf Flächen, Grund der Seite |
+
+Verdigris, Ocker und Knochen sind die drei gedruckten Fassungen. Rost und
+Staubblau ergänzen die Familie für die übrigen Abschnitte — sie sind nach
+denselben Regeln gebaut (entsättigt, warm verschoben) und gehören darum
+sichtbar dazu.
+
+**Keine Farbe kommt zweimal vor.** Eine frühere Fassung führte Giftgrün als
+wiederkehrenden Faden über drei Abschnitte; das liess mehrere Bildschirme
+gleich aussehen. Zusammengehalten wird die Seite jetzt über die Familie und
+das Schriftbild, nicht über eine einzelne Signalfarbe.
+
+**Abschnitt 00 kommt ohne Farbe aus.** Knochen auf Tinte, der Unterschied
+zwischen den Zeilen liegt in der Silhouette (Kontur gegen Fläche), nicht im
+Ton. Die Farbe setzt erst ab 01 ein.
 
 ## Die Regeln, die bleiben
 
 **Kontrast über den Hellwert, nicht über den Farbton.** Auf farbigen Flächen
-steht immer Tinte, auf dunklen Papier oder die Leitfarbe. Nie Ton auf Ton —
-das flimmert und ist auf kleinen Schirmen unlesbar.
+steht immer Tinte, auf dunklen Knochen oder die Leitfarbe. Nie Ton auf Ton.
 
 **Höchstens drei Farben gleichzeitig.** Pro Bildschirm: dunkler Grund als
-Fläche, die Leitfarbe als Träger, Papier als Nebentext.
+Fläche, die Leitfarbe als Träger, Knochen als Nebentext.
 
 **Neutrales Signal für alles Übergreifende.** Mauszeiger, Fokusrahmen und Fuss
-laufen auf Papier statt auf einer Signalfarbe. Sonst wäre über die Hintertür
+laufen auf Knochen statt auf einer Leitfarbe. Sonst wäre über die Hintertür
 doch wieder eine Farbe der wiederkehrende Faden.
 
 ## Die Bilder
@@ -39,27 +65,30 @@ doch wieder eine Farbe der wiederkehrende Faden.
 Jedes Foto wird auf zwei Pole abgebildet (Zweiklang). Der helle Pol ist
 bewusst eine **gedämpfte, dunklere Verwandte** der Leitfarbe — nie die
 Leitfarbe selbst. Sonst stünde die Schrift in ihrer eigenen Farbe auf einer
-Fläche derselben Farbe, und genau das verbietet die Kontrastregel.
-
-Ergebnis: das Foto bleibt eine dunkle Textur im Farbklima des Abschnitts, rein
-leuchtet die Leitfarbe nur in der Schrift.
+Fläche derselben Farbe.
 
 | Abschnitt | Schatten | Licht | Eingriff |
 |---|---|---|---|
-| 00 | `#08080C` Schwarz | `#7A2418` Rost | Zug waagrecht |
-| 01 | `#0A1A33` Tiefblau | `#5C4A1E` Ocker | Zug senkrecht |
-| 02 | `#24272D` Beton | `#3E5A70` Stahl dunkel | Raster |
-| 03 | `#1A0A2E` Nachtviolett | `#4A1638` Pflaume | Versatz |
-| 04 | `#06333D` Petrol | `#3E6E7E` Teal dunkel | Zug waagrecht |
+| 00 Knochen | `#101014` Tinte | `#4A453C` Warmgrau | Zug waagrecht |
+| 01 Ocker | `#1A1712` Russ | `#6B4E18` Ocker dunkel | Zug senkrecht |
+| 02 Staubblau | `#1B2226` Schiefer | `#3A5460` Staubblau dunkel | Raster |
+| 03 Rost | `#1E1310` Tiefbraun | `#5C2A18` Kupfer | Versatz |
+| 04 Verdigris | `#091613` Tiefgrün | `#163830` Verdigris dunkel | Zug waagrecht |
+
+Abschnitt 04 ist am dunkelsten gehalten: die Kontur steht dort in Verdigris,
+und bei einem helleren Foto verschwindet sie im eigenen Farbklima.
 
 ## Für den Aufkleber
 
-**Drei Fassungen, je zweifarbig:** Zinnober, Magenta oder Stahlblau als
-Fläche, Tinte als Schrift. Zwei Farben heissen günstiger Druck, maximaler
-Kontrast und Lesbarkeit aus drei Metern.
+**Drei Fassungen, je zweifarbig** — Fläche zuerst, dann die Schrift:
 
-Drei Farben derselben Familie haben ausserdem einen Nebeneffekt: Leute wollen
-alle drei. Ein Aufkleber ist ein Einzelstück, ein Satz ist eine Sammlung.
+| Fassung | Fläche | Schrift |
+|---|---|---|
+| Haupt | Verdigris `#2F8F7A` | Knochen `#EFE6D2` |
+| Zweite | Ocker `#D9962B` | Tiefgrün `#1C3A34` |
+| Dritte | Knochen `#EFE6D2` | Tiefgrün `#1C3A34` |
 
-Keine Verläufe, keine Schatten, kein Weiss als Fläche — Weiss vergilbt am
-Case und im Regen, und Verläufe brechen im Kleinformat zusammen.
+Rund, 80 mm, matt. Adresse `soundmatters.audio` unter dem Wortlaut.
+
+Drei Farben derselben Familie haben einen Nebeneffekt: Leute wollen alle
+drei. Ein Aufkleber ist ein Einzelstück, ein Satz ist eine Sammlung.

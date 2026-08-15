@@ -1,0 +1,10 @@
+---
+import Basis from '../../layouts/Basis.astro';
+import Seite from '../../components/Seite.astro';
+import { INHALT } from '../../data/inhalt';
+const { titel, beschreibung } = INHALT.en;
+---
+
+<Basis sprache="en" titel={titel} beschreibung={beschreibung}>
+  <Seite sprache="en" />
+</Basis>

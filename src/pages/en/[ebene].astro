@@ -1,0 +1,20 @@
+---
+/** Dasselbe wie /[ebene], nur in der englischen Fassung unter /en. */
+import Basis from '../../layouts/Basis.astro';
+import Seite from '../../components/Seite.astro';
+import { INHALT } from '../../data/inhalt';
+
+export function getStaticPaths() {
+  return INHALT.en.ebenen.map((e) => ({
+    params: { ebene: e.schluessel },
+    props: { titel: `${e.titel} — Sound Matters`, beschreibung: e.vorspann }
+  }));
+}
+
+const { ebene } = Astro.params;
+const { titel, beschreibung } = Astro.props;
+---
+
+<Basis sprache="en" titel={titel} beschreibung={beschreibung}>
+  <Seite sprache="en" offen={ebene} />
+</Basis>

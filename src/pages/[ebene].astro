@@ -6,10 +6,10 @@
  */
 import Basis from '../layouts/Basis.astro';
 import Seite from '../components/Seite.astro';
-import { EBENEN } from '../data/inhalt';
+import { INHALT } from '../data/inhalt';
 
 export function getStaticPaths() {
-  return EBENEN.map((e) => ({
+  return INHALT.de.ebenen.map((e) => ({
     params: { ebene: e.schluessel },
     props: { titel: `${e.titel} — Sound Matters`, beschreibung: e.vorspann }
   }));
@@ -19,6 +19,6 @@ const { ebene } = Astro.params;
 const { titel, beschreibung } = Astro.props;
 ---
 
-<Basis titel={titel} beschreibung={beschreibung}>
-  <Seite offen={ebene} />
+<Basis sprache="de" titel={titel} beschreibung={beschreibung}>
+  <Seite sprache="de" offen={ebene} />
 </Basis>

@@ -1,32 +1,46 @@
 ---
 import '../styles/global.css';
+import { BASIS, gegenstueck, mitStrich, type Sprache } from '../data/inhalt';
 
-interface Props { titel?: string; beschreibung?: string }
+interface Props { sprache?: Sprache; titel?: string; beschreibung?: string }
 const {
+  sprache = 'de',
   titel = 'Sound Matters',
   beschreibung = 'Maurizio Zulli aus Luzern: Ton für Film und Video, selbst gebaute Recording-Rigs, Musik und Feldaufnahmen.'
 } = Astro.props;
+
+const pfad = mitStrich(Astro.url.pathname);
+const andereSprache: Sprache = sprache === 'de' ? 'en' : 'de';
+const andererPfad = gegenstueck(sprache, pfad);
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={sprache} data-basis={BASIS[sprache]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{titel}</title>
     <meta name="description" content={beschreibung} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="canonical" href={new URL(pfad, Astro.site)} />
+
+    <!-- Beide Fassungen kennen einander, damit Suchmaschinen die richtige
+         ausliefern und keine als Kopie der anderen gilt. -->
+    <link rel="alternate" hreflang={sprache} href={new URL(pfad, Astro.site)} />
+    <link rel="alternate" hreflang={andereSprache} href={new URL(andererPfad, Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(sprache === 'de' ? pfad : andererPfad, Astro.site)} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content={sprache === 'de' ? 'de_CH' : 'en_GB'} />
     <meta property="og:title" content={titel} />
     <meta property="og:description" content={beschreibung} />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Die zwei Schriften tragen die ganze Seite — vor allem anderen holen. -->
-    <link rel="preload" as="font" type="font/woff2" href="/schriften/poster.woff2" crossorigin />
+    <!-- Leitschrift und Gegenstimme tragen die Überschriften — vor allem
+         anderen holen. Die Mono kommt erst in der Fusszeile zum Zug. -->
     <link rel="preload" as="font" type="font/woff2" href="/schriften/heavy.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/schriften/serif.woff2" crossorigin />
 
-    <meta name="theme-color" content="#0B0B12" />
+    <meta name="theme-color" content="#101014" />
   </head>
 
   <body>

@@ -124,6 +124,25 @@ Nur bei deutlich hellerem Bild `kontrast` in `src/data/bilder.ts` nachziehen.
   über 1 sprengt sonst den Abschnitt, obwohl ein Deckel gesetzt ist. `schrift.ts`
   misst darum bei 100px Breite *und* Höhe.
 
+## Zwei Sprachen
+
+Deutsch liegt unter `/`, Englisch unter `/en`. Beide sind **echte, vorgebaute
+Seiten** — kein Umschalten im Kopf des Browsers. Damit ist jede Fassung
+verschickbar und auffindbar, aus demselben Grund, aus dem die Detail-Ebenen
+eigene Adressen haben. Beide kennen einander über `hreflang`.
+
+Die englischen Ebenen haben eigene Adressen: `/en/rig` und `/en/recordings`.
+Der Schalter unten in der Mitte führt auf dieselbe Ebene in der anderen
+Sprache, sonst auf die Startseite.
+
+**Der Schalter liegt bewusst unter der Detail-Ebene** (kleinerer z-index):
+sobald eine Ebene offen ist, ist er verdeckt. Sonst hätte die Ebene einen
+Ausgang, eine Weiterführung *und* einen Sprachwechsel — und das wäre einer zu
+viel für die zweite Regel.
+
+Eigennamen bleiben auch im Englischen stehen (Am Bach Festival, Schwing und
+Stampf) — übersetzt wären sie unauffindbar.
+
 ## Sprache
 
 Deutsch, Schweizer Rechtschreibung (**ss statt ß**). Das gilt für Inhalt,
@@ -136,8 +155,8 @@ Fähigkeit behaupten. Das ist Absicht und macht glaubwürdig.
 
 ## Stand und was offen ist
 
-Gebaut, Build läuft, drei Seiten (`/`, `/rig`, `/aufnahmen`), rund 428 KB
-inklusive Fotos und Schriften, kein externer Abruf.
+Gebaut, Build läuft, sechs Seiten (`/`, `/rig`, `/aufnahmen` und dieselben
+unter `/en`), kein externer Abruf.
 
 - [ ] **Eigene Fotos** statt der Platzhalter — mit Abstand der grösste Hebel
 - [ ] Echte Links zu SoundCloud und Instagram in `src/data/inhalt.ts`

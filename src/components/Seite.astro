@@ -6,20 +6,24 @@
  */
 import Abschnitt from './Abschnitt.astro';
 import Ebene from './Ebene.astro';
-import { ABSCHNITTE, EBENEN, FUSS } from '../data/inhalt';
+import Sprache from './Sprache.astro';
+import { INHALT, type Sprache as SpracheTyp } from '../data/inhalt';
 
-interface Props { offen?: string | null }
-const { offen = null } = Astro.props;
+interface Props { sprache?: SpracheTyp; offen?: string | null }
+const { sprache = 'de', offen = null } = Astro.props;
+const { abschnitte, ebenen, fuss } = INHALT[sprache];
 ---
 
 <main>
-  {ABSCHNITTE.map((a) => <Abschnitt a={a} />)}
+  {abschnitte.map((a) => <Abschnitt a={a} />)}
 </main>
 
 <footer class="fuss">
-  <span>{FUSS.wer}</span>
-  <span>{FUSS.aufkleber}</span>
-  <a href={FUSS.kontakt.ziel}>{FUSS.kontakt.text} →</a>
+  <span>{fuss.wer}</span>
+  <span>{fuss.aufkleber}</span>
+  <a href={fuss.kontakt.ziel}>{fuss.kontakt.text} →</a>
 </footer>
 
-{EBENEN.map((e) => <Ebene e={e} offen={e.schluessel === offen} />)}
+{ebenen.map((e) => <Ebene e={e} offen={e.schluessel === offen} />)}
+
+<Sprache sprache={sprache} pfad={Astro.url.pathname} />

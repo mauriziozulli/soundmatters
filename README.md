@@ -29,7 +29,7 @@ npm run build
 ```
 src/
   data/
-    inhalt.ts      ALLE Texte, Links, Reihenfolge — hier änderst du
+    inhalt.ts      ALLE Texte, Links, Reihenfolge, beide Sprachen — hier änderst du
     bilder.ts      wie aus jedem Foto eine Fläche wird
   styles/
     tokens.css     Farben und Schriften, einzige Quelle
@@ -42,10 +42,12 @@ src/
     flaeche.ts     Foto → Fläche (Zug, Raster, Versatz, Zweiklang)
     schrift.ts     Überschriften auf volle Breite rechnen
     ebene.ts       Ebene öffnen/schliessen samt Adresse
-    zeiger.ts      der grüne Mauszeiger
+    zeiger.ts      der Mauszeiger
   pages/
     index.astro       /
     [ebene].astro     /rig, /aufnahmen
+    en/index.astro    /en
+    en/[ebene].astro  /en/rig, /en/recordings
 public/
   fotos/         die fünf Hintergrundbilder (Platzhalter, siehe QUELLEN.md)
   schriften/     Poster (Bebas Neue) und Heavy (Archivo Black)

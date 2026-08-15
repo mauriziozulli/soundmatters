@@ -1,0 +1,25 @@
+---
+/**
+ * Der Sprachschalter. Schwebt unten rechts über dem Plakat.
+ *
+ * Bewusst zwei Zustände und kein Menü: eine Fläche, zwei Hälften, die aktive
+ * ausgefüllt. Kontur und Mono-Schrift kommen vom Aufkleber, damit er wie ein
+ * Typenschild wirkt und nicht wie ein Bedienelement von der Stange.
+ *
+ * Es sind echte Links auf echte Adressen — kein Umschalten im Kopf des
+ * Browsers. Damit bleibt jede Fassung verschickbar und auffindbar.
+ */
+import { SPRACHEN, gegenstueck, type Sprache } from '../data/inhalt';
+
+interface Props { sprache: Sprache; pfad: string }
+const { sprache, pfad } = Astro.props;
+const andere = gegenstueck(sprache, pfad);
+---
+
+<nav class="sprache" aria-label="Sprache">
+  {SPRACHEN.map((s) => (
+    s === sprache
+      ? <span class="sprache__teil ist-aktiv" aria-current="true">{s.toUpperCase()}</span>
+      : <a class="sprache__teil" href={andere} hreflang={s} lang={s}>{s.toUpperCase()}</a>
+  ))}
+</nav>

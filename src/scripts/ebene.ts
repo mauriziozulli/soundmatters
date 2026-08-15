@@ -10,6 +10,11 @@
  * nichts verloren, es lädt dann nur neu statt zu überblenden.
  */
 
+/* Adress-Vorsilbe der Fassung: leer für Deutsch, '/en' für Englisch. Ohne
+   sie würde die englische Ebene ihre Adresse als '/rig' statt '/en/rig'
+   mitschreiben und der Verlauf führte in die falsche Sprache. */
+const basis = document.documentElement.dataset.basis ?? '';
+
 const ebenen = new Map<string, HTMLElement>();
 let zuletztFokus: HTMLElement | null = null;
 let selbstGeschoben = false;
@@ -29,7 +34,7 @@ function oeffnen(schluessel: string, schieben: boolean) {
   document.body.style.overflow = 'hidden';
 
   if (schieben && pfadZuSchluessel(location.pathname) !== schluessel) {
-    history.pushState({ ebene: schluessel }, '', `/${schluessel}`);
+    history.pushState({ ebene: schluessel }, '', `${basis}/${schluessel}`);
     selbstGeschoben = true;
   }
   ebene.querySelector<HTMLButtonElement>('.ebene__zu')?.focus();
@@ -50,7 +55,7 @@ function schliessen(ueberVerlauf: boolean) {
       selbstGeschoben = false;
       history.back();
     } else {
-      history.pushState(null, '', '/');
+      history.pushState(null, '', basis || '/');
     }
   }
 }
@@ -70,6 +75,7 @@ export function ebenenAufbauen() {
 
   /* Klicks auf Links, zu denen es eine Ebene gibt, fangen wir ab. */
   document.querySelectorAll<HTMLAnchorElement>('a[href^="/"]').forEach((a) => {
+    if (a.closest('.sprache')) return; // Sprachwechsel lädt neu, das ist Absicht
     const schluessel = pfadZuSchluessel(a.getAttribute('href') ?? '');
     if (!ebenen.has(schluessel)) return;
     a.addEventListener('click', (e) => {

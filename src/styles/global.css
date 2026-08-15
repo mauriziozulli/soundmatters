@@ -293,3 +293,42 @@ a { color: inherit; }
   border: 2px solid var(--signal);
 }
 @media (hover: none), (pointer: coarse) { .zeiger { display: none; } }
+
+/* =========================================================================
+   DER SPRACHSCHALTER
+   Schwebt unten in der Mitte — links und rechts sind in jedem Abschnitt
+   schon belegt. Harte Kontur und Mono kommen vom Aufkleber: er soll wie ein
+   Typenschild wirken, nicht wie ein Bedienelement von der Stange.
+
+   Bewusst unter der Detail-Ebene (z-index kleiner): sobald eine Ebene offen
+   ist, ist er verdeckt. Sonst hätte die Ebene einen Ausgang, eine
+   Weiterführung *und* einen Sprachwechsel — und das ist einer zu viel.
+   ========================================================================= */
+
+.sprache {
+  position: fixed; z-index: 70;
+  left: 50%; transform: translateX(-50%);
+  bottom: calc(var(--rand) + 46px);
+  display: flex;
+  border: 2px solid var(--knochen);
+  border-radius: 3px;
+  overflow: hidden;
+  background: rgba(16, 16, 20, .55);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .14em;
+}
+
+.sprache__teil {
+  display: block;
+  padding: 5px 11px 6px;
+  color: var(--knochen);
+  text-decoration: none;
+}
+.sprache__teil.ist-aktiv { background: var(--knochen); color: var(--tinte); }
+.sprache__teil:not(.ist-aktiv):hover { background: rgba(239, 230, 210, .16); }
+
+@media (max-width: 620px) {
+  .sprache { bottom: calc(var(--rand) + 62px); }
+}

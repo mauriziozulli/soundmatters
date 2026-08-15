@@ -78,7 +78,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     zeilen: [{ text: 'Musik' }],
     satz: 'Ich lege auf und baue an einem Festival in den Bergen mit. Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert — und baue danach.',
     betont: 'Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert',
-    fussnote: 'Smile Club · Schwing und Stampf',
+    fussnote: 'Am Bach Festival · Schwing und Stampf',
     link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
   },
   {

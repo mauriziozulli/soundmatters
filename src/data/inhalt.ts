@@ -12,12 +12,14 @@ export type Abschnitt = {
   /** Ecke oben rechts */
   einordnung: string;
   /** Schriftbild: jeder Abschnitt hat ein eigenes */
-  griff: 'kontur' | 'serif' | 'mono' | 'fett' | 'hohl';
+  griff: 'grotesk' | 'serif' | 'hohl';
   /** Sicherheitsabstand beim Breitrechnen der Zeilen, siehe schrift.ts */
   passung: number;
   /** Akzentfarbe des Abschnitts (CSS-Variable) */
   akzent: string;
-  /** Zeilen der Überschrift. `schmal`/`breit` blenden je nach Fensterbreite. */
+  /** Zeilen der Überschrift. `balken` legt die Zeile in eine Farbfläche,
+   *  `ton` setzt sie in die Leitfarbe. `schmal`/`breit` blenden je nach
+   *  Fensterbreite. */
   zeilen: { text: string; klasse?: string }[];
   /** Der eine Satz, der den Zusammenhang zu den anderen Welten nennt */
   satz: string;
@@ -34,10 +36,10 @@ export const ABSCHNITTE: Abschnitt[] = [
     bild: 'intro',
     nummer: 'soundmatters.audio',
     einordnung: 'Luzern',
-    griff: 'kontur',
-    passung: 0.98,
-    akzent: 'var(--knochen)',
-    zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'gefuellt' }],
+    griff: 'grotesk',
+    passung: 0.9,
+    akzent: 'var(--verdigris)',
+    zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
     satz: 'Hi, ich bin Maurizio. Darum versuche ich, Ton überall gut zu machen — im Kino, im Booth, auf dem Gletscher.',
     betont: 'Darum versuche ich, Ton überall gut zu machen',
     fussnote: 'Runterscrollen'
@@ -49,7 +51,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     griff: 'serif',
     passung: 0.94,
     akzent: 'var(--ocker)',
-    zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'zweite' }],
+    zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
     satz: 'Sounddesign, Schnitt und Mischung. Was ich draussen aufnehme, landet hier drin — meine Bibliothek besteht nicht aus gekauften Paketen.',
     betont: 'Was ich draussen aufnehme, landet hier drin',
     fussnote: 'Die ganze Werkschau',
@@ -59,10 +61,10 @@ export const ABSCHNITTE: Abschnitt[] = [
     bild: 'gear',
     nummer: '02',
     einordnung: 'Rigs · Mikrofone · Bühne',
-    griff: 'mono',
-    passung: 0.9,
-    akzent: 'var(--staubblau)',
-    zeilen: [{ text: 'Custom' }, { text: 'Gear' }],
+    griff: 'grotesk',
+    passung: 0.84,
+    akzent: 'var(--ocker)',
+    zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
     satz: 'Recording-Cases, die jedes Set am Festival mitschneiden — acht Kanäle aus dem Booth, die ganze Nacht. Gebaut, wie ich sie selber als DJ brauche.',
     betont: 'Gebaut, wie ich sie selber als DJ brauche.',
     fussnote: "Zeichnung und Teileliste gibt's dazu",
@@ -72,10 +74,10 @@ export const ABSCHNITTE: Abschnitt[] = [
     bild: 'club',
     nummer: '03',
     einordnung: 'House · Techno · Festival',
-    griff: 'fett',
+    griff: 'grotesk',
     passung: 0.93,
-    akzent: 'var(--rost)',
-    zeilen: [{ text: 'Musik' }],
+    akzent: 'var(--verdigris)',
+    zeilen: [{ text: 'Musik', klasse: 'ton' }],
     satz: 'Ich lege auf und baue an einem Festival in den Bergen mit. Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert — und baue danach.',
     betont: 'Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert',
     fussnote: 'Am Bach Festival · Schwing und Stampf',
@@ -87,7 +89,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     einordnung: 'Gletscher · Seilbahn · leere Räume',
     griff: 'hohl',
     passung: 0.92,
-    akzent: 'var(--verdigris)',
+    akzent: 'var(--knochen)',
     zeilen: [{ text: 'Field' }, { text: 'Recording' }],
     satz: 'Hydrophon in der Gletschermühle, Kontaktmikro am Tragseil, Stereopaar im leeren Club um zehn nach sechs. Sag mir den Ort, ich bringe das Zeug und die Geduld.',
     betont: 'Sag mir den Ort, ich bringe das Zeug und die Geduld.',
@@ -116,7 +118,7 @@ export type Ebene = {
 export const EBENEN: Ebene[] = [
   {
     schluessel: 'rig',
-    farbe: 'var(--staubblau)',
+    farbe: 'var(--ocker)',
     kicker: '02 — Custom Gear',
     titel: 'Das Bühnen-Rig',
     vorspann:
@@ -146,7 +148,7 @@ export const EBENEN: Ebene[] = [
   },
   {
     schluessel: 'aufnahmen',
-    farbe: 'var(--verdigris)',
+    farbe: 'var(--knochen)',
     kicker: '04 — Field Recording',
     titel: 'Die Aufnahmen',
     vorspann:

@@ -27,26 +27,25 @@ im Regen.
 
 | Name | Hex | Rolle |
 |---|---|---|
-| Knochen | `#EFE6D2` | Abschnitt 00, zugleich Textfarbe der ganzen Seite |
-| Ocker | `#D9962B` | Abschnitt 01 |
-| Staubblau | `#6E93A6` | Abschnitt 02 |
-| Rost | `#B4562E` | Abschnitt 03 |
-| Verdigris | `#2F8F7A` | Abschnitt 04, Hauptfassung des Aufklebers |
+| Verdigris | `#2F8F7A` | Leitfarbe, Hauptfassung des Klebers — Abschnitte 00 und 03 |
+| Ocker | `#D9962B` | Leitfarbe, zweite Fassung — Abschnitte 01 und 02 |
+| Knochen | `#EFE6D2` | Abschnitt 04, zugleich Textfarbe der ganzen Seite |
 | Tinte | `#101014` | Schrift auf Flächen, Grund der Seite |
+| Rost | `#B4562E` | nur noch im Farbklima von Foto 03 |
+| Staubblau | `#6E93A6` | nur noch im Farbklima von Foto 02 |
+
+**Ocker und Verdigris führen und dürfen sich wiederholen** — sie sind die
+gedruckten Fassungen des Klebers, und die Wiederholung ist genau das, was
+Seite und Kleber zusammenbindet. Rost und Staubblau sind zurückgetreten.
 
 Verdigris, Ocker und Knochen sind die drei gedruckten Fassungen. Rost und
 Staubblau ergänzen die Familie für die übrigen Abschnitte — sie sind nach
 denselben Regeln gebaut (entsättigt, warm verschoben) und gehören darum
 sichtbar dazu.
 
-**Keine Farbe kommt zweimal vor.** Eine frühere Fassung führte Giftgrün als
-wiederkehrenden Faden über drei Abschnitte; das liess mehrere Bildschirme
-gleich aussehen. Zusammengehalten wird die Seite jetzt über die Familie und
-das Schriftbild, nicht über eine einzelne Signalfarbe.
-
-**Abschnitt 00 kommt ohne Farbe aus.** Knochen auf Tinte, der Unterschied
-zwischen den Zeilen liegt in der Silhouette (Kontur gegen Fläche), nicht im
-Ton. Die Farbe setzt erst ab 01 ein.
+**Abschnitt 00 ist der Aufkleber.** Erste Zeile in Knochen, zweite Zeile in
+einem Verdigris-Balken mit harter Kontur — dieselbe Anordnung wie auf dem
+Kleber. Wer den Kleber gesehen hat, erkennt die Seite wieder.
 
 ## Die Regeln, die bleiben
 

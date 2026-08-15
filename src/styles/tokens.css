@@ -4,31 +4,24 @@
    Begründung der Palette steht in FARBEN.md.
    ========================================================================= */
 
-/* Fünf Familien, eine je Abschnitt. Jede liegt lokal, kein externer Abruf. */
+/* Zwei Stimmen statt fünf Familien: eine fette Grotesk als Leitschrift —
+   dieselbe wie auf dem Aufkleber — und eine Antiqua als Gegenstimme. Dazu
+   die Mono für alles Kleine (Nummern, Einordnung, Fusszeile), genau wie die
+   Adresse unter dem Wortlaut des Klebers. Alle liegen lokal. */
 @font-face {
-  font-family: 'Kondens';          /* 00 — kondensierte Grotesk */
-  src: url('/schriften/poster.woff2') format('woff2');
-  font-weight: 400; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Serif';            /* 01 — Antiqua mit starkem Strichkontrast */
-  src: url('/schriften/serif.woff2') format('woff2');
-  font-weight: 700; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Mono';             /* 02 — technische Schreibmaschine */
-  src: url('/schriften/mono.woff2') format('woff2');
-  font-weight: 700; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Fett';             /* 03 — fette Grotesk */
+  font-family: 'Fett';             /* Leitschrift, Archivo Black */
   src: url('/schriften/heavy.woff2') format('woff2');
   font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
-  font-family: 'Antiqua';          /* 04 — schmale Antiqua, nur Kontur */
-  src: url('/schriften/antiqua.woff2') format('woff2');
-  font-weight: 600; font-style: normal; font-display: swap;
+  font-family: 'Serif';            /* Gegenstimme, Bodoni Moda */
+  src: url('/schriften/serif.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Mono';             /* Kleinschrift, Space Mono */
+  src: url('/schriften/mono.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
 }
 
 :root {
@@ -68,13 +61,11 @@
   --leise: rgba(239, 230, 210, .66);
 
   /* --- Schrift ---------------------------------------------------------
-     Eine Familie je Abschnitt, siehe @font-face oben. Body ist die
-     Systemschrift und nur für Fliesstext zuständig. */
-  --kondens: 'Kondens', 'Haettenschweiler', 'Arial Narrow', sans-serif;
+     Leitschrift, Gegenstimme und Kleinschrift, siehe @font-face oben.
+     Body ist die Systemschrift und nur für Fliesstext zuständig. */
+  --fett:    'Fett', 'Arial Black', 'Helvetica Neue', sans-serif;
   --serifig: 'Serif', 'Didot', 'Times New Roman', serif;
   --mono:    'Mono', 'Courier New', monospace;
-  --fett:    'Fett', 'Arial Black', 'Helvetica Neue', sans-serif;
-  --antiqua: 'Antiqua', 'Garamond', 'Times New Roman', serif;
   --body:    'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* --- Masse ------------------------------------------------------------ */

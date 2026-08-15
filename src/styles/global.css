@@ -70,10 +70,13 @@ a { color: inherit; }
 .abschnitt__unten {
   display: flex; flex-wrap: wrap; gap: 8px 22px;
   align-items: baseline; justify-content: space-between;
-  font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase;
+  font-family: var(--mono);
+  font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--leise);
 }
-.abschnitt__unten { border-top: 1px solid rgba(239, 230, 210, .28); padding-top: 13px; }
+/* Harte Linien oben und unten — der Rahmen des Klebers, aufgeklappt. */
+.abschnitt__oben  { border-bottom: 2px solid rgba(239, 230, 210, .3); padding-bottom: 12px; }
+.abschnitt__unten { border-top: 2px solid rgba(239, 230, 210, .3); padding-top: 13px; }
 
 .abschnitt__link {
   color: var(--papier); text-decoration: none;
@@ -113,68 +116,50 @@ a { color: inherit; }
   .schmal { display: block; }
 }
 
-/* 00 — kondensierte Grotesk. Kontur gegen Fläche, beides in Knochen: der
-   Einstieg kommt ohne Farbe aus, die Familie beginnt erst danach. Der
-   Unterschied liegt in der Silhouette, nicht im Ton. */
-.griff-kontur {
-  font-family: var(--kondens); text-transform: uppercase;
-  line-height: .88; letter-spacing: .01em;
-  color: transparent; -webkit-text-stroke: 2.5px var(--papier);
-}
-.griff-kontur .gefuellt { color: var(--knochen); -webkit-text-stroke: 0; }
+/* Drei Schriftbilder statt fünf — die Mittel des Aufklebers:
+   fette Grotesk, harte Fläche im Balken, Antiqua als Gegenstimme.
+   Unterschieden wird über Farbe und Balken, nicht über die Familie. */
 
-/* 01 — Antiqua mit starkem Strichkontrast, zweite Zeile kursiv in Ocker.
-   Bewusst gemischte Gross-/Kleinschreibung: in Versalien brechen die
-   Haarstriche weg, und genau der Strichkontrast ist hier der Bruch zu 00.
-   Zeilenhöhe grosszügig, sonst stossen die Oberlängen aneinander. */
+/* Leitschrift: fette Grotesk, wie auf dem Kleber. */
+.griff-grotesk {
+  font-family: var(--fett); text-transform: uppercase;
+  line-height: .96; letter-spacing: -.04em;
+  color: var(--knochen);
+}
+/* Zeilen mit .ton stehen in der Leitfarbe statt in Knochen. */
+.griff-grotesk .ton { color: var(--akzent); }
+
+/* Der Balken — das Motiv des Klebers. Fläche in der Leitfarbe, Schrift in
+   Tinte, harte Kontur. inline-block, damit die Fläche der Zeilenbox
+   entkommt und als Balken statt als Quadrat liest. */
+.zeile + .zeile { margin-top: .1em; }
+.balken {
+  display: inline-block;
+  line-height: .86;
+  background: var(--akzent); color: var(--tinte);
+  border: .07em solid var(--tinte);
+  border-radius: .1em;
+  padding: .16em .13em .1em;
+}
+
+/* Gegenstimme: Antiqua mit starkem Strichkontrast. Bewusst gemischte
+   Gross-/Kleinschreibung — in Versalien brechen die Haarstriche weg. */
 .griff-serif {
   font-family: var(--serifig);
   line-height: 1.02; letter-spacing: -.015em;
   color: var(--papier);
 }
-.griff-serif .zweite { color: var(--ocker); font-style: italic; }
+.griff-serif .ton { color: var(--akzent); font-style: italic; }
 
-/* 02 — technische Mono, weit gesperrt, Tinte auf Staubblau. Der Balken
-   macht den Kontrast unabhängig vom Foto darunter. */
-.griff-mono {
-  font-family: var(--mono); text-transform: uppercase;
-  line-height: 1; letter-spacing: .12em;
-}
-/* Die Balkenhöhe folgt der Zeilenhöhe, nicht dem Polster — darum hier eng
-   halten und den Abstand zwischen den Balken separat setzen. Sonst wachsen
-   die beiden Zeilen zu einem Block zusammen. */
-.griff-mono .zeile + .zeile { margin-top: .14em; }
-/* inline-block, damit die Fläche der Zeilenbox entkommt: bei einer Mono ist
-   die Zeilenbox rund zweieinhalbmal so hoch wie die Versalien, und der
-   Balken würde sonst als Quadrat statt als Balken lesen. */
-.griff-mono .balken {
-  display: inline-block;
-  line-height: .82;
-  background: var(--staubblau); color: var(--tinte);
-  padding: .16em .12em .1em;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-/* 03 — fette Grotesk, flächig gefüllt, Rost. Dichtestes Schriftbild der
-   Seite; die negative Laufweite schiebt die Buchstaben zur Fläche zusammen. */
-.griff-fett {
-  font-family: var(--fett); text-transform: uppercase;
-  line-height: .9; letter-spacing: -.05em;
-  color: var(--rost);
-}
-
-/* 04 — schmale Antiqua, nur Kontur, Verdigris. Leichtestes Schriftbild,
-   bewusst als Gegenpol zum dichten 03 direkt davor. */
+/* Gegenstimme, nur Kontur — das leichteste Schriftbild der Seite. */
 .griff-hohl {
-  font-family: var(--antiqua);
-  line-height: 1.08; letter-spacing: .02em;
-  color: transparent; -webkit-text-stroke: 2.4px var(--verdigris);
+  font-family: var(--serifig);
+  line-height: 1.06; letter-spacing: -.01em;
+  color: transparent; -webkit-text-stroke: 2.4px var(--akzent);
 }
 
 @media (max-width: 620px) {
-  .griff-kontur { -webkit-text-stroke-width: 1.6px; }
-  .griff-hohl { -webkit-text-stroke-width: 1.2px; }
+  .griff-hohl { -webkit-text-stroke-width: 1.5px; }
 }
 
 /* =========================================================================
@@ -186,7 +171,8 @@ a { color: inherit; }
   display: flex; flex-wrap: wrap; gap: 12px 26px;
   align-items: baseline; justify-content: space-between;
   padding: 30px var(--rand) 44px;
-  font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  font-family: var(--mono);
+  font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase;
   color: var(--leise);
   border-top: 1px solid rgba(239, 230, 210, .16);
 }

@@ -31,20 +31,26 @@ Fünf bildschirmfüllende Abschnitte, danach eine zweite Ebene für Vertiefungen
 
 | | Abschnitt | Schrift | Schriftbild | Leitfarbe |
 |---|---|---|---|---|
-| 00 | Sound is what matters. | Bebas Neue (kondensiert) | Kontur, ein Wort gefüllt | Knochen |
-| 01 | Sound and Picture | Bodoni Moda (Antiqua) | zwei Zeilen, zweite kursiv | Ocker |
-| 02 | Custom Gear | Space Mono | gesperrt, Tinte auf Balken | Staubblau |
-| 03 | Musik | Archivo Black (fette Grotesk) | flächig gefüllt | Rost |
-| 04 | Field Recording | Cormorant Garamond | nur Kontur | Verdigris |
+| 00 | Sound is what matters. | Grotesk | Zeile 1 Knochen, Zeile 2 im Balken | Verdigris |
+| 01 | Sound and Picture | Antiqua | zwei Zeilen, zweite kursiv | Ocker |
+| 02 | Custom Gear | Grotesk | beide Zeilen im Balken | Ocker |
+| 03 | Musik | Grotesk | flächig gefüllt | Verdigris |
+| 04 | Field Recording | Antiqua | nur Kontur | Knochen |
 
-Jeder Abschnitt hat eine **eigene Schriftfamilie** und ein eigenes
-Schriftbild — das war eine ausdrückliche Forderung. Nicht vereinheitlichen.
+**Die Seite spricht die Sprache des Aufklebers.** Fette Grotesk als
+Leitschrift, der Balken mit harter Kontur als Motiv, die Mono für alles Kleine
+— genau wie die Adresse unter dem Wortlaut des Klebers. Abschnitt 00 ist der
+Kleber, aufgezogen auf Bildschirmgrösse.
 
-**Und keine Farbe kommt zweimal vor.** Die erste Fassung führte Giftgrün als
-wiederkehrenden Faden über drei Abschnitte; das band die Seite zusammen, liess
-aber mehrere Bildschirme gleich aussehen. Der Auftraggeber hat das verworfen.
-Zusammengehalten wird die Seite jetzt über Aufbau und Schriftbild, nicht über
-eine Signalfarbe. Wer einen Faden vermisst: nicht über die Farbe zurückholen.
+Zwischenzeitlich hatte jeder Abschnitt eine **eigene Schriftfamilie** (fünf
+Stück) und **keine Farbe kam zweimal vor**. Beides ist bewusst zurückgenommen:
+Der Kleber spricht eine Sprache, fünf Schriften sprechen fünf. Jetzt tragen
+eine Leitschrift und eine Gegenstimme die Seite, und Ocker und Verdigris
+führen — sie dürfen sich wiederholen, weil sie die gedruckten Fassungen sind.
+Rost und Staubblau sind nur noch im Farbklima der Fotos vorhanden.
+
+Unterschieden werden die Abschnitte über **Farbe, Balken und Kontur**, nicht
+über die Schriftfamilie. Nicht wieder auseinanderziehen.
 
 ## Die zwei Regeln
 

@@ -27,11 +27,17 @@ const pfeil = a.link?.art === 'extern' ? '↗' : '→';
 
   <div class="abschnitt__mitte">
     <h2 class={`wort griff-${a.griff}`} data-passung={a.passung}>
-      {a.zeilen.map((z) => (
-        <span class={`zeile ${z.klasse ?? ''}`}>
-          {a.griff === 'mono' ? <span class="balken">{z.text}</span> : z.text}
-        </span>
-      ))}
+      {a.zeilen.map((z) => {
+        /* `balken` steuert nur die innere Fläche — die äussere Zeile darf die
+           Klasse nicht auch tragen, sonst wird der Rahmen zweimal gezeichnet. */
+        const imBalken = z.klasse?.includes('balken');
+        const aussen = (z.klasse ?? '').replace('balken', '').trim();
+        return (
+          <span class={`zeile ${aussen}`}>
+            {imBalken ? <span class="balken">{z.text}</span> : z.text}
+          </span>
+        );
+      })}
     </h2>
     <p class="abschnitt__satz">{davor}{betont && <b>{betont}</b>}{danach}</p>
   </div>

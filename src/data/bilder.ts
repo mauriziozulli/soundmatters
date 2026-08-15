@@ -26,10 +26,24 @@ export type Behandlung = {
   breite: number;
 };
 
+/**
+ * Der helle Pol ist bewusst eine *gedämpfte, dunklere Verwandte* der
+ * Leitfarbe des Abschnitts — nie die Leitfarbe selbst. Sonst stünde die
+ * Schrift in ihrer eigenen Farbe auf einer Fläche derselben Farbe, und
+ * genau das verbietet die Kontrastregel (nie Ton auf Ton).
+ *
+ * Ergebnis: das Foto bleibt eine dunkle Textur im Farbklima des
+ * Abschnitts, rein leuchtet die Leitfarbe nur in der Schrift.
+ */
 export const BEHANDLUNG: Record<string, Behandlung> = {
-  intro: { eingriff: 'zugX',    staerke: 18, schatten: [24, 10, 46], licht: [255, 95, 176],  kontrast: 1.25, breite: 460 },
-  film:  { eingriff: 'zugY',    staerke: 16, schatten: [6, 32, 43],  licht: [255, 183, 77],  kontrast: 1.3,  breite: 460 },
-  gear:  { eingriff: 'raster',  staerke: 16, schatten: [4, 26, 46],  licht: [111, 233, 255], kontrast: 1.35, breite: 420 },
-  club:  { eingriff: 'versatz', staerke: 16, schatten: [32, 6, 24],  licht: [255, 162, 79],  kontrast: 1.2,  breite: 460 },
-  ice:   { eingriff: 'zugX',    staerke: 18, schatten: [5, 32, 46],  licht: [190, 239, 255], kontrast: 1.22, breite: 460 }
+  /* 00 Zinnober auf Schwarz — Rost als dunkle Verwandte */
+  intro: { eingriff: 'zugX',    staerke: 18, schatten: [8, 8, 12],   licht: [122, 36, 24],  kontrast: 1.28, breite: 460 },
+  /* 01 Bernstein auf Tiefblau — dunkler Ocker */
+  film:  { eingriff: 'zugY',    staerke: 16, schatten: [10, 26, 51], licht: [92, 74, 30],   kontrast: 1.3,  breite: 460 },
+  /* 02 Stahlblau auf Beton — abgedunkeltes Stahl */
+  gear:  { eingriff: 'raster',  staerke: 16, schatten: [36, 39, 45], licht: [62, 90, 112],  kontrast: 1.35, breite: 420 },
+  /* 03 Magenta auf Nachtviolett — Pflaume */
+  club:  { eingriff: 'versatz', staerke: 16, schatten: [26, 10, 46], licht: [74, 22, 56],   kontrast: 1.24, breite: 460 },
+  /* 04 Eisweiss auf Petrol — dunkles Teal, damit die Kontur stehen bleibt */
+  ice:   { eingriff: 'zugX',    staerke: 18, schatten: [6, 51, 61],  licht: [62, 110, 126], kontrast: 1.22, breite: 460 }
 };

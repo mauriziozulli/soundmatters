@@ -29,20 +29,22 @@ jeder Abschnitt genau einen Satz, der die Verbindung zu den anderen nennt.
 
 Fünf bildschirmfüllende Abschnitte, danach eine zweite Ebene für Vertiefungen.
 
-| | Abschnitt | Schriftbild | Zweiklang des Bildes |
-|---|---|---|---|
-| 00 | Sound is what matters. | Kontur schmal, ein Wort grün gefüllt | Violett → Pink |
-| 01 | Sound and Picture | fett gefüllt, zwei Zeilen zweifarbig | Petrol → Orange |
-| 02 | Custom Gear | Tinte auf pinken Balken | Navy → Hellblau |
-| 03 | Musik | schmal, gefüllt, weit gesperrt, grün | Weinrot → Orange |
-| 04 | Field Recording | fett, nur Kontur, grün | Tiefeis → Eis |
+| | Abschnitt | Schrift | Schriftbild | Leitfarbe |
+|---|---|---|---|---|
+| 00 | Sound is what matters. | Bebas Neue (kondensiert) | Kontur, ein Wort gefüllt | Zinnober |
+| 01 | Sound and Picture | Bodoni Moda (Antiqua) | zwei Zeilen, zweite kursiv | Bernstein |
+| 02 | Custom Gear | Space Mono | gesperrt, Tinte auf Balken | Stahlblau |
+| 03 | Musik | Archivo Black (fette Grotesk) | flächig gefüllt | Magenta |
+| 04 | Field Recording | Cormorant Garamond | nur Kontur | Eisweiss |
 
-Jeder Abschnitt hat ein **eigenes Schriftbild** — das war eine ausdrückliche
-Forderung, nachdem sich vorher mehrere Abschnitte dieselbe Behandlung teilten.
-Nicht vereinheitlichen.
+Jeder Abschnitt hat eine **eigene Schriftfamilie** und ein eigenes
+Schriftbild — das war eine ausdrückliche Forderung. Nicht vereinheitlichen.
 
-**Abschnitt 04 ist unantastbar:** Grün auf Eisblau ist die Kombination, die dem
-Auftraggeber am besten gefällt. Nicht anfassen.
+**Und keine Farbe kommt zweimal vor.** Die erste Fassung führte Giftgrün als
+wiederkehrenden Faden über drei Abschnitte; das band die Seite zusammen, liess
+aber mehrere Bildschirme gleich aussehen. Der Auftraggeber hat das verworfen.
+Zusammengehalten wird die Seite jetzt über Aufbau und Schriftbild, nicht über
+eine Signalfarbe. Wer einen Faden vermisst: nicht über die Farbe zurückholen.
 
 ## Die zwei Regeln
 
@@ -67,11 +69,10 @@ Links, es lädt dann neu statt zu überblenden.
 
 ## Farben
 
-Doppelkomplementär: Grün gegen Pink, Hellblau gegen Orange. Alle vier gleich
-kräftig, damit sie als Familie gelesen werden. **Kontrast läuft immer über den
-Hellwert** — Tinte auf Farbe, Papier auf Dunkel, nie Signal auf Signal.
-Höchstens drei Farben gleichzeitig. Grün ist der wiederkehrende Faden über
-mehrere Abschnitte.
+Ein Ton je Abschnitt, keine Farbe zweimal. **Kontrast läuft immer über den
+Hellwert** — Tinte auf Farbe, Papier auf Dunkel, nie Ton auf Ton. Höchstens
+drei Farben gleichzeitig. Alles Übergreifende (Zeiger, Fokus, Fuss) läuft auf
+Papier statt auf einer Signalfarbe.
 
 Ausführlich samt Herleitung in `FARBEN.md`. Werte stehen in
 `src/styles/tokens.css` und nirgends sonst.
@@ -79,7 +80,9 @@ Ausführlich samt Herleitung in `FARBEN.md`. Werte stehen in
 ## Bilder
 
 Die Fotos werden **im Browser abstrahiert**: Eingriff (Zug, Raster, Versatz),
-danach ein Zweiklang aus zwei Farbpolen. Dadurch wird das Foto Textur statt
+danach ein Zweiklang aus zwei Farbpolen. Der helle Pol ist eine gedämpfte,
+dunklere Verwandte der Leitfarbe — nie die Leitfarbe selbst, sonst stünde die
+Schrift auf einer Fläche ihrer eigenen Farbe. Dadurch wird das Foto Textur statt
 Motiv, und der Kontrast zur Schrift ist gesetzt statt vom Motiv abhängig.
 Gerechnet wird in ~460 px Breite, CSS zieht hoch — schnell genug fürs Handy.
 
@@ -104,6 +107,10 @@ Nur bei deutlich hellerem Bild `kontrast` in `src/data/bilder.ts` nachziehen.
   in die Zeile darüber.
 - **Nach `document.fonts.ready` neu rechnen** — die Ersatzschrift ist schmaler
   als die geladene.
+- **Der Höhendeckel muss die gemessene Höhe deckeln, nicht den Schriftgrad.**
+  Zeilenhöhe, Polster und Balken zählen mit: ein Schriftbild mit Zeilenhöhe
+  über 1 sprengt sonst den Abschnitt, obwohl ein Deckel gesetzt ist. `schrift.ts`
+  misst darum bei 100px Breite *und* Höhe.
 
 ## Sprache
 

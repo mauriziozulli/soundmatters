@@ -3,56 +3,60 @@
 Gebaut nach den üblichen Regeln, nicht nach Gefühl — damit sie auf dem Schirm,
 im Druck und auf dem Aufkleber gleich gut funktioniert.
 
-## Die Palette
+## Das Prinzip: ein Ton je Abschnitt
 
-| Rolle | Name | Hex | Wofür |
-|---|---|---|---|
-| Grund | Tinte | `#0B0B12` | Hintergrund, Druckfarbe, Text auf hellen Flächen |
-| Papier | Papier | `#F7F3EA` | Text auf Dunkel, warmes Off-White |
-| Signal 1 | Giftgrün | `#B4FF2E` | die Marken-Konstante, Zeiger, Aufkleber |
-| Signal 2 | Pink | `#FF3D9A` | Musik, Nacht, Balken |
-| Signal 3 | Hellblau | `#35DFFF` | Technik, Eis, Gerät |
-| Signal 4 | Orange | `#FFA51F` | Film, Wärme, Bühnenlicht |
+**Keine Farbe kommt zweimal vor.** Das ist die tragende Entscheidung. Vorher
+lief Giftgrün als wiederkehrender Faden über drei von fünf Bildschirmen — das
+band die Seite zwar zusammen, liess aber mehrere Abschnitte gleich aussehen.
+Jetzt steht jeder Abschnitt für sich, und zusammengehalten wird die Seite über
+Aufbau und Schriftbild statt über eine Signalfarbe.
 
-## Warum genau diese vier
+| | Abschnitt | Leitfarbe | Hex | Grund | Hex |
+|---|---|---|---|---|---|
+| 00 | Sound is what matters | Zinnober | `#FF3B1F` | Schwarz | `#08080C` |
+| 01 | Sound and Picture | Bernstein | `#FFB020` | Tiefblau | `#0A1A33` |
+| 02 | Custom Gear | Stahlblau | `#6BB6F0` | Beton | `#24272D` |
+| 03 | Musik | Magenta | `#FF2E88` | Nachtviolett | `#1A0A2E` |
+| 04 | Field Recording | Eisweiss | `#E4F3FF` | Petrol | `#06333D` |
 
-**Doppelkomplementär (tetradisch).** Grün (~80°) und Pink (~330°) stehen sich
-fast gegenüber, ebenso Hellblau (~190°) und Orange (~35°). Zwei
-Komplementärpaare ergeben eine Palette, die bunt ist, ohne beliebig zu wirken —
-und in der jede Farbe eine natürliche Partnerin hat.
+Dazu zwei Grundwerte: Tinte `#0B0B12` und Papier `#F7F3EA`.
 
-**Gleiche Sättigung und Helligkeit.** Alle vier sind ähnlich kräftig. Das ist
-der Grund, warum sie als Familie gelesen werden und nicht als Zufall. Eine
-davon blasser, und sie fällt sofort raus.
+## Die Regeln, die bleiben
 
 **Kontrast über den Hellwert, nicht über den Farbton.** Auf farbigen Flächen
-steht immer Tinte, auf dunklen immer Papier oder eine Signalfarbe. Nie Signal
-auf Signal — das flimmert und ist auf kleinen Schirmen unlesbar.
+steht immer Tinte, auf dunklen Papier oder die Leitfarbe. Nie Ton auf Ton —
+das flimmert und ist auf kleinen Schirmen unlesbar.
 
-**60 / 30 / 10.** Pro Bildschirm: dunkler Grund als Fläche, eine Signalfarbe
-als Träger, eine zweite als Akzent. Nie mehr als drei Farben gleichzeitig.
+**Höchstens drei Farben gleichzeitig.** Pro Bildschirm: dunkler Grund als
+Fläche, die Leitfarbe als Träger, Papier als Nebentext.
 
-**Ein durchgehender Faden.** Giftgrün taucht auf drei von fünf Bildschirmen
-auf. Eine wiederkehrende Farbe macht aus vier Bildern eine Marke.
+**Neutrales Signal für alles Übergreifende.** Mauszeiger, Fokusrahmen und Fuss
+laufen auf Papier statt auf einer Signalfarbe. Sonst wäre über die Hintertür
+doch wieder eine Farbe der wiederkehrende Faden.
 
 ## Die Bilder
 
-Jedes Foto wird auf zwei Pole abgebildet (Zweiklang): einen tiefen, satten
-Schatten und ein helles Signal. Dadurch bleibt kein Grau übrig.
+Jedes Foto wird auf zwei Pole abgebildet (Zweiklang). Der helle Pol ist
+bewusst eine **gedämpfte, dunklere Verwandte** der Leitfarbe — nie die
+Leitfarbe selbst. Sonst stünde die Schrift in ihrer eigenen Farbe auf einer
+Fläche derselben Farbe, und genau das verbietet die Kontrastregel.
 
-| Abschnitt | Schatten | Licht | Begründung |
+Ergebnis: das Foto bleibt eine dunkle Textur im Farbklima des Abschnitts, rein
+leuchtet die Leitfarbe nur in der Schrift.
+
+| Abschnitt | Schatten | Licht | Eingriff |
 |---|---|---|---|
-| 00 Sound is what matters | `#180A2E` Violett | `#FF5FB0` Pink | Nacht, aber warm |
-| 01 Sound and Picture | `#06202B` Petrol | `#FFB74D` Orange | der klassische Kino-Zweiklang |
-| 02 Custom Gear | `#041A2E` Navy | `#6FE9FF` Hellblau | technisch, kalt, wach |
-| 03 Musik | `#200618` Weinrot | `#FFA24F` Orange | Clublicht durch Nebel, damit Grün darauf knallt |
-| 04 Field Recording | `#05202E` Tiefeis | `#BEEFFF` Eis | kalt, damit Grün darauf knallt |
+| 00 | `#08080C` Schwarz | `#7A2418` Rost | Zug waagrecht |
+| 01 | `#0A1A33` Tiefblau | `#5C4A1E` Ocker | Zug senkrecht |
+| 02 | `#24272D` Beton | `#3E5A70` Stahl dunkel | Raster |
+| 03 | `#1A0A2E` Nachtviolett | `#4A1638` Pflaume | Versatz |
+| 04 | `#06333D` Petrol | `#3E6E7E` Teal dunkel | Zug waagrecht |
 
 ## Für den Aufkleber
 
-**Drei Fassungen, je zweifarbig:** Giftgrün, Pink oder Hellblau als Fläche,
-Tinte als Schrift. Zwei Farben heissen günstiger Druck, maximaler Kontrast und
-Lesbarkeit aus drei Metern.
+**Drei Fassungen, je zweifarbig:** Zinnober, Magenta oder Stahlblau als
+Fläche, Tinte als Schrift. Zwei Farben heissen günstiger Druck, maximaler
+Kontrast und Lesbarkeit aus drei Metern.
 
 Drei Farben derselben Familie haben ausserdem einen Nebeneffekt: Leute wollen
 alle drei. Ein Aufkleber ist ein Einzelstück, ein Satz ist eine Sammlung.

@@ -29,7 +29,7 @@ const pfeil = a.link?.art === 'extern' ? '↗' : '→';
     <h2 class={`wort griff-${a.griff}`} data-passung={a.passung}>
       {a.zeilen.map((z) => (
         <span class={`zeile ${z.klasse ?? ''}`}>
-          {a.griff === 'balken' ? <span class="balken">{z.text}</span> : z.text}
+          {a.griff === 'mono' ? <span class="balken">{z.text}</span> : z.text}
         </span>
       ))}
     </h2>

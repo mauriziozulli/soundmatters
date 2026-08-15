@@ -4,43 +4,73 @@
    Begründung der Palette steht in FARBEN.md.
    ========================================================================= */
 
+/* Fünf Familien, eine je Abschnitt. Jede liegt lokal, kein externer Abruf. */
 @font-face {
-  font-family: 'Poster';
+  font-family: 'Kondens';          /* 00 — kondensierte Grotesk */
   src: url('/schriften/poster.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
-  font-family: 'Heavy';
+  font-family: 'Serif';            /* 01 — Antiqua mit starkem Strichkontrast */
+  src: url('/schriften/serif.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Mono';             /* 02 — technische Schreibmaschine */
+  src: url('/schriften/mono.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Fett';             /* 03 — fette Grotesk */
   src: url('/schriften/heavy.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Antiqua';          /* 04 — schmale Antiqua, nur Kontur */
+  src: url('/schriften/antiqua.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
 }
 
 :root {
-  /* --- Palette: doppelkomplementär -------------------------------------
-     Grün gegen Pink, Hellblau gegen Orange. Alle vier gleich kräftig,
-     damit sie als Familie gelesen werden. Kontrast läuft immer über den
-     Hellwert: Tinte auf Farbe, Papier auf Dunkel. Nie Signal auf Signal. */
-  --tinte:    #0B0B12;
-  --papier:   #F7F3EA;
-  --gruen:    #B4FF2E;   /* die Marken-Konstante, kehrt überall wieder */
-  --pink:     #FF3D9A;
-  --hellblau: #35DFFF;
-  --orange:   #FFA51F;
+  /* --- Grundwerte ------------------------------------------------------- */
+  --tinte:  #0B0B12;
+  --papier: #F7F3EA;
+
+  /* --- Ein Ton je Abschnitt --------------------------------------------
+     Keine Farbe kommt zweimal vor. Das ist der Punkt: es gibt keinen
+     wiederkehrenden Faden mehr, jeder Bildschirm steht für sich.
+     Kontrast läuft weiterhin über den Hellwert — Ton auf dunklem Grund,
+     Tinte auf Ton. Nie Ton auf Ton. */
+  --zinnober:  #FF3B1F;   /* 00 */
+  --bernstein: #FFB020;   /* 01 */
+  --stahl:     #6BB6F0;   /* 02 */
+  --magenta:   #FF2E88;   /* 03 */
+  --eis:       #E4F3FF;   /* 04 */
+
+  /* Der zugehörige Grund. Bestimmt zugleich den dunklen Pol des Fotos. */
+  --grund-00: #08080C;    /* Schwarz */
+  --grund-01: #0A1A33;    /* Tiefblau */
+  --grund-02: #24272D;    /* Beton */
+  --grund-03: #1A0A2E;    /* Nachtviolett */
+  --grund-04: #06333D;    /* Petrol */
+
+  /* Neutrales Signal für alles, was über den Abschnitten liegt: Mauszeiger,
+     Fokusrahmen, Fuss. Bewusst farblos — sonst wäre über die Hintertür
+     doch wieder eine Farbe der wiederkehrende Faden. */
+  --signal: var(--papier);
 
   /* gedämpftes Papier für Nebentext */
   --leise: rgba(247, 243, 234, .66);
 
   /* --- Schrift ---------------------------------------------------------
-     Poster = schmal und hoch, für Kontur und Sperrung.
-     Heavy  = fett und breit, für Flächen und Balken.
-     Body   = Systemschrift, nur für Fliesstext. */
-  --poster: 'Poster', 'Haettenschweiler', 'Arial Narrow', sans-serif;
-  --heavy:  'Heavy', 'Arial Black', 'Helvetica Neue', sans-serif;
-  --body:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+     Eine Familie je Abschnitt, siehe @font-face oben. Body ist die
+     Systemschrift und nur für Fliesstext zuständig. */
+  --kondens: 'Kondens', 'Haettenschweiler', 'Arial Narrow', sans-serif;
+  --serifig: 'Serif', 'Didot', 'Times New Roman', serif;
+  --mono:    'Mono', 'Courier New', monospace;
+  --fett:    'Fett', 'Arial Black', 'Helvetica Neue', sans-serif;
+  --antiqua: 'Antiqua', 'Garamond', 'Times New Roman', serif;
+  --body:    'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* --- Masse ------------------------------------------------------------ */
   --rand: 26px;

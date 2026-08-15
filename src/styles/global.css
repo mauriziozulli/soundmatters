@@ -21,7 +21,7 @@ body {
 
 canvas { display: block; }
 a { color: inherit; }
-:focus-visible { outline: 3px solid var(--gruen); outline-offset: -6px; }
+:focus-visible { outline: 3px solid var(--signal); outline-offset: -6px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-snap-type: none; }
@@ -77,7 +77,7 @@ a { color: inherit; }
 
 .abschnitt__link {
   color: var(--papier); text-decoration: none;
-  border-bottom: 2px solid var(--akzent, var(--gruen));
+  border-bottom: 2px solid var(--akzent, var(--signal));
   padding-bottom: 3px;
 }
 
@@ -97,7 +97,7 @@ a { color: inherit; }
   text-wrap: pretty;
   text-shadow: 0 2px 18px rgba(11, 11, 18, .8);
 }
-.abschnitt__satz b { font-weight: 400; color: var(--akzent, var(--gruen)); }
+.abschnitt__satz b { font-weight: 400; color: var(--akzent, var(--signal)); }
 
 /* =========================================================================
    DIE FÜNF SCHRIFTBILDER
@@ -113,52 +113,67 @@ a { color: inherit; }
   .schmal { display: block; }
 }
 
-/* 00 — schmale Konturschrift, ein Wort gefüllt */
+/* 00 — kondensierte Grotesk, Kontur, ein Wort in Zinnober gefüllt.
+   Grösster Grad der Seite: der Einstieg soll wie ein Plakat wirken. */
 .griff-kontur {
-  font-family: var(--poster); text-transform: uppercase;
-  line-height: .9; letter-spacing: .01em;
+  font-family: var(--kondens); text-transform: uppercase;
+  line-height: .88; letter-spacing: .01em;
   color: transparent; -webkit-text-stroke: 2.5px var(--papier);
 }
-.griff-kontur .gefuellt { color: var(--gruen); -webkit-text-stroke: 0; }
+.griff-kontur .gefuellt { color: var(--zinnober); -webkit-text-stroke: 0; }
 
-/* 01 — fett gefüllt, die zwei Zeilen in zwei Farben */
-.griff-zweifarbig {
-  font-family: var(--heavy); text-transform: uppercase;
-  line-height: .9; letter-spacing: -.045em;
+/* 01 — Antiqua mit starkem Strichkontrast, zweite Zeile kursiv in Bernstein.
+   Bewusst gemischte Gross-/Kleinschreibung: in Versalien brechen die
+   Haarstriche weg, und genau der Strichkontrast ist hier der Bruch zu 00.
+   Zeilenhöhe grosszügig, sonst stossen die Oberlängen aneinander. */
+.griff-serif {
+  font-family: var(--serifig);
+  line-height: 1.02; letter-spacing: -.015em;
   color: var(--papier);
 }
-.griff-zweifarbig .zweite { color: var(--hellblau); }
+.griff-serif .zweite { color: var(--bernstein); font-style: italic; }
 
-/* 02 — Tinte auf Farbbalken statt Farbe auf Bild. Anderer Umriss als alles
-   andere, und der Kontrast hängt nicht mehr vom Foto ab. */
-.griff-balken {
-  font-family: var(--heavy); text-transform: uppercase;
-  line-height: 1.08; letter-spacing: -.045em;
+/* 02 — technische Mono, weit gesperrt, Tinte auf Stahlblau. Der Balken
+   macht den Kontrast unabhängig vom Foto darunter. */
+.griff-mono {
+  font-family: var(--mono); text-transform: uppercase;
+  line-height: 1; letter-spacing: .12em;
 }
-.griff-balken .balken {
-  background: var(--pink); color: var(--tinte);
-  padding: .02em .09em;
+/* Die Balkenhöhe folgt der Zeilenhöhe, nicht dem Polster — darum hier eng
+   halten und den Abstand zwischen den Balken separat setzen. Sonst wachsen
+   die beiden Zeilen zu einem Block zusammen. */
+.griff-mono .zeile + .zeile { margin-top: .14em; }
+/* inline-block, damit die Fläche der Zeilenbox entkommt: bei einer Mono ist
+   die Zeilenbox rund zweieinhalbmal so hoch wie die Versalien, und der
+   Balken würde sonst als Quadrat statt als Balken lesen. */
+.griff-mono .balken {
+  display: inline-block;
+  line-height: .82;
+  background: var(--stahl); color: var(--tinte);
+  padding: .16em .12em .1em;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-/* 03 — schmal, gefüllt, weit gesperrt */
-.griff-gesperrt {
-  font-family: var(--poster); text-transform: uppercase;
-  line-height: .92; letter-spacing: .09em;
-  color: var(--gruen);
+/* 03 — fette Grotesk, flächig gefüllt, Magenta. Dichtestes Schriftbild der
+   Seite; die negative Laufweite schiebt die Buchstaben zur Fläche zusammen. */
+.griff-fett {
+  font-family: var(--fett); text-transform: uppercase;
+  line-height: .9; letter-spacing: -.05em;
+  color: var(--magenta);
 }
 
-/* 04 — fett, nur Kontur */
+/* 04 — schmale Antiqua, nur Kontur, Eisweiss. Leichtestes Schriftbild,
+   bewusst als Gegenpol zum dichten 03 direkt davor. */
 .griff-hohl {
-  font-family: var(--heavy); text-transform: uppercase;
-  line-height: .92; letter-spacing: -.04em;
-  color: transparent; -webkit-text-stroke: 3px var(--gruen);
+  font-family: var(--antiqua);
+  line-height: 1.08; letter-spacing: .02em;
+  color: transparent; -webkit-text-stroke: 2px var(--eis);
 }
 
 @media (max-width: 620px) {
   .griff-kontur { -webkit-text-stroke-width: 1.6px; }
-  .griff-hohl { -webkit-text-stroke-width: 2px; }
+  .griff-hohl { -webkit-text-stroke-width: 1.2px; }
 }
 
 /* =========================================================================
@@ -176,7 +191,7 @@ a { color: inherit; }
 }
 .fuss a {
   color: var(--papier); text-decoration: none;
-  border-bottom: 2px solid var(--gruen); padding-bottom: 3px;
+  border-bottom: 2px solid var(--signal); padding-bottom: 3px;
 }
 
 /* =========================================================================
@@ -205,19 +220,19 @@ a { color: inherit; }
 .ebene__zu {
   position: fixed; top: 18px; right: 22px; z-index: 2;
   appearance: none; cursor: pointer;
-  background: var(--ef, var(--gruen)); color: var(--tinte);
+  background: var(--ef, var(--signal)); color: var(--tinte);
   border: 0; border-radius: 999px;
   padding: 10px 18px;
-  font-family: var(--heavy); text-transform: uppercase;
+  font-family: var(--fett); text-transform: uppercase;
   font-size: 13px; letter-spacing: -.01em;
 }
 
 .ebene__kicker {
   font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase;
-  color: var(--ef, var(--gruen));
+  color: var(--ef, var(--signal));
 }
 .ebene__titel {
-  font-family: var(--heavy); text-transform: uppercase;
+  font-family: var(--fett); text-transform: uppercase;
   font-size: clamp(2.1rem, 7vw, 3.6rem); line-height: .95; letter-spacing: -.045em;
   margin: 12px 0 20px;
 }
@@ -240,9 +255,9 @@ a { color: inherit; }
 
 .ebene__block { margin-bottom: 34px; }
 .ebene__block h3 {
-  font-family: var(--heavy); text-transform: uppercase;
+  font-family: var(--fett); text-transform: uppercase;
   font-size: 1.15rem; letter-spacing: -.03em; margin-bottom: 9px;
-  color: var(--ef, var(--gruen));
+  color: var(--ef, var(--signal));
 }
 .ebene__block p { line-height: 1.6; color: rgba(247, 243, 234, .86); }
 
@@ -265,14 +280,14 @@ a { color: inherit; }
 
 .ebene__handlung {
   display: inline-block; text-decoration: none;
-  background: var(--ef, var(--gruen)); color: var(--tinte);
+  background: var(--ef, var(--signal)); color: var(--tinte);
   border-radius: 999px; padding: 14px 26px;
-  font-family: var(--heavy); text-transform: uppercase;
+  font-family: var(--fett); text-transform: uppercase;
   font-size: 15px; letter-spacing: -.01em;
 }
 
 /* =========================================================================
-   DER GRÜNE ZEIGER
+   DER ZEIGER
    Punkt sofort, Ring läuft weich hinterher. Beide verrechnen sich mit dem
    Bild darunter, sind also auf hell wie dunkel sichtbar. Auf Touch aus.
    ========================================================================= */
@@ -280,7 +295,7 @@ a { color: inherit; }
 .zeiger {
   position: fixed; top: 0; left: 0; z-index: 90;
   width: 22px; height: 22px; border-radius: 50%;
-  background: var(--gruen);
+  background: var(--signal);
   pointer-events: none;
   mix-blend-mode: difference;
   will-change: transform;
@@ -288,6 +303,6 @@ a { color: inherit; }
 .zeiger--ring {
   width: 56px; height: 56px;
   background: transparent;
-  border: 2px solid var(--gruen);
+  border: 2px solid var(--signal);
 }
 @media (hover: none), (pointer: coarse) { .zeiger { display: none; } }

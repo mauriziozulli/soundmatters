@@ -12,7 +12,7 @@ export type Abschnitt = {
   /** Ecke oben rechts */
   einordnung: string;
   /** Schriftbild: jeder Abschnitt hat ein eigenes */
-  griff: 'kontur' | 'zweifarbig' | 'balken' | 'gesperrt' | 'hohl';
+  griff: 'kontur' | 'serif' | 'mono' | 'fett' | 'hohl';
   /** Sicherheitsabstand beim Breitrechnen der Zeilen, siehe schrift.ts */
   passung: number;
   /** Akzentfarbe des Abschnitts (CSS-Variable) */
@@ -36,7 +36,7 @@ export const ABSCHNITTE: Abschnitt[] = [
     einordnung: 'Luzern',
     griff: 'kontur',
     passung: 0.98,
-    akzent: 'var(--gruen)',
+    akzent: 'var(--zinnober)',
     zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'gefuellt' }],
     satz: 'Hi, ich bin Maurizio. Darum versuche ich, Ton überall gut zu machen — im Kino, im Booth, auf dem Gletscher.',
     betont: 'Darum versuche ich, Ton überall gut zu machen',
@@ -46,9 +46,9 @@ export const ABSCHNITTE: Abschnitt[] = [
     bild: 'film',
     nummer: '01',
     einordnung: 'Film · Video · Werbung',
-    griff: 'zweifarbig',
-    passung: 0.9,
-    akzent: 'var(--hellblau)',
+    griff: 'serif',
+    passung: 0.94,
+    akzent: 'var(--bernstein)',
     zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'zweite' }],
     satz: 'Sounddesign, Schnitt und Mischung. Was ich draussen aufnehme, landet hier drin — meine Bibliothek besteht nicht aus gekauften Paketen.',
     betont: 'Was ich draussen aufnehme, landet hier drin',
@@ -59,9 +59,9 @@ export const ABSCHNITTE: Abschnitt[] = [
     bild: 'gear',
     nummer: '02',
     einordnung: 'Rigs · Mikrofone · Bühne',
-    griff: 'balken',
-    passung: 0.82,
-    akzent: 'var(--pink)',
+    griff: 'mono',
+    passung: 0.9,
+    akzent: 'var(--stahl)',
     zeilen: [{ text: 'Custom' }, { text: 'Gear' }],
     satz: 'Recording-Cases, die jedes Set am Festival mitschneiden — acht Kanäle aus dem Booth, die ganze Nacht. Gebaut, wie ich sie selber als DJ brauche.',
     betont: 'Gebaut, wie ich sie selber als DJ brauche.',
@@ -72,9 +72,9 @@ export const ABSCHNITTE: Abschnitt[] = [
     bild: 'club',
     nummer: '03',
     einordnung: 'House · Techno · Festival',
-    griff: 'gesperrt',
+    griff: 'fett',
     passung: 0.93,
-    akzent: 'var(--gruen)',
+    akzent: 'var(--magenta)',
     zeilen: [{ text: 'Musik' }],
     satz: 'Ich lege auf und baue an einem Festival in den Bergen mit. Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert — und baue danach.',
     betont: 'Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert',
@@ -86,8 +86,8 @@ export const ABSCHNITTE: Abschnitt[] = [
     nummer: '04',
     einordnung: 'Gletscher · Seilbahn · leere Räume',
     griff: 'hohl',
-    passung: 0.93,
-    akzent: 'var(--gruen)',
+    passung: 0.92,
+    akzent: 'var(--eis)',
     zeilen: [{ text: 'Field' }, { text: 'Recording' }],
     satz: 'Hydrophon in der Gletschermühle, Kontaktmikro am Tragseil, Stereopaar im leeren Club um zehn nach sechs. Sag mir den Ort, ich bringe das Zeug und die Geduld.',
     betont: 'Sag mir den Ort, ich bringe das Zeug und die Geduld.',
@@ -116,7 +116,7 @@ export type Ebene = {
 export const EBENEN: Ebene[] = [
   {
     schluessel: 'rig',
-    farbe: 'var(--pink)',
+    farbe: 'var(--stahl)',
     kicker: '02 — Custom Gear',
     titel: 'Das Bühnen-Rig',
     vorspann:
@@ -146,7 +146,7 @@ export const EBENEN: Ebene[] = [
   },
   {
     schluessel: 'aufnahmen',
-    farbe: 'var(--gruen)',
+    farbe: 'var(--eis)',
     kicker: '04 — Field Recording',
     titel: 'Die Aufnahmen',
     vorspann:

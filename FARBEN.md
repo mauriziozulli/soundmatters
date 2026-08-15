@@ -38,10 +38,8 @@ im Regen.
 gedruckten Fassungen des Klebers, und die Wiederholung ist genau das, was
 Seite und Kleber zusammenbindet. Rost und Staubblau sind zurückgetreten.
 
-Verdigris, Ocker und Knochen sind die drei gedruckten Fassungen. Rost und
-Staubblau ergänzen die Familie für die übrigen Abschnitte — sie sind nach
-denselben Regeln gebaut (entsättigt, warm verschoben) und gehören darum
-sichtbar dazu.
+Alle sechs sind nach denselben Regeln gebaut — entsättigt und warm verschoben
+— und gehören darum sichtbar zusammen, auch die beiden zurückgetretenen.
 
 **Abschnitt 00 ist der Aufkleber.** Erste Zeile in Knochen, zweite Zeile in
 einem Verdigris-Balken mit harter Kontur — dieselbe Anordnung wie auf dem

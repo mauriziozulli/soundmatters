@@ -97,7 +97,7 @@ const DEUTSCH: Fassung = {
   beschriftung: {
     schliessen: '✕ Schliessen',
     platzhalter: 'Hier kommt dein Foto hin',
-    stuecke: 'Zwei Beispiele'
+    stuecke: 'Drei Beispiele'
   },
   abschnitte: [
     {
@@ -180,7 +180,7 @@ const DEUTSCH: Fassung = {
         },
         {
           titel: 'Wie es gebaut ist',
-          text: 'Merging Anubis als Herz, dazu eine eigene Stromführung, damit ein Kurzschluss am Pult nicht die Aufnahme killt. Alles in einem Case, das man zu zweit tragen kann. Aufbau: zwanzig Minuten. Abbau: zehn.'
+          text: 'Eine eigene Stromführung, damit ein Kurzschluss am Pult nicht die Aufnahme killt. Alles in einem Case, das man zu zweit tragen kann. Aufbau: zwanzig Minuten. Abbau: zehn.'
         },
         {
           titel: 'Was schiefging',
@@ -189,7 +189,7 @@ const DEUTSCH: Fassung = {
       ],
       daten: [
         { was: 'Kanäle', wert: '8, gleichzeitig' },
-        { was: 'Herz', wert: 'Merging Anubis' },
+        { was: 'Herz', wert: 'noch einzutragen' },
         { was: 'Laufzeit', wert: 'eine ganze Nacht, ohne Eingriff' },
         { was: 'Aufbau', wert: 'zwanzig Minuten' },
         { was: 'Unterlagen', wert: 'Zeichnung und Teileliste, frei kopierbar' }
@@ -206,6 +206,19 @@ const DEUTSCH: Fassung = {
             { was: 'Auflösung', wert: '24 Bit / 96 kHz, WAV' },
             { was: 'Übergabe', wert: 'FTP über Ethernet, Dante als Option' },
             { was: 'Aufbau', wert: 'zwanzig Minuten' }
+          ]
+        },
+        {
+          titel: 'Das Gletscher-Case',
+          einordnung: 'Feld · Expedition · Eis',
+          text: 'Ein Peli 1400, ausgebaut für den Merging Anubis SPS Premium — Vorverstärker und Monitorcontroller in einem, mitgenommen auf den Griesgletscher. Der Strom kommt aus SWIT-NP-1-Akkus; über einen powerCON läuft und lädt das Case gleichzeitig, und im Feld übernimmt der Akku nahtlos. Zwei Wege, eine Aufnahme.',
+          daten: [
+            { was: 'Case', wert: 'Peli 1400, selber ausgebaut' },
+            { was: 'Herz', wert: 'Merging Anubis SPS Premium' },
+            { was: 'Aufnahme', wert: 'Zoom F3 mit LOM-Ucho-Mikrofonen' },
+            { was: 'Strom', wert: 'SWIT NP-1, powerCON für Netzbetrieb' },
+            { was: 'Redundanz', wert: 'nahtlose Übernahme auf Akku' },
+            { was: 'Verkabelung', wert: 'Mogami, innen wie aussen selbst gebaut' }
           ]
         },
         {
@@ -275,7 +288,7 @@ const ENGLISCH: Fassung = {
   beschriftung: {
     schliessen: '✕ Close',
     platzhalter: 'Your photo goes here',
-    stuecke: 'Two examples'
+    stuecke: 'Three examples'
   },
   abschnitte: [
     {
@@ -358,7 +371,7 @@ const ENGLISCH: Fassung = {
         },
         {
           titel: 'How it is built',
-          text: "A Merging Anubis at the heart, plus its own power routing so a short circuit at the desk doesn't kill the recording. All in one case two people can carry. Setup: twenty minutes. Teardown: ten."
+          text: "Its own power routing, so a short circuit at the desk doesn't kill the recording. All in one case two people can carry. Setup: twenty minutes. Teardown: ten."
         },
         {
           titel: 'What went wrong',
@@ -367,7 +380,7 @@ const ENGLISCH: Fassung = {
       ],
       daten: [
         { was: 'Channels', wert: '8, simultaneously' },
-        { was: 'Heart', wert: 'Merging Anubis' },
+        { was: 'Heart', wert: 'to be filled in' },
         { was: 'Runtime', wert: 'a whole night, unattended' },
         { was: 'Setup', wert: 'twenty minutes' },
         { was: 'Documents', wert: 'drawing and parts list, free to copy' }
@@ -384,6 +397,19 @@ const ENGLISCH: Fassung = {
             { was: 'Resolution', wert: '24 bit / 96 kHz, WAV' },
             { was: 'Handover', wert: 'FTP over Ethernet, Dante optional' },
             { was: 'Setup', wert: 'twenty minutes' }
+          ]
+        },
+        {
+          titel: 'The Glacier Case',
+          einordnung: 'Field · Expedition · Ice',
+          text: 'A Peli 1400 built out for the Merging Anubis SPS Premium — preamp and monitor controller in one, carried up the Gries Glacier. Power comes from SWIT NP-1 batteries; a powerCON lets the case run and charge at once, and in the field the battery takes over seamlessly. Two paths, one recording.',
+          daten: [
+            { was: 'Case', wert: 'Peli 1400, built out by hand' },
+            { was: 'Heart', wert: 'Merging Anubis SPS Premium' },
+            { was: 'Capture', wert: 'Zoom F3 with LOM Ucho microphones' },
+            { was: 'Power', wert: 'SWIT NP-1, powerCON for mains' },
+            { was: 'Redundancy', wert: 'seamless battery takeover' },
+            { was: 'Cabling', wert: 'Mogami, inside and out, self-built' }
           ]
         },
         {

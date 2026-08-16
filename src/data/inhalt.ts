@@ -195,6 +195,7 @@ const DEUTSCH: Fassung = {
         {
           titel: 'Das Gletscher-Case',
           einordnung: 'Feld · Expedition · Eis',
+          bild: '/fotos/peli-case.jpg',
           text: 'Ein Peli 1400, ausgebaut für den Merging Anubis SPS Premium — Vorverstärker und Monitorcontroller in einem, mitgenommen auf den Griesgletscher. Der Strom kommt aus SWIT-NP-1-Akkus; über einen powerCON läuft und lädt das Case gleichzeitig, und im Feld übernimmt der Akku nahtlos. Zwei Wege, eine Aufnahme.',
           daten: [
             { was: 'Case', wert: 'Peli 1400, selber ausgebaut' },
@@ -365,6 +366,7 @@ const ENGLISCH: Fassung = {
         {
           titel: 'The Glacier Case',
           einordnung: 'Field · Expedition · Ice',
+          bild: '/fotos/peli-case.jpg',
           text: 'A Peli 1400 built out for the Merging Anubis SPS Premium — preamp and monitor controller in one, carried up the Gries Glacier. Power comes from SWIT NP-1 batteries; a powerCON lets the case run and charge at once, and in the field the battery takes over seamlessly. Two paths, one recording.',
           daten: [
             { was: 'Case', wert: 'Peli 1400, built out by hand' },

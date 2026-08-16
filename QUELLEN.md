@@ -29,3 +29,9 @@ und damit der Kontrast zur Schrift vorhersagbar ist statt vom Foto abhängig:
 Beim Austausch gegen echte Fotos bleibt die Behandlung gleich — nur die
 Data-URI in `IMAGES` und gegebenenfalls die beiden Farbpole in `SHOTS`
 müssen angepasst werden.
+
+## Eigene Fotos
+
+`peli-case.jpg` — Maurizio Zulli, Griesgletscher 2025. Das ausgebaute
+Peli 1400 mit dem Merging Anubis SPS Premium im Feld. Eigenes Bild, keine
+Fremdlizenz nötig.

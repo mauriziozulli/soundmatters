@@ -189,7 +189,6 @@ const DEUTSCH: Fassung = {
       ],
       daten: [
         { was: 'Kanäle', wert: '8, gleichzeitig' },
-        { was: 'Herz', wert: 'noch einzutragen' },
         { was: 'Laufzeit', wert: 'eine ganze Nacht, ohne Eingriff' },
         { was: 'Aufbau', wert: 'zwanzig Minuten' },
         { was: 'Unterlagen', wert: 'Zeichnung und Teileliste, frei kopierbar' }
@@ -380,7 +379,6 @@ const ENGLISCH: Fassung = {
       ],
       daten: [
         { was: 'Channels', wert: '8, simultaneously' },
-        { was: 'Heart', wert: 'to be filled in' },
         { was: 'Runtime', wert: 'a whole night, unattended' },
         { was: 'Setup', wert: 'twenty minutes' },
         { was: 'Documents', wert: 'drawing and parts list, free to copy' }

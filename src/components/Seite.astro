@@ -11,7 +11,7 @@ import { INHALT, type Sprache as SpracheTyp } from '../data/inhalt';
 
 interface Props { sprache?: SpracheTyp; offen?: string | null }
 const { sprache = 'de', offen = null } = Astro.props;
-const { abschnitte, ebenen, fuss } = INHALT[sprache];
+const { abschnitte, ebenen, fuss, beschriftung } = INHALT[sprache];
 ---
 
 <main>
@@ -24,6 +24,6 @@ const { abschnitte, ebenen, fuss } = INHALT[sprache];
   <a href={fuss.kontakt.ziel}>{fuss.kontakt.text} →</a>
 </footer>
 
-{ebenen.map((e) => <Ebene e={e} offen={e.schluessel === offen} />)}
+{ebenen.map((e) => <Ebene e={e} offen={e.schluessel === offen} beschriftung={beschriftung} />)}
 
 <Sprache sprache={sprache} pfad={Astro.url.pathname} />

@@ -56,6 +56,18 @@ export type Ebene = {
   bild?: string;
   bloecke: { titel: string; text: string }[];
   daten: { was: string; wert: string }[];
+  /**
+   * Einzelne Geräte auf dieser Ebene. Bewusst ohne eigene Adresse — eine
+   * dritte Ebene gibt es nicht. Zum Ergänzen einen Eintrag kopieren und
+   * ausfüllen; die Reihenfolge hier ist die Reihenfolge auf der Seite.
+   */
+  stuecke?: {
+    titel: string;
+    /** Kurze Verortung, erscheint klein über dem Titel */
+    einordnung: string;
+    text: string;
+    daten: { was: string; wert: string }[];
+  }[];
   handlung: { text: string; ziel: string };
 };
 
@@ -68,6 +80,8 @@ export type Fuss = {
 export type Fassung = {
   titel: string;
   beschreibung: string;
+  /** Feste Beschriftungen der Oberfläche, damit nichts hartkodiert ist */
+  beschriftung: { schliessen: string; platzhalter: string; stuecke: string };
   /** Beschriftung des Sprachschalters für die jeweils andere Fassung */
   wechsel: string;
   abschnitte: Abschnitt[];
@@ -80,6 +94,11 @@ const DEUTSCH: Fassung = {
   beschreibung:
     'Maurizio Zulli aus Luzern: Ton für Film und Video, selbst gebaute Recording-Rigs, Musik und Feldaufnahmen.',
   wechsel: 'Auf Deutsch lesen',
+  beschriftung: {
+    schliessen: '✕ Schliessen',
+    platzhalter: 'Hier kommt dein Foto hin',
+    stuecke: 'Zwei Beispiele'
+  },
   abschnitte: [
     {
       bild: 'intro',
@@ -175,6 +194,34 @@ const DEUTSCH: Fassung = {
         { was: 'Aufbau', wert: 'zwanzig Minuten' },
         { was: 'Unterlagen', wert: 'Zeichnung und Teileliste, frei kopierbar' }
       ],
+      stuecke: [
+        {
+          titel: 'Der Booth-Recorder',
+          einordnung: 'Festival · DJ-Booth',
+          text: 'Ein Tascam SS-R250N im Case, fest am Booth-Ausgang. Er läuft die ganze Nacht durch und schreibt auf zwei SD-Karten gleichzeitig — fällt eine aus, ist die Nacht trotzdem drauf. Am Morgen hängt er am Netzwerk und lädt die Dateien selber hoch, statt dass jemand mit einem Stick durch den Backstage läuft.',
+          daten: [
+            { was: 'Herz', wert: 'Tascam SS-R250N' },
+            { was: 'Kanäle', wert: '2, Stereo-Summe aus dem Booth' },
+            { was: 'Sicherung', wert: 'zwei SD-Karten parallel' },
+            { was: 'Auflösung', wert: '24 Bit / 96 kHz, WAV' },
+            { was: 'Übergabe', wert: 'FTP über Ethernet, Dante als Option' },
+            { was: 'Aufbau', wert: 'zwanzig Minuten' }
+          ]
+        },
+        {
+          titel: 'Kabel nach Mass',
+          einordnung: 'Studio · Bühne · Set',
+          text: 'Mogami-Kabel, Neutrik-Stecker, von Hand gelötet und einzeln durchgemessen. Breakout von Multipin auf Einzelkanäle, Adapter zwischen zwei Welten, die nicht zusammenpassen wollten, Splitter, wenn ein Signal an zwei Orte muss. Auf Länge gebaut, nicht ab Lager — ein Kabel, das zwei Meter zu lang ist, liegt am Ende im Weg.',
+          daten: [
+            { was: 'Kabel', wert: 'Mogami' },
+            { was: 'Stecker', wert: 'Neutrik' },
+            { was: 'Gebaut', wert: 'Breakout, Adapter, Splitter, Sonderlängen' },
+            { was: 'Prüfung', wert: 'jede Ader einzeln durchgemessen' },
+            { was: 'Beschriftung', wert: 'beidseitig, dauerhaft' },
+            { was: 'Länge', wert: 'nach Mass, nicht nach Katalog' }
+          ]
+        }
+      ],
       handlung: { text: 'Bau mir eins', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Rig%20bauen' }
     },
     {
@@ -225,6 +272,11 @@ const ENGLISCH: Fassung = {
   beschreibung:
     'Maurizio Zulli from Lucerne: sound for film and video, self-built recording rigs, music and field recordings.',
   wechsel: 'Read in English',
+  beschriftung: {
+    schliessen: '✕ Close',
+    platzhalter: 'Your photo goes here',
+    stuecke: 'Two examples'
+  },
   abschnitte: [
     {
       bild: 'intro',
@@ -319,6 +371,34 @@ const ENGLISCH: Fassung = {
         { was: 'Runtime', wert: 'a whole night, unattended' },
         { was: 'Setup', wert: 'twenty minutes' },
         { was: 'Documents', wert: 'drawing and parts list, free to copy' }
+      ],
+      stuecke: [
+        {
+          titel: 'The Booth Recorder',
+          einordnung: 'Festival · DJ booth',
+          text: 'A Tascam SS-R250N in a case, wired straight to the booth output. It runs all night and writes to two SD cards at once — if one fails, the night is still there. In the morning it sits on the network and uploads the files itself, instead of someone walking a USB stick through backstage.',
+          daten: [
+            { was: 'Heart', wert: 'Tascam SS-R250N' },
+            { was: 'Channels', wert: '2, stereo sum from the booth' },
+            { was: 'Backup', wert: 'two SD cards in parallel' },
+            { was: 'Resolution', wert: '24 bit / 96 kHz, WAV' },
+            { was: 'Handover', wert: 'FTP over Ethernet, Dante optional' },
+            { was: 'Setup', wert: 'twenty minutes' }
+          ]
+        },
+        {
+          titel: 'Cables to Measure',
+          einordnung: 'Studio · Stage · Set',
+          text: 'Mogami cable, Neutrik connectors, soldered by hand and tested core by core. Breakouts from multipin to single channels, adapters between two worlds that refused to fit, splitters when one signal has to reach two places. Built to length, not off the shelf — a cable two metres too long ends up in the way.',
+          daten: [
+            { was: 'Cable', wert: 'Mogami' },
+            { was: 'Connectors', wert: 'Neutrik' },
+            { was: 'Built', wert: 'breakouts, adapters, splitters, custom lengths' },
+            { was: 'Testing', wert: 'every core measured individually' },
+            { was: 'Labelling', wert: 'both ends, permanent' },
+            { was: 'Length', wert: 'to measure, not to catalogue' }
+          ]
+        }
       ],
       handlung: { text: 'Build me one', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Build%20a%20rig' }
     },

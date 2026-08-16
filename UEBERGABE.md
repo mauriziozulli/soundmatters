@@ -129,6 +129,16 @@ Nur bei deutlich hellerem Bild `kontrast` in `src/data/bilder.ts` nachziehen.
   über 1 sprengt sonst den Abschnitt, obwohl ein Deckel gesetzt ist. `schrift.ts`
   misst darum bei 100px Breite *und* Höhe.
 
+## Geräte auf der Ebene
+
+`inhalt.ts` kennt unter jeder Ebene ein optionales Feld `stuecke` — einzelne
+Geräte mit Einordnung, Text und Datenliste. **Zum Ergänzen einen Eintrag
+kopieren und ausfüllen**, die Reihenfolge im Array ist die Reihenfolge auf der
+Seite. Beide Sprachen brauchen ihren eigenen Eintrag.
+
+Bewusst **ohne Links**: Ein Stück ist Inhalt, kein Einstieg. Sonst entstünde
+eine dritte Ebene, und die gibt es nicht.
+
 ## Zwei Sprachen
 
 Deutsch liegt unter `/`, Englisch unter `/en`. Beide sind **echte, vorgebaute

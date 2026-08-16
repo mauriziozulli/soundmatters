@@ -1,8 +1,8 @@
 ---
-import type { Ebene } from '../data/inhalt';
+import type { Ebene, Fassung } from '../data/inhalt';
 
-interface Props { e: Ebene; offen?: boolean }
-const { e, offen = false } = Astro.props;
+interface Props { e: Ebene; offen?: boolean; beschriftung: Fassung['beschriftung'] }
+const { e, offen = false, beschriftung } = Astro.props;
 ---
 
 <div
@@ -14,7 +14,7 @@ const { e, offen = false } = Astro.props;
   aria-label={e.titel}
   style={`--ef: ${e.farbe}`}
 >
-  <button class="ebene__zu" type="button">✕ Schliessen</button>
+  <button class="ebene__zu" type="button">{beschriftung.schliessen}</button>
 
   <div class="ebene__in">
     <div class="ebene__kicker">{e.kicker}</div>
@@ -23,7 +23,7 @@ const { e, offen = false } = Astro.props;
 
     {e.bild
       ? <img class="ebene__bild" src={e.bild} alt="" loading="lazy" decoding="async" />
-      : <div class="ebene__platz">Hier kommt dein Foto hin</div>}
+      : <div class="ebene__platz">{beschriftung.platzhalter}</div>}
 
     {e.bloecke.map((b) => (
       <div class="ebene__block">
@@ -40,6 +40,29 @@ const { e, offen = false } = Astro.props;
         </div>
       ))}
     </dl>
+
+    {/* Einzelne Geräte. Bewusst ohne Links — eine dritte Ebene gibt es nicht. */}
+    {e.stuecke && e.stuecke.length > 0 && (
+      <section class="stuecke">
+        <h2 class="stuecke__marke">{beschriftung.stuecke}</h2>
+
+        {e.stuecke.map((st) => (
+          <article class="stueck">
+            <div class="stueck__einordnung">{st.einordnung}</div>
+            <h3 class="stueck__titel">{st.titel}</h3>
+            <p class="stueck__text">{st.text}</p>
+            <dl class="stueck__daten">
+              {st.daten.map((d) => (
+                <div class="stueck__zeile">
+                  <dt>{d.was}</dt>
+                  <dd>{d.wert}</dd>
+                </div>
+              ))}
+            </dl>
+          </article>
+        ))}
+      </section>
+    )}
 
     <a class="ebene__handlung" href={e.handlung.ziel}>{e.handlung.text} →</a>
   </div>

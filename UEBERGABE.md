@@ -173,6 +173,9 @@ Fähigkeit behaupten. Das ist Absicht und macht glaubwürdig.
 Gebaut, Build läuft, sechs Seiten (`/`, `/rig`, `/aufnahmen` und dieselben
 unter `/en`), kein externer Abruf.
 
+- [ ] **Foto vom Peli-Case** in die Rig-Ebene: Datei unter `public/fotos/`
+      ablegen und den Pfad im Stück «Das Gletscher-Case» als `bild` eintragen,
+      etwa `bild: '/fotos/peli-case.jpg'`. Beide Sprachen.
 - [ ] **Eigene Fotos** statt der Platzhalter — mit Abstand der grösste Hebel
 - [ ] Echte Links zu SoundCloud und Instagram in `src/data/inhalt.ts`
       (aktuell `https://soundcloud.com` als Platzhalter)

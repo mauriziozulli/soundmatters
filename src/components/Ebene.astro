@@ -21,25 +21,28 @@ const { e, offen = false, beschriftung } = Astro.props;
     <h1 class="ebene__titel">{e.titel}</h1>
     <p class="ebene__vorspann">{e.vorspann}</p>
 
-    {e.bild
-      ? <img class="ebene__bild" src={e.bild} alt="" loading="lazy" decoding="async" />
-      : <div class="ebene__platz">{beschriftung.platzhalter}</div>}
+    {/* Kein Bild, keine Lücke: ein sichtbarer Platzhalter auf einer
+        veröffentlichten Seite liest sich als Baustelle. Was fehlt, steht
+        in der Übergabe, nicht auf der Seite. */}
+    {e.bild && <img class="ebene__bild" src={e.bild} alt="" loading="lazy" decoding="async" />}
 
-    {e.bloecke.map((b) => (
+    {e.bloecke?.map((b) => (
       <div class="ebene__block">
         <h3>{b.titel}</h3>
         <p>{b.text}</p>
       </div>
     ))}
 
-    <dl class="ebene__daten">
-      {e.daten.map((d) => (
-        <div class="ebene__zeile">
-          <dt>{d.was}</dt>
-          <dd>{d.wert}</dd>
-        </div>
-      ))}
-    </dl>
+    {e.daten && e.daten.length > 0 && (
+      <dl class="ebene__daten">
+        {e.daten.map((d) => (
+          <div class="ebene__zeile">
+            <dt>{d.was}</dt>
+            <dd>{d.wert}</dd>
+          </div>
+        ))}
+      </dl>
+    )}
 
     {/* Einzelne Geräte. Bewusst ohne Links — eine dritte Ebene gibt es nicht. */}
     {e.stuecke && e.stuecke.length > 0 && (
@@ -51,6 +54,9 @@ const { e, offen = false, beschriftung } = Astro.props;
             <div class="stueck__einordnung">{st.einordnung}</div>
             <h3 class="stueck__titel">{st.titel}</h3>
             <p class="stueck__text">{st.text}</p>
+            {st.bild && (
+              <img class="stueck__bild" src={st.bild} alt="" loading="lazy" decoding="async" />
+            )}
             <dl class="stueck__daten">
               {st.daten.map((d) => (
                 <div class="stueck__zeile">

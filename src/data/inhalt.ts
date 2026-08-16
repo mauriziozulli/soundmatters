@@ -54,8 +54,9 @@ export type Ebene = {
   vorspann: string;
   /** Bild oben in der Ebene; leer lassen, solange keins da ist */
   bild?: string;
-  bloecke: { titel: string; text: string }[];
-  daten: { was: string; wert: string }[];
+  /** Fliesstext-Bloecke. Weglassen, wenn die Stuecke den Inhalt tragen. */
+  bloecke?: { titel: string; text: string }[];
+  daten?: { was: string; wert: string }[];
   /**
    * Einzelne Geräte auf dieser Ebene. Bewusst ohne eigene Adresse — eine
    * dritte Ebene gibt es nicht. Zum Ergänzen einen Eintrag kopieren und
@@ -66,6 +67,10 @@ export type Ebene = {
     /** Kurze Verortung, erscheint klein über dem Titel */
     einordnung: string;
     text: string;
+    /** Foto des Geräts. Datei unter public/fotos/ ablegen, Pfad hier
+     *  eintragen — zum Beispiel '/fotos/peli-case.jpg'. Weglassen, solange
+     *  keins da ist; dann wird einfach keins gezeigt. */
+    bild?: string;
     daten: { was: string; wert: string }[];
   }[];
   handlung: { text: string; ziel: string };
@@ -133,7 +138,7 @@ const DEUTSCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Recording-Cases, die jedes Set am Festival mitschneiden — acht Kanäle aus dem Booth, die ganze Nacht. Gebaut, wie ich sie selber als DJ brauche.',
+      satz: 'Recording-Cases, die jedes Set am Festival mitschneiden — die ganze Nacht, ohne dass jemand am Pult etwas davon merkt. Gebaut, wie ich sie selber als DJ brauche.',
       betont: 'Gebaut, wie ich sie selber als DJ brauche.',
       fussnote: "Zeichnung und Teileliste gibt's dazu",
       link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
@@ -170,41 +175,21 @@ const DEUTSCH: Fassung = {
       schluessel: 'rig',
       farbe: 'var(--ocker)',
       kicker: '02 — Custom Gear',
-      titel: 'Das Bühnen-Rig',
+      titel: 'Was ich baue',
       vorspann:
-        'Ein Case, das an jeder Bühne steht und jedes Set sauber mitschneidet. Acht Kanäle direkt aus dem Booth, die ganze Nacht durch, ohne dass jemand am Mixer etwas davon merkt.',
-      bloecke: [
-        {
-          titel: 'Was es macht',
-          text: 'Es hängt am Ausgang des Booth-Mixers und schreibt parallel mit — Stereo-Summe plus die einzelnen Kanäle. Die DJs merken nichts davon, und am Montag habt ihr saubere Spuren statt einem Handy-Mitschnitt aus der dritten Reihe.'
-        },
-        {
-          titel: 'Wie es gebaut ist',
-          text: 'Eine eigene Stromführung, damit ein Kurzschluss am Pult nicht die Aufnahme killt. Alles in einem Case, das man zu zweit tragen kann. Aufbau: zwanzig Minuten. Abbau: zehn.'
-        },
-        {
-          titel: 'Was schiefging',
-          text: 'Version eins stieg bei acht Grad unter null aus, weil ich die Kondenswasserbildung im geschlossenen Case unterschätzt habe. Version zwei hat Lüftungsschlitze und eine Heizmatte. Auch das gehört dokumentiert.'
-        }
-      ],
-      daten: [
-        { was: 'Kanäle', wert: '8, gleichzeitig' },
-        { was: 'Laufzeit', wert: 'eine ganze Nacht, ohne Eingriff' },
-        { was: 'Aufbau', wert: 'zwanzig Minuten' },
-        { was: 'Unterlagen', wert: 'Zeichnung und Teileliste, frei kopierbar' }
-      ],
+        'Cases und Kabel, die es so nicht zu kaufen gibt — gebaut für den Ort, an dem sie stehen sollen, nicht für den Katalog. Das hier sind drei, die im Einsatz sind.',
       stuecke: [
         {
           titel: 'Der Booth-Recorder',
           einordnung: 'Festival · DJ-Booth',
-          text: 'Ein Tascam SS-R250N im Case, fest am Booth-Ausgang. Er läuft die ganze Nacht durch und schreibt auf zwei SD-Karten gleichzeitig — fällt eine aus, ist die Nacht trotzdem drauf. Am Morgen hängt er am Netzwerk und lädt die Dateien selber hoch, statt dass jemand mit einem Stick durch den Backstage läuft.',
+          text: 'Ein Tascam SS-R250N im Case, fest am Booth-Ausgang. Er läuft die ganze Nacht und sichert laufend mit — zieht jemand den Stecker, ist die Aufnahme bis kurz davor da und läuft danach von selbst weiter. Übersteuert ein Set, setzt er den Marker automatisch. Und wer sein eigenes Set mitnehmen will, hängt seinen Recorder ans durchgeschleifte Signal.',
           daten: [
             { was: 'Herz', wert: 'Tascam SS-R250N' },
             { was: 'Kanäle', wert: '2, Stereo-Summe aus dem Booth' },
-            { was: 'Sicherung', wert: 'zwei SD-Karten parallel' },
-            { was: 'Auflösung', wert: '24 Bit / 96 kHz, WAV' },
-            { was: 'Übergabe', wert: 'FTP über Ethernet, Dante als Option' },
-            { was: 'Aufbau', wert: 'zwanzig Minuten' }
+            { was: 'Nach Stromausfall', wert: 'gesicherte Datei, Aufnahme läuft weiter' },
+            { was: 'Sicherung', wert: 'laufend, zwei SD-Karten parallel' },
+            { was: 'Marker', wert: 'automatisch bei Übersteuerung, dazu von Hand' },
+            { was: 'Für Künstler', wert: 'Signal durchgeschleift, eigener Recorder mithängbar' }
           ]
         },
         {
@@ -323,7 +308,7 @@ const ENGLISCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Recording cases that capture every set at the festival — eight channels straight out of the booth, all night. Built the way I need them as a DJ myself.',
+      satz: 'Recording cases that capture every set at the festival — all night, without anyone at the desk noticing. Built the way I need them as a DJ myself.',
       betont: 'Built the way I need them as a DJ myself.',
       fussnote: 'Drawing and parts list come with it',
       link: { text: 'How it is built', ziel: '/en/rig', art: 'ebene' }
@@ -360,41 +345,21 @@ const ENGLISCH: Fassung = {
       schluessel: 'rig',
       farbe: 'var(--ocker)',
       kicker: '02 — Custom Gear',
-      titel: 'The Stage Rig',
+      titel: 'What I Build',
       vorspann:
-        'A case that stands at every stage and records every set cleanly. Eight channels straight out of the booth, all night long, without anyone at the mixer noticing.',
-      bloecke: [
-        {
-          titel: 'What it does',
-          text: 'It sits on the booth mixer output and records in parallel — the stereo sum plus the individual channels. The DJs notice nothing, and on Monday you have clean tracks instead of a phone recording from the third row.'
-        },
-        {
-          titel: 'How it is built',
-          text: "Its own power routing, so a short circuit at the desk doesn't kill the recording. All in one case two people can carry. Setup: twenty minutes. Teardown: ten."
-        },
-        {
-          titel: 'What went wrong',
-          text: 'Version one died at eight below zero, because I underestimated the condensation inside a closed case. Version two has vents and a heating mat. That belongs in the documentation too.'
-        }
-      ],
-      daten: [
-        { was: 'Channels', wert: '8, simultaneously' },
-        { was: 'Runtime', wert: 'a whole night, unattended' },
-        { was: 'Setup', wert: 'twenty minutes' },
-        { was: 'Documents', wert: 'drawing and parts list, free to copy' }
-      ],
+        'Cases and cables you cannot buy like this — built for the place they have to work in, not for a catalogue. These three are in use.',
       stuecke: [
         {
           titel: 'The Booth Recorder',
           einordnung: 'Festival · DJ booth',
-          text: 'A Tascam SS-R250N in a case, wired straight to the booth output. It runs all night and writes to two SD cards at once — if one fails, the night is still there. In the morning it sits on the network and uploads the files itself, instead of someone walking a USB stick through backstage.',
+          text: "A Tascam SS-R250N in a case, wired straight to the booth output. It runs all night and keeps saving as it goes — pull the plug and the recording is there up to a moment before, then it picks up again by itself. If a set clips, it sets the marker automatically. And anyone who wants their own set can hang their recorder off the through signal.",
           daten: [
             { was: 'Heart', wert: 'Tascam SS-R250N' },
             { was: 'Channels', wert: '2, stereo sum from the booth' },
-            { was: 'Backup', wert: 'two SD cards in parallel' },
-            { was: 'Resolution', wert: '24 bit / 96 kHz, WAV' },
-            { was: 'Handover', wert: 'FTP over Ethernet, Dante optional' },
-            { was: 'Setup', wert: 'twenty minutes' }
+            { was: 'After power loss', wert: 'file saved, recording continues' },
+            { was: 'Backup', wert: 'continuous, two SD cards in parallel' },
+            { was: 'Markers', wert: 'automatic on clipping, plus manual' },
+            { was: 'For artists', wert: 'signal passed through, own recorder can hang off it' }
           ]
         },
         {

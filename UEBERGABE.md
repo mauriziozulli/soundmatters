@@ -150,10 +150,15 @@ Die englischen Ebenen haben eigene Adressen: `/en/rig` und `/en/recordings`.
 Der Schalter unten in der Mitte führt auf dieselbe Ebene in der anderen
 Sprache, sonst auf die Startseite.
 
-**Der Schalter liegt bewusst unter der Detail-Ebene** (kleinerer z-index):
-sobald eine Ebene offen ist, ist er verdeckt. Sonst hätte die Ebene einen
-Ausgang, eine Weiterführung *und* einen Sprachwechsel — und das wäre einer zu
-viel für die zweite Regel.
+**Der Schalter gehört zum ersten Abschnitt und scrollt mit ihm weg.** Er steht
+absolut im Fluss, nicht fest im Fenster — die Sprache wählt man beim
+Eintreten, nicht auf jedem Abschnitt neu. Kein JavaScript nötig. Der Wert
+`top: calc(100svh - …)` hängt an der Abschnittshöhe: wer die ändert, muss ihn
+mitziehen.
+
+Er liegt zudem unter der Detail-Ebene (kleinerer z-index): sobald eine Ebene
+offen ist, ist er verdeckt. Sonst hätte die Ebene einen Ausgang, eine
+Weiterführung *und* einen Sprachwechsel — einer zu viel für die zweite Regel.
 
 Eigennamen bleiben auch im Englischen stehen (Am Bach Festival, Schwing und
 Stampf) — übersetzt wären sie unauffindbar.
@@ -164,9 +169,17 @@ Deutsch, Schweizer Rechtschreibung (**ss statt ß**). Das gilt für Inhalt,
 Kommentare im Code, Dateinamen und Commit-Nachrichten. Bezeichner im Code sind
 ebenfalls deutsch (`abschnitt`, `ebene`, `zeiger`) — konsequent bleiben.
 
-Der Ton der Texte: direkt, in der ersten Person, keine Werbesprache. Lieber ein
-Fehler zugeben („Version eins stieg bei minus acht Grad aus") als eine
-Fähigkeit behaupten. Das ist Absicht und macht glaubwürdig.
+Der Ton der Texte: direkt, keine Werbesprache. Lieber ein Fehler zugeben als
+eine Fähigkeit behaupten.
+
+**Die erste Person ist bewusst zurückgenommen.** Eine frühere Fassung stand in
+sieben von fünf Sätzen in «ich» und «mein» und las sich angeberisch — «ich
+weiss, was um vier Uhr wirklich passiert». Jetzt führt die Sache, nicht die
+Person: «Wer selber im Booth steht, baut sie anders.» Dieselbe Behauptung,
+ohne sie sich anzuheften — der Leser zieht den Schluss selber.
+
+Zwei «ich» sind absichtlich geblieben: die Begrüssung in 00 und das Angebot in
+04. Dort leistet die erste Person etwas. Überall sonst nicht wieder einbauen.
 
 ## Stand und was offen ist
 

@@ -113,8 +113,8 @@ const DEUTSCH: Fassung = {
       passung: 0.9,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
-      satz: 'Hi, ich bin Maurizio. Darum versuche ich, Ton überall gut zu machen — im Kino, im Booth, auf dem Gletscher.',
-      betont: 'Darum versuche ich, Ton überall gut zu machen',
+      satz: 'Hi, ich bin Maurizio. Ton merkt man erst, wenn er fehlt — im Kino, im Booth, auf dem Gletscher.',
+      betont: 'Ton merkt man erst, wenn er fehlt',
       fussnote: 'Runterscrollen'
     },
     {
@@ -125,8 +125,8 @@ const DEUTSCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'Sounddesign, Schnitt und Mischung. Was ich draussen aufnehme, landet hier drin — meine Bibliothek besteht nicht aus gekauften Paketen.',
-      betont: 'Was ich draussen aufnehme, landet hier drin',
+      satz: 'Sounddesign, Schnitt und Mischung. Eine Bibliothek aus eigenen Aufnahmen klingt anders als eine aus gekauften Paketen — jeder Ort klingt nur einmal so.',
+      betont: 'Eine Bibliothek aus eigenen Aufnahmen klingt anders',
       fussnote: 'Die ganze Werkschau',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -138,8 +138,8 @@ const DEUTSCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Recording-Cases, die jedes Set am Festival mitschneiden — die ganze Nacht, ohne dass jemand am Pult etwas davon merkt. Gebaut, wie ich sie selber als DJ brauche.',
-      betont: 'Gebaut, wie ich sie selber als DJ brauche.',
+      satz: 'Recording-Cases, die jedes Set am Festival mitschneiden — die ganze Nacht, ohne dass jemand am Pult etwas davon merkt. Wer selber im Booth steht, baut sie anders.',
+      betont: 'Wer selber im Booth steht, baut sie anders.',
       fussnote: "Zeichnung und Teileliste gibt's dazu",
       link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
     },
@@ -151,8 +151,8 @@ const DEUTSCH: Fassung = {
       passung: 0.93,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Musik', klasse: 'ton' }],
-      satz: 'Ich lege auf und baue an einem Festival in den Bergen mit. Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert — und baue danach.',
-      betont: 'Deshalb weiss ich, was um vier Uhr im Booth wirklich passiert',
+      satz: 'Um vier Uhr früh zeigt sich, ob ein Rig taugt und ob eine Nacht trägt. Beides lernt man nur, wenn man dabei ist.',
+      betont: 'Beides lernt man nur, wenn man dabei ist.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -164,8 +164,8 @@ const DEUTSCH: Fassung = {
       passung: 0.92,
       akzent: 'var(--knochen)',
       zeilen: [{ text: 'Field' }, { text: 'Recording' }],
-      satz: 'Hydrophon in der Gletschermühle, Kontaktmikro am Tragseil, Stereopaar im leeren Club um zehn nach sechs. Sag mir den Ort, ich bringe das Zeug und die Geduld.',
-      betont: 'Sag mir den Ort, ich bringe das Zeug und die Geduld.',
+      satz: 'Hydrophon in der Gletschermühle, Kontaktmikro am Tragseil, Stereopaar im leeren Club um zehn nach sechs. Orte klingen nie zweimal gleich — sag mir einen, ich bringe das Zeug und die Geduld.',
+      betont: 'sag mir einen, ich bringe das Zeug und die Geduld',
       fussnote: 'Aufnahmen auf Bestellung',
       link: { text: 'Reinhören', ziel: '/aufnahmen', art: 'ebene' }
     }
@@ -284,8 +284,8 @@ const ENGLISCH: Fassung = {
       passung: 0.9,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
-      satz: "Hi, I'm Maurizio. That's why I try to get sound right everywhere — in the cinema, in the booth, on the glacier.",
-      betont: "That's why I try to get sound right everywhere",
+      satz: "Hi, I'm Maurizio. Sound is what you notice only when it is missing — in the cinema, in the booth, on the glacier.",
+      betont: 'Sound is what you notice only when it is missing',
       fussnote: 'Scroll down'
     },
     {
@@ -296,8 +296,8 @@ const ENGLISCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: "Sound design, editing and mixing. What I record outdoors ends up in here — my library isn't built from bought packs.",
-      betont: 'What I record outdoors ends up in here',
+      satz: 'Sound design, editing and mixing. A library of your own recordings sounds different from one built out of bought packs — every place sounds that way only once.',
+      betont: 'A library of your own recordings sounds different',
       fussnote: 'The full body of work',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -309,8 +309,8 @@ const ENGLISCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Recording cases that capture every set at the festival — all night, without anyone at the desk noticing. Built the way I need them as a DJ myself.',
-      betont: 'Built the way I need them as a DJ myself.',
+      satz: 'Recording cases that capture every set at the festival — all night, without anyone at the desk noticing. Whoever stands in the booth themselves builds them differently.',
+      betont: 'Whoever stands in the booth themselves builds them differently.',
       fussnote: 'Drawing and parts list come with it',
       link: { text: 'How it is built', ziel: '/en/rig', art: 'ebene' }
     },
@@ -322,8 +322,8 @@ const ENGLISCH: Fassung = {
       passung: 0.93,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Music', klasse: 'ton' }],
-      satz: "I play records and help build a festival up in the mountains. That's why I know what really happens in the booth at four in the morning — and I build for that.",
-      betont: 'what really happens in the booth at four in the morning',
+      satz: 'At four in the morning it shows whether a rig holds and whether a night carries. You only learn either of them by being there.',
+      betont: 'You only learn either of them by being there.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -335,8 +335,8 @@ const ENGLISCH: Fassung = {
       passung: 0.92,
       akzent: 'var(--knochen)',
       zeilen: [{ text: 'Field' }, { text: 'Recording' }],
-      satz: "Hydrophone in a glacier mill, contact mic on a cable-car rope, stereo pair in the empty club at ten past six. Tell me the place, I'll bring the gear and the patience.",
-      betont: "Tell me the place, I'll bring the gear and the patience.",
+      satz: 'Hydrophone in a glacier mill, contact mic on a cable-car rope, stereo pair in the empty club at ten past six. Places never sound the same twice — name one and I will bring the gear and the patience.',
+      betont: 'name one and I will bring the gear and the patience',
       fussnote: 'Recordings to order',
       link: { text: 'Have a listen', ziel: '/en/recordings', art: 'ebene' }
     }

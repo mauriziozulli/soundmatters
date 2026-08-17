@@ -19,6 +19,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+main { position: relative; }
 canvas { display: block; }
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--signal); outline-offset: -6px; }
@@ -310,9 +311,12 @@ a { color: inherit; }
    ========================================================================= */
 
 .sprache {
-  position: fixed; z-index: 70;
+  /* Absolut im Fluss statt fest im Fenster: so gehört er sichtbar zum ersten
+     Abschnitt und ist danach weg. Die 100svh entsprechen der Höhe eines
+     Abschnitts — wer die ändert, muss diesen Wert mitziehen. */
+  position: absolute; z-index: 70;
   left: 50%; transform: translateX(-50%);
-  bottom: calc(var(--rand) + 46px);
+  top: calc(100svh - var(--rand) - 74px);
   display: flex;
   border: 2px solid var(--knochen);
   border-radius: 3px;
@@ -334,7 +338,7 @@ a { color: inherit; }
 .sprache__teil:not(.ist-aktiv):hover { background: rgba(239, 230, 210, .16); }
 
 @media (max-width: 620px) {
-  .sprache { bottom: calc(var(--rand) + 62px); }
+  .sprache { top: calc(100svh - var(--rand) - 92px); }
 }
 
 /* =========================================================================

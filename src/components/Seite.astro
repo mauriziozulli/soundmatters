@@ -16,6 +16,11 @@ const { abschnitte, ebenen, fuss, beschriftung } = INHALT[sprache];
 
 <main>
   {abschnitte.map((a) => <Abschnitt a={a} />)}
+
+  {/* Der Sprachschalter gehört zum ersten Bildschirm und scrollt mit ihm
+      weg. Er steht absolut im Fluss, nicht fest im Fenster — die Sprache
+      wählt man beim Eintreten, nicht auf jedem Abschnitt neu. */}
+  <Sprache sprache={sprache} pfad={Astro.url.pathname} />
 </main>
 
 <footer class="fuss">
@@ -25,5 +30,3 @@ const { abschnitte, ebenen, fuss, beschriftung } = INHALT[sprache];
 </footer>
 
 {ebenen.map((e) => <Ebene e={e} offen={e.schluessel === offen} beschriftung={beschriftung} />)}
-
-<Sprache sprache={sprache} pfad={Astro.url.pathname} />

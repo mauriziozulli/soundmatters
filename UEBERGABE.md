@@ -178,8 +178,19 @@ weiss, was um vier Uhr wirklich passiert». Jetzt führt die Sache, nicht die
 Person: «Wer selber im Booth steht, baut sie anders.» Dieselbe Behauptung,
 ohne sie sich anzuheften — der Leser zieht den Schluss selber.
 
-Zwei «ich» sind absichtlich geblieben: die Begrüssung in 00 und das Angebot in
-04. Dort leistet die erste Person etwas. Überall sonst nicht wieder einbauen.
+Ein «ich» ist absichtlich geblieben: die Begrüssung in 00. Überall sonst nicht
+wieder einbauen.
+
+**Und: Grundsatz statt Aufzählung.** Eine Zwischenfassung listete Geräte und
+Orte auf — Hydrophon, Kontaktmikro, Stereopaar, «zehn nach sechs». Das war zu
+kleinteilig fürs Plakat; die Beispiele gehören auf die Ebene darunter, wo Platz
+für sie ist. Auf dem Plakat steht jetzt je Abschnitt, worum es geht, und dann
+ein Satz, der sagt warum. Konkret bleibt nur, was die Kategorie benennt
+(«Recording-Rigs für DJ-Booths und Festivals, Kabel nach Mass»).
+
+Katalogwörter wie «High End», «Premium» oder «professionell» kommen nicht vor.
+Die Qualität belegt die Datenliste auf der Ebene — Mogami, Neutrik, jede Ader
+durchgemessen. Das überzeugt vom Fach mehr als ein Adjektiv.
 
 ## Stand und was offen ist
 

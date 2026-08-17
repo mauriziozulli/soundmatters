@@ -172,6 +172,57 @@ ebenfalls deutsch (`abschnitt`, `ebene`, `zeiger`) — konsequent bleiben.
 Der Ton der Texte: direkt, keine Werbesprache. Lieber ein Fehler zugeben als
 eine Fähigkeit behaupten.
 
+**Die erste Person ist gewollt.** Der Auftraggeber schreibt so, wie er redet:
+zuerst der Antrieb, dann die Sache. «Ich baue Geräte aus Leidenschaft, aber vor
+allem, weil sie nützlich sind.» Nicht in unpersönliche Grundsätze umschreiben —
+eine Zwischenfassung tat das («Wer damit arbeitet, baut anders als wer sie
+verkauft») und wurde als kühl verworfen.
+
+Was trotzdem gilt: **kein Leistungsausweis.** Der Unterschied liegt zwischen
+«ich mache das, weil …» und «ich kann das besser als …». Das erste ist der Ton,
+das zweite war der Fehler einer früheren Fassung («Deshalb weiss ich, was um
+vier Uhr wirklich passiert»).
+
+Katalogwörter wie «High End», «Premium» oder «professionell» kommen nicht vor.
+Die Qualität belegt die Datenliste auf der Ebene — Mogami, Neutrik, jede Ader
+durchgemessen. Das überzeugt vom Fach mehr als ein Adjektiv.
+
+Konkrete Beispiele gehören auf die Ebene, nicht aufs Plakat. Oben steht, worum
+es geht und warum; die Belege stehen unten.
+
+## Zwei Sprachen
+
+Deutsch liegt unter `/`, Englisch unter `/en`. Beide sind **echte, vorgebaute
+Seiten** — kein Umschalten im Kopf des Browsers. Damit ist jede Fassung
+verschickbar und auffindbar, aus demselben Grund, aus dem die Detail-Ebenen
+eigene Adressen haben. Beide kennen einander über `hreflang`.
+
+Die englischen Ebenen haben eigene Adressen: `/en/rig` und `/en/recordings`.
+Der Schalter unten in der Mitte führt auf dieselbe Ebene in der anderen
+Sprache, sonst auf die Startseite.
+
+**Der Schalter gehört zum ersten Abschnitt und scrollt mit ihm weg.** Er steht
+absolut im Fluss, nicht fest im Fenster — die Sprache wählt man beim
+Eintreten, nicht auf jedem Abschnitt neu. Kein JavaScript nötig. Der Wert
+`top: calc(100svh - …)` hängt an der Abschnittshöhe: wer die ändert, muss ihn
+mitziehen.
+
+Er liegt zudem unter der Detail-Ebene (kleinerer z-index): sobald eine Ebene
+offen ist, ist er verdeckt. Sonst hätte die Ebene einen Ausgang, eine
+Weiterführung *und* einen Sprachwechsel — einer zu viel für die zweite Regel.
+
+Eigennamen bleiben auch im Englischen stehen (Am Bach Festival, Schwing und
+Stampf) — übersetzt wären sie unauffindbar.
+
+## Sprache
+
+Deutsch, Schweizer Rechtschreibung (**ss statt ß**). Das gilt für Inhalt,
+Kommentare im Code, Dateinamen und Commit-Nachrichten. Bezeichner im Code sind
+ebenfalls deutsch (`abschnitt`, `ebene`, `zeiger`) — konsequent bleiben.
+
+Der Ton der Texte: direkt, keine Werbesprache. Lieber ein Fehler zugeben als
+eine Fähigkeit behaupten.
+
 **Die erste Person ist bewusst zurückgenommen.** Eine frühere Fassung stand in
 sieben von fünf Sätzen in «ich» und «mein» und las sich angeberisch — «ich
 weiss, was um vier Uhr wirklich passiert». Jetzt führt die Sache, nicht die

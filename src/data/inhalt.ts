@@ -113,8 +113,8 @@ const DEUTSCH: Fassung = {
       passung: 0.9,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
-      satz: 'Hi, ich bin Maurizio. Ton merkt man erst, wenn er fehlt — und dann sofort.',
-      betont: 'Ton merkt man erst, wenn er fehlt',
+      satz: 'Hi, ich bin Maurizio. Ich arbeite mit Ton, aus Leidenschaft — im Film, auf der Bühne, draussen.',
+      betont: 'Ich arbeite mit Ton, aus Leidenschaft',
       fussnote: 'Runterscrollen'
     },
     {
@@ -125,8 +125,8 @@ const DEUTSCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'Sounddesign, Schnitt und Mischung. Ein Bild wird erst glaubwürdig, wenn der Ton nicht widerspricht.',
-      betont: 'Ein Bild wird erst glaubwürdig, wenn der Ton nicht widerspricht.',
+      satz: 'Ich höre, was noch nicht da ist. Das ist mein Antrieb für guten Filmton — Sounddesign, Schnitt und Mischung.',
+      betont: 'Ich höre, was noch nicht da ist.',
       fussnote: 'Die ganze Werkschau',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -138,8 +138,8 @@ const DEUTSCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Recording-Rigs für DJ-Booths und Festivals, Kabel nach Mass. Wer damit arbeitet, baut anders als wer sie verkauft.',
-      betont: 'Wer damit arbeitet, baut anders als wer sie verkauft.',
+      satz: 'Ich baue Geräte aus Leidenschaft, aber vor allem, weil sie nützlich sind. Recording-Rigs für DJ-Booths und Festivals, Kabel nach Mass.',
+      betont: 'Ich baue Geräte aus Leidenschaft, aber vor allem, weil sie nützlich sind.',
       fussnote: "Zeichnung und Teileliste gibt's dazu",
       link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
     },
@@ -151,8 +151,8 @@ const DEUTSCH: Fassung = {
       passung: 0.93,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Musik', klasse: 'ton' }],
-      satz: 'Auflegen, an Festivals mitbauen, Teil der Kultur sein statt sie nur zu beliefern. Wer dabei ist, weiss, was eine Nacht trägt.',
-      betont: 'Wer dabei ist, weiss, was eine Nacht trägt.',
+      satz: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene — weil es mir Spass macht, Leute damit glücklich zu machen.',
+      betont: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -164,8 +164,8 @@ const DEUTSCH: Fassung = {
       passung: 0.92,
       akzent: 'var(--knochen)',
       zeilen: [{ text: 'Field' }, { text: 'Recording' }],
-      satz: 'Aufnahmen dort, wo es nicht bequem ist — auf dem Gletscher wie im Proberaum. Der Ort bestimmt den Klang, man muss ihm nur Zeit lassen.',
-      betont: 'Der Ort bestimmt den Klang, man muss ihm nur Zeit lassen.',
+      satz: 'Ich nehme auf, wo es nicht bequem ist — auf dem Gletscher wie im Proberaum. Weil ein Ort nur einmal so klingt und ich die Geduld dafür mitbringe.',
+      betont: 'Ich nehme auf, wo es nicht bequem ist',
       fussnote: 'Aufnahmen auf Bestellung',
       link: { text: 'Reinhören', ziel: '/aufnahmen', art: 'ebene' }
     }
@@ -284,8 +284,8 @@ const ENGLISCH: Fassung = {
       passung: 0.9,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
-      satz: "Hi, I'm Maurizio. Sound is what you notice only when it is missing — and then at once.",
-      betont: 'Sound is what you notice only when it is missing',
+      satz: "Hi, I'm Maurizio. I work with sound, out of passion — in film, on stage, outdoors.",
+      betont: 'I work with sound, out of passion',
       fussnote: 'Scroll down'
     },
     {
@@ -296,8 +296,8 @@ const ENGLISCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'Sound design, editing and mixing. A picture only becomes believable when the sound does not contradict it.',
-      betont: 'A picture only becomes believable when the sound does not contradict it.',
+      satz: 'I hear what is not there yet. That is what drives me in film sound — sound design, editing and mixing.',
+      betont: 'I hear what is not there yet.',
       fussnote: 'The full body of work',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -309,8 +309,8 @@ const ENGLISCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Recording rigs for DJ booths and festivals, cables made to measure. Whoever works with them builds differently than whoever sells them.',
-      betont: 'Whoever works with them builds differently than whoever sells them.',
+      satz: 'I build gear out of passion, but above all because it has to be useful. Recording rigs for DJ booths and festivals, cables made to measure.',
+      betont: 'I build gear out of passion, but above all because it has to be useful.',
       fussnote: 'Drawing and parts list come with it',
       link: { text: 'How it is built', ziel: '/en/rig', art: 'ebene' }
     },
@@ -322,8 +322,8 @@ const ENGLISCH: Fassung = {
       passung: 0.93,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Music', klasse: 'ton' }],
-      satz: 'Playing records, helping build festivals, being part of a culture instead of only supplying it. Whoever is there knows what carries a night.',
-      betont: 'Whoever is there knows what carries a night.',
+      satz: 'For fifteen years I have played music and organised events in the cultural scene — because I enjoy making people happy with it.',
+      betont: 'For fifteen years I have played music and organised events in the cultural scene',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -335,8 +335,8 @@ const ENGLISCH: Fassung = {
       passung: 0.92,
       akzent: 'var(--knochen)',
       zeilen: [{ text: 'Field' }, { text: 'Recording' }],
-      satz: 'Recording where it is not comfortable — on a glacier as much as in a rehearsal room. The place decides the sound; you only have to give it time.',
-      betont: 'The place decides the sound; you only have to give it time.',
+      satz: 'I record where it is not comfortable — on a glacier as much as in a rehearsal room. Because a place sounds that way only once, and I bring the patience for it.',
+      betont: 'I record where it is not comfortable',
       fussnote: 'Recordings to order',
       link: { text: 'Have a listen', ziel: '/en/recordings', art: 'ebene' }
     }

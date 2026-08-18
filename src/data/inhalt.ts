@@ -102,7 +102,7 @@ const DEUTSCH: Fassung = {
   beschriftung: {
     schliessen: '✕ Schliessen',
     platzhalter: 'Hier kommt dein Foto hin',
-    stuecke: 'Drei Beispiele'
+    stuecke: 'Vier Beispiele'
   },
   abschnitte: [
     {
@@ -177,7 +177,7 @@ const DEUTSCH: Fassung = {
       kicker: '02 — Custom Gear',
       titel: 'Was ich baue',
       vorspann:
-        'Cases und Kabel, die es so nicht zu kaufen gibt — gebaut für den Ort, an dem sie stehen sollen, nicht für den Katalog. Das hier sind drei, die im Einsatz sind.',
+        'Cases, Kabel und Software, die es so nicht zu kaufen gibt — gebaut für den Fall, den es zu lösen gab, nicht für den Katalog. Das hier sind vier, die im Einsatz sind.',
       stuecke: [
         {
           titel: 'Der Booth-Recorder',
@@ -217,6 +217,19 @@ const DEUTSCH: Fassung = {
             { was: 'Prüfung', wert: 'jede Ader einzeln durchgemessen' },
             { was: 'Beschriftung', wert: 'beidseitig, dauerhaft' },
             { was: 'Länge', wert: 'nach Mass, nicht nach Katalog' }
+          ]
+        },
+        {
+          titel: 'ParanoidQC',
+          einordnung: 'Postproduktion · macOS',
+          text: 'Gebaut gegen den Ärger, der immer gleich anfängt: Der fertige Stereomix kommt als Dual Mono zurück, oder er ist auf einmal zu leise. Datei ins Fenster ziehen, und die App prüft sie gegen ein Ausgabeprofil — Pegel, Lautheit, Kanäle, Format. Pass, Warnung oder Fehler, mit Timecode zur Fundstelle. Nichts wird hochgeladen, alles rechnet lokal.',
+          daten: [
+            { was: 'System', wert: 'macOS, Apple Silicon und Intel' },
+            { was: 'Prüfungen', wert: '21 in fünf Gruppen' },
+            { was: 'Findet', wert: 'Dual Mono, Clipping, Lautheit, True Peak, Aussetzer' },
+            { was: 'Ergebnis', wert: 'Pass, Warnung oder Fehler — mit Timecode' },
+            { was: 'Bericht', wert: 'HTML, CSV oder Text' },
+            { was: 'Zu finden', wert: 'mauriziozulli.com/paranoid-qc' }
           ]
         }
       ],
@@ -273,7 +286,7 @@ const ENGLISCH: Fassung = {
   beschriftung: {
     schliessen: '✕ Close',
     platzhalter: 'Your photo goes here',
-    stuecke: 'Three examples'
+    stuecke: 'Four examples'
   },
   abschnitte: [
     {
@@ -348,7 +361,7 @@ const ENGLISCH: Fassung = {
       kicker: '02 — Custom Gear',
       titel: 'What I Build',
       vorspann:
-        'Cases and cables you cannot buy like this — built for the place they have to work in, not for a catalogue. These three are in use.',
+        'Cases, cables and software you cannot buy like this — built for the problem that needed solving, not for a catalogue. These four are in use.',
       stuecke: [
         {
           titel: 'The Booth Recorder',
@@ -388,6 +401,19 @@ const ENGLISCH: Fassung = {
             { was: 'Testing', wert: 'every core measured individually' },
             { was: 'Labelling', wert: 'both ends, permanent' },
             { was: 'Length', wert: 'to measure, not to catalogue' }
+          ]
+        },
+        {
+          titel: 'ParanoidQC',
+          einordnung: 'Post-production · macOS',
+          text: 'Built against the trouble that always starts the same way: the finished stereo mix comes back as dual mono, or it is suddenly too quiet. Drag the file into the window and the app checks it against a delivery profile — levels, loudness, channels, format. Pass, warning or fail, with a timecode for every finding. Nothing is uploaded; it all runs locally.',
+          daten: [
+            { was: 'System', wert: 'macOS, Apple Silicon and Intel' },
+            { was: 'Checks', wert: '21 across five groups' },
+            { was: 'Catches', wert: 'dual mono, clipping, loudness, true peak, dropouts' },
+            { was: 'Result', wert: 'pass, warning or fail — with timecode' },
+            { was: 'Report', wert: 'HTML, CSV or text' },
+            { was: 'Where', wert: 'mauriziozulli.com/paranoid-qc' }
           ]
         }
       ],

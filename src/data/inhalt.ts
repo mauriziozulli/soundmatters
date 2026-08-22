@@ -125,8 +125,8 @@ const DEUTSCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'Gute Aufnahmen sind wichtig für die Story. Ich höre, was noch nicht da ist — Sounddesign, Schnitt und Mischung.',
-      betont: 'Gute Aufnahmen sind wichtig für die Story.',
+      satz: 'Ton erzählt mit — er entscheidet, ob deine Geschichte trägt. Ich höre, was noch nicht da ist: Sounddesign, Schnitt und Mischung.',
+      betont: 'Ton erzählt mit — er entscheidet, ob deine Geschichte trägt.',
       fussnote: 'Die ganze Werkschau',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -309,8 +309,8 @@ const ENGLISCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'Good recordings carry the story. I hear what is not there yet — sound design, editing and mixing.',
-      betont: 'Good recordings carry the story.',
+      satz: 'Sound tells the story too — it decides whether yours carries. I hear what is not there yet: sound design, editing and mixing.',
+      betont: 'Sound tells the story too — it decides whether yours carries.',
       fussnote: 'The full body of work',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },

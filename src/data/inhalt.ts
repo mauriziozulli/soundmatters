@@ -113,8 +113,8 @@ const DEUTSCH: Fassung = {
       passung: 0.9,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
-      satz: 'Hi, ich bin Maurizio. Ich arbeite mit Ton, aus Leidenschaft — im Film, auf der Bühne, draussen.',
-      betont: 'Ich arbeite mit Ton, aus Leidenschaft',
+      satz: 'Schön, dass du da bist. Dir ist Ton also wichtig — dann bist du hier richtig. Komm und schau.',
+      betont: 'Dir ist Ton also wichtig — dann bist du hier richtig.',
       fussnote: 'Runterscrollen'
     },
     {
@@ -125,8 +125,8 @@ const DEUTSCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'Ich höre, was noch nicht da ist. Das ist mein Antrieb für guten Filmton — Sounddesign, Schnitt und Mischung.',
-      betont: 'Ich höre, was noch nicht da ist.',
+      satz: 'Gute Aufnahmen sind wichtig für die Story. Ich höre, was noch nicht da ist — Sounddesign, Schnitt und Mischung.',
+      betont: 'Gute Aufnahmen sind wichtig für die Story.',
       fussnote: 'Die ganze Werkschau',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -138,8 +138,8 @@ const DEUTSCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Ich baue Geräte aus Leidenschaft, aber vor allem, weil sie nützlich sind. Recording-Rigs für DJ-Booths und Festivals, Kabel nach Mass.',
-      betont: 'Ich baue Geräte aus Leidenschaft, aber vor allem, weil sie nützlich sind.',
+      satz: 'Custom Audio-Kabel für die Profis unter uns, dazu Recording-Rigs für DJ-Booths und Festivals. Gebaut, weil sie nützlich sein müssen.',
+      betont: 'Custom Audio-Kabel für die Profis unter uns',
       fussnote: "Zeichnung und Teileliste gibt's dazu",
       link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
     },
@@ -151,8 +151,8 @@ const DEUTSCH: Fassung = {
       passung: 0.93,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Musik', klasse: 'ton' }],
-      satz: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene — weil es mir Spass macht, Leute damit glücklich zu machen.',
-      betont: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene',
+      satz: 'DJ-Set mastern? Da kann ich dir helfen. Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene.',
+      betont: 'DJ-Set mastern? Da kann ich dir helfen.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -164,8 +164,8 @@ const DEUTSCH: Fassung = {
       passung: 0.92,
       akzent: 'var(--knochen)',
       zeilen: [{ text: 'Field' }, { text: 'Recording' }],
-      satz: 'Ich nehme auf, wo es nicht bequem ist — auf dem Gletscher wie im Proberaum. Weil ein Ort nur einmal so klingt und ich die Geduld dafür mitbringe.',
-      betont: 'Ich nehme auf, wo es nicht bequem ist',
+      satz: 'Du brauchst eine Aufnahme, die es so noch nicht gibt? Sag mir den Ort — auf dem Gletscher wie im Proberaum.',
+      betont: 'Sag mir den Ort',
       fussnote: 'Aufnahmen auf Bestellung',
       link: { text: 'Reinhören', ziel: '/aufnahmen', art: 'ebene' }
     }
@@ -177,7 +177,7 @@ const DEUTSCH: Fassung = {
       kicker: '02 — Custom Gear',
       titel: 'Was ich baue',
       vorspann:
-        'Cases, Kabel und Software, die es so nicht zu kaufen gibt — gebaut für den Fall, den es zu lösen gab, nicht für den Katalog. Das hier sind vier, die im Einsatz sind.',
+        'Cases, Kabel und Software, die es so nicht zu kaufen gibt — gebaut für den Fall, den es zu lösen gab. Schau dir an, was im Einsatz ist.',
       stuecke: [
         {
           titel: 'Der Booth-Recorder',
@@ -241,7 +241,7 @@ const DEUTSCH: Fassung = {
       kicker: '04 — Field Recording',
       titel: 'Die Aufnahmen',
       vorspann:
-        'Orte klingen nie zweimal gleich. Das hier sind die, bei denen es sich gelohnt hat, das Zeug hochzuschleppen.',
+        'Orte klingen nie zweimal gleich. Das hier sind die, bei denen es sich gelohnt hat, das Zeug hochzuschleppen — hör rein.',
       bloecke: [
         {
           titel: 'Eis, das arbeitet',
@@ -297,8 +297,8 @@ const ENGLISCH: Fassung = {
       passung: 0.9,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
-      satz: "Hi, I'm Maurizio. I work with sound, out of passion — in film, on stage, outdoors.",
-      betont: 'I work with sound, out of passion',
+      satz: 'Good to have you here. So sound matters to you — then you are in the right place. Come and have a look.',
+      betont: 'So sound matters to you — then you are in the right place.',
       fussnote: 'Scroll down'
     },
     {
@@ -309,8 +309,8 @@ const ENGLISCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'I hear what is not there yet. That is what drives me in film sound — sound design, editing and mixing.',
-      betont: 'I hear what is not there yet.',
+      satz: 'Good recordings carry the story. I hear what is not there yet — sound design, editing and mixing.',
+      betont: 'Good recordings carry the story.',
       fussnote: 'The full body of work',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -322,8 +322,8 @@ const ENGLISCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'I build gear out of passion, but above all because it has to be useful. Recording rigs for DJ booths and festivals, cables made to measure.',
-      betont: 'I build gear out of passion, but above all because it has to be useful.',
+      satz: 'Custom audio cables for the pros among us, plus recording rigs for DJ booths and festivals. Built because they have to be useful.',
+      betont: 'Custom audio cables for the pros among us',
       fussnote: 'Drawing and parts list come with it',
       link: { text: 'How it is built', ziel: '/en/rig', art: 'ebene' }
     },
@@ -335,8 +335,8 @@ const ENGLISCH: Fassung = {
       passung: 0.93,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Music', klasse: 'ton' }],
-      satz: 'For fifteen years I have played music and organised events in the cultural scene — because I enjoy making people happy with it.',
-      betont: 'For fifteen years I have played music and organised events in the cultural scene',
+      satz: 'Need your DJ set mastered? I can help. For fifteen years I have played music and organised events in the cultural scene.',
+      betont: 'Need your DJ set mastered? I can help.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -348,8 +348,8 @@ const ENGLISCH: Fassung = {
       passung: 0.92,
       akzent: 'var(--knochen)',
       zeilen: [{ text: 'Field' }, { text: 'Recording' }],
-      satz: 'I record where it is not comfortable — on a glacier as much as in a rehearsal room. Because a place sounds that way only once, and I bring the patience for it.',
-      betont: 'I record where it is not comfortable',
+      satz: 'Need a recording that does not exist yet? Tell me the place — on a glacier as much as in a rehearsal room.',
+      betont: 'Tell me the place',
       fussnote: 'Recordings to order',
       link: { text: 'Have a listen', ziel: '/en/recordings', art: 'ebene' }
     }
@@ -361,7 +361,7 @@ const ENGLISCH: Fassung = {
       kicker: '02 — Custom Gear',
       titel: 'What I Build',
       vorspann:
-        'Cases, cables and software you cannot buy like this — built for the problem that needed solving, not for a catalogue. These four are in use.',
+        'Cases, cables and software you cannot buy like this — built for the problem that needed solving. Have a look at what is in use.',
       stuecke: [
         {
           titel: 'The Booth Recorder',
@@ -425,7 +425,7 @@ const ENGLISCH: Fassung = {
       kicker: '04 — Field Recording',
       titel: 'The Recordings',
       vorspann:
-        'Places never sound the same twice. These are the ones where hauling the gear up there paid off.',
+        'Places never sound the same twice. These are the ones where hauling the gear up there paid off — have a listen.',
       bloecke: [
         {
           titel: 'Ice at work',

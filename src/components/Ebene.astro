@@ -54,8 +54,15 @@ const { e, offen = false, beschriftung } = Astro.props;
             <div class="stueck__einordnung">{st.einordnung}</div>
             <h3 class="stueck__titel">{st.titel}</h3>
             <p class="stueck__text">{st.text}</p>
-            {st.bild && (
-              <img class="stueck__bild" src={st.bild} alt="" loading="lazy" decoding="async" />
+            {st.bilder && st.bilder.length > 0 && (
+              <div class="stueck__bilder" data-anzahl={st.bilder.length}>
+                {st.bilder.map((f) => (
+                  <figure class="stueck__bild">
+                    <img src={f.datei} alt="" loading="lazy" decoding="async" />
+                    <figcaption>{f.text}</figcaption>
+                  </figure>
+                ))}
+              </div>
             )}
             <dl class="stueck__daten">
               {st.daten.map((d) => (

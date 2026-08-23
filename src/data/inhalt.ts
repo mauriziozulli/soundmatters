@@ -67,10 +67,12 @@ export type Ebene = {
     /** Kurze Verortung, erscheint klein über dem Titel */
     einordnung: string;
     text: string;
-    /** Foto des Geräts. Datei unter public/fotos/ ablegen, Pfad hier
-     *  eintragen — zum Beispiel '/fotos/peli-case.jpg'. Weglassen, solange
-     *  keins da ist; dann wird einfach keins gezeigt. */
-    bild?: string;
+    /** Fotos des Geräts, je mit einer Zeile darunter. Datei unter
+     *  public/fotos/ ablegen und hier eintragen. Ein Bild steht allein,
+     *  mehrere stehen nebeneinander. Weglassen, solange keins da ist.
+     *  Ab etwa fünf Bildern wird die Reihe unruhig — dann lieber ein
+     *  eigenes Stück je Bauform. */
+    bilder?: { datei: string; text: string }[];
     daten: { was: string; wert: string }[];
   }[];
   handlung: { text: string; ziel: string };
@@ -195,7 +197,7 @@ const DEUTSCH: Fassung = {
         {
           titel: 'Das Gletscher-Case',
           einordnung: 'Feld · Expedition · Eis',
-          bild: '/fotos/peli-case.jpg',
+          bilder: [{ datei: '/fotos/peli-case.jpg', text: 'Peli 1400 mit dem Anubis, am Griesgletscher' }],
           text: 'Ein Peli 1400, ausgebaut für den Merging Anubis SPS Premium — Vorverstärker und Monitorcontroller in einem, mitgenommen auf den Griesgletscher. Der Strom kommt aus SWIT-NP-1-Akkus; über einen powerCON läuft und lädt das Case gleichzeitig, und im Feld übernimmt der Akku nahtlos. Zwei Wege, eine Aufnahme.',
           daten: [
             { was: 'Case', wert: 'Peli 1400, selber ausgebaut' },
@@ -209,12 +211,15 @@ const DEUTSCH: Fassung = {
         {
           titel: 'Kabel nach Mass',
           einordnung: 'Location Sound · Bag · Angel',
-          bild: '/fotos/kabel.jpg',
-          text: 'Mogami-Kabel, Neutrik-Stecker, von Hand gelötet und jede Ader einzeln durchgemessen. Fünfpolig für Mid/Side an der Angel, Breakout von fünf Pol auf zwei dreipolige Flachstecker fürs Recording-Bag, Verlängerungen für Ambisonics-Rigs. Mogami, weil es im Bag kaum Griffgeräusche überträgt und auch nach hundert Drehtagen noch weich in der Hand liegt.',
+          bilder: [
+            { datei: '/fotos/kabel.jpg', text: 'Fünfpolig für Mid/Side, Breakout 5 → 2 × 3 fürs Bag' },
+            { datei: '/fotos/kabel-adapter.jpg', text: 'Adapter zwischen Steckerwelten, ebenfalls nach Mass' }
+          ],
+          text: 'Mogami-Kabel, Neutrik-Stecker, von Hand gelötet und jede Ader einzeln durchgemessen. Fünfpolig für Mid/Side an der Angel, Breakout von fünf Pol auf zwei dreipolige Flachstecker fürs Recording-Bag, Verlängerungen für Ambisonics-Rigs, dazu Adapter zwischen Steckerwelten, die nicht zusammenpassen wollten. Mogami, weil es im Bag kaum Griffgeräusche überträgt und auch nach hundert Drehtagen noch weich in der Hand liegt.',
           daten: [
             { was: 'Kabel', wert: 'Mogami, Sternvierer' },
             { was: 'Stecker', wert: 'Neutrik, im Bag in Flachbauform' },
-            { was: 'Gebaut', wert: 'Mid/Side an der Angel, Breakout fürs Bag, Verlängerungen' },
+            { was: 'Gebaut', wert: 'Mid/Side, Breakout fürs Bag, Adapter, Verlängerungen' },
             { was: 'Warum Mogami', wert: 'wenig Griffgeräusch, bleibt lange weich' },
             { was: 'Prüfung', wert: 'jede Ader einzeln durchgemessen' },
             { was: 'Länge', wert: 'nach Mass, nicht nach Katalog' }
@@ -380,7 +385,7 @@ const ENGLISCH: Fassung = {
         {
           titel: 'The Glacier Case',
           einordnung: 'Field · Expedition · Ice',
-          bild: '/fotos/peli-case.jpg',
+          bilder: [{ datei: '/fotos/peli-case.jpg', text: 'Peli 1400 with the Anubis, on the Gries Glacier' }],
           text: 'A Peli 1400 built out for the Merging Anubis SPS Premium — preamp and monitor controller in one, carried up the Gries Glacier. Power comes from SWIT NP-1 batteries; a powerCON lets the case run and charge at once, and in the field the battery takes over seamlessly. Two paths, one recording.',
           daten: [
             { was: 'Case', wert: 'Peli 1400, built out by hand' },
@@ -394,12 +399,15 @@ const ENGLISCH: Fassung = {
         {
           titel: 'Cables to Measure',
           einordnung: 'Location sound · Bag · Boom',
-          bild: '/fotos/kabel.jpg',
-          text: 'Mogami cable, Neutrik connectors, soldered by hand and every core measured individually. Five-pin for mid/side on the boom, a breakout from five-pin to two low-profile three-pin connectors for the recording bag, extensions for ambisonic rigs. Mogami, because it passes on almost no handling noise inside a bag and still lies soft in the hand after a hundred shooting days.',
+          bilder: [
+            { datei: '/fotos/kabel.jpg', text: 'Five-pin for mid/side, breakout 5 → 2 × 3 for the bag' },
+            { datei: '/fotos/kabel-adapter.jpg', text: 'Adapters between connector worlds, also made to measure' }
+          ],
+          text: 'Mogami cable, Neutrik connectors, soldered by hand and every core measured individually. Five-pin for mid/side on the boom, a breakout from five-pin to two low-profile three-pin connectors for the recording bag, extensions for ambisonic rigs, plus adapters between connector worlds that refused to fit. Mogami, because it passes on almost no handling noise inside a bag and still lies soft in the hand after a hundred shooting days.',
           daten: [
             { was: 'Cable', wert: 'Mogami, star-quad' },
             { was: 'Connectors', wert: 'Neutrik, low-profile in the bag' },
-            { was: 'Built', wert: 'mid/side on the boom, breakouts for the bag, extensions' },
+            { was: 'Built', wert: 'mid/side, breakouts for the bag, adapters, extensions' },
             { was: 'Why Mogami', wert: 'little handling noise, stays supple' },
             { was: 'Testing', wert: 'every core measured individually' },
             { was: 'Length', wert: 'to measure, not to catalogue' }

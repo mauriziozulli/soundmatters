@@ -208,14 +208,15 @@ const DEUTSCH: Fassung = {
         },
         {
           titel: 'Kabel nach Mass',
-          einordnung: 'Studio · Bühne · Set',
-          text: 'Mogami-Kabel, Neutrik-Stecker, von Hand gelötet und einzeln durchgemessen. Breakout von Multipin auf Einzelkanäle, Adapter zwischen zwei Welten, die nicht zusammenpassen wollten, Splitter, wenn ein Signal an zwei Orte muss. Auf Länge gebaut, nicht ab Lager — ein Kabel, das zwei Meter zu lang ist, liegt am Ende im Weg.',
+          einordnung: 'Location Sound · Bag · Angel',
+          bild: '/fotos/kabel.jpg',
+          text: 'Mogami-Kabel, Neutrik-Stecker, von Hand gelötet und jede Ader einzeln durchgemessen. Fünfpolig für Mid/Side an der Angel, Breakout von fünf Pol auf zwei dreipolige Flachstecker fürs Recording-Bag, Verlängerungen für Ambisonics-Rigs. Mogami, weil es im Bag kaum Griffgeräusche überträgt und auch nach hundert Drehtagen noch weich in der Hand liegt.',
           daten: [
-            { was: 'Kabel', wert: 'Mogami' },
-            { was: 'Stecker', wert: 'Neutrik' },
-            { was: 'Gebaut', wert: 'Breakout, Adapter, Splitter, Sonderlängen' },
+            { was: 'Kabel', wert: 'Mogami, Sternvierer' },
+            { was: 'Stecker', wert: 'Neutrik, im Bag in Flachbauform' },
+            { was: 'Gebaut', wert: 'Mid/Side an der Angel, Breakout fürs Bag, Verlängerungen' },
+            { was: 'Warum Mogami', wert: 'wenig Griffgeräusch, bleibt lange weich' },
             { was: 'Prüfung', wert: 'jede Ader einzeln durchgemessen' },
-            { was: 'Beschriftung', wert: 'beidseitig, dauerhaft' },
             { was: 'Länge', wert: 'nach Mass, nicht nach Katalog' }
           ]
         },
@@ -392,14 +393,15 @@ const ENGLISCH: Fassung = {
         },
         {
           titel: 'Cables to Measure',
-          einordnung: 'Studio · Stage · Set',
-          text: 'Mogami cable, Neutrik connectors, soldered by hand and tested core by core. Breakouts from multipin to single channels, adapters between two worlds that refused to fit, splitters when one signal has to reach two places. Built to length, not off the shelf — a cable two metres too long ends up in the way.',
+          einordnung: 'Location sound · Bag · Boom',
+          bild: '/fotos/kabel.jpg',
+          text: 'Mogami cable, Neutrik connectors, soldered by hand and every core measured individually. Five-pin for mid/side on the boom, a breakout from five-pin to two low-profile three-pin connectors for the recording bag, extensions for ambisonic rigs. Mogami, because it passes on almost no handling noise inside a bag and still lies soft in the hand after a hundred shooting days.',
           daten: [
-            { was: 'Cable', wert: 'Mogami' },
-            { was: 'Connectors', wert: 'Neutrik' },
-            { was: 'Built', wert: 'breakouts, adapters, splitters, custom lengths' },
+            { was: 'Cable', wert: 'Mogami, star-quad' },
+            { was: 'Connectors', wert: 'Neutrik, low-profile in the bag' },
+            { was: 'Built', wert: 'mid/side on the boom, breakouts for the bag, extensions' },
+            { was: 'Why Mogami', wert: 'little handling noise, stays supple' },
             { was: 'Testing', wert: 'every core measured individually' },
-            { was: 'Labelling', wert: 'both ends, permanent' },
             { was: 'Length', wert: 'to measure, not to catalogue' }
           ]
         },

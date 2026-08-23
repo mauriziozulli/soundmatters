@@ -103,6 +103,15 @@ a { color: inherit; }
 }
 .abschnitt__satz b { font-weight: 400; color: var(--akzent, var(--signal)); }
 
+/* Abschnitt 04 führt Knochen — dieselbe Farbe wie der Fliesstext. Dort
+   trägt der Farbton nicht, also übernimmt der Hellwert: der Rest des
+   Satzes tritt zurück, die Hervorhebung bleibt voll. Kein Fettschnitt,
+   der wäre die dritte Betonungsart neben Farbe und Hellwert. */
+.abschnitt[data-tonauf-ton] .abschnitt__satz {
+  color: color-mix(in srgb, var(--knochen) 60%, transparent);
+}
+.abschnitt[data-tonauf-ton] .abschnitt__satz b { color: var(--knochen); }
+
 /* =========================================================================
    DIE FÜNF SCHRIFTBILDER
    Jeder Abschnitt hat sein eigenes — gleiche Familie, andere Silhouette.

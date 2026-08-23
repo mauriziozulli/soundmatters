@@ -75,7 +75,13 @@ export type Ebene = {
     bilder?: { datei: string; text: string }[];
     daten: { was: string; wert: string }[];
   }[];
-  handlung: { text: string; ziel: string };
+  /** Weiterführung am Fuss der Ebene. **Optional, und meistens richtig
+   *  weggelassen.** Hier standen einmal «Bau mir eins» und «Aufnahme
+   *  bestellen» als Mail mit vorbereitetem Betreff — das machte aus der
+   *  Ebene ein Bestellformular. Wer vom Aufkleber kommt, erwartet eine
+   *  Haltung, keinen Laden; die Adresse steht ohnehin im Fuss der Seite.
+   *  Die zweite Regel erlaubt eine Weiterführung, sie verlangt keine. */
+  handlung?: { text: string; ziel: string };
 };
 
 export type Fuss = {
@@ -127,8 +133,8 @@ const DEUTSCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'Ton erzählt mit — er entscheidet, ob deine Geschichte trägt. Ich höre, was noch nicht da ist: Sounddesign, Schnitt und Mischung.',
-      betont: 'Ton erzählt mit — er entscheidet, ob deine Geschichte trägt.',
+      satz: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt. Ich höre, was noch nicht da ist: Sounddesign, Schnitt und Mischung.',
+      betont: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt.',
       fussnote: 'Die ganze Werkschau',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -140,8 +146,8 @@ const DEUTSCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Custom Audio-Kabel für die Profis unter uns, dazu Recording-Rigs für DJ-Booths und Festivals. Gebaut, weil sie nützlich sein müssen.',
-      betont: 'Custom Audio-Kabel für die Profis unter uns',
+      satz: 'Ich baue Kabel und Recording-Rigs für DJ-Booths und Festivals. Aus Leidenschaft, aber vor allem, weil sie nützlich sein müssen.',
+      betont: 'Ich baue Kabel und Recording-Rigs für DJ-Booths und Festivals.',
       fussnote: "Zeichnung und Teileliste gibt's dazu",
       link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
     },
@@ -153,8 +159,8 @@ const DEUTSCH: Fassung = {
       passung: 0.93,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Musik', klasse: 'ton' }],
-      satz: 'DJ-Set mastern? Da kann ich dir helfen. Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene.',
-      betont: 'DJ-Set mastern? Da kann ich dir helfen.',
+      satz: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene. Die Rigs baue ich für Booths, in denen ich selber stehe.',
+      betont: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -166,9 +172,9 @@ const DEUTSCH: Fassung = {
       passung: 0.92,
       akzent: 'var(--knochen)',
       zeilen: [{ text: 'Field' }, { text: 'Recording' }],
-      satz: 'Du brauchst eine Aufnahme, die es so noch nicht gibt? Sag mir den Ort — auf dem Gletscher wie im Proberaum.',
-      betont: 'Sag mir den Ort',
-      fussnote: 'Aufnahmen auf Bestellung',
+      satz: 'Ich nehme auf, was sonst nicht aufgenommen wird — auf dem Gletscher wie im Proberaum. Dieselben Ohren, die den Film mischen.',
+      betont: 'Ich nehme auf, was sonst nicht aufgenommen wird',
+      fussnote: 'Bisher einunddreissig Orte',
       link: { text: 'Reinhören', ziel: '/aufnahmen', art: 'ebene' }
     }
   ],
@@ -240,8 +246,7 @@ const DEUTSCH: Fassung = {
             { was: 'Zu finden', wert: 'mauriziozulli.com/paranoid-qc' }
           ]
         }
-      ],
-      handlung: { text: 'Bau mir eins', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Rig%20bauen' }
+      ]
     },
     {
       schluessel: 'aufnahmen',
@@ -270,8 +275,7 @@ const DEUTSCH: Fassung = {
         { was: 'Am lautesten', wert: 'Seilbahn unter Last' },
         { was: 'Zu haben', wert: 'einzeln oder als Paket, für alle' },
         { was: 'Auf Bestellung', wert: 'sag mir den Ort' }
-      ],
-      handlung: { text: 'Aufnahme bestellen', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Feldaufnahme' }
+      ]
     }
   ],
   fuss: {
@@ -317,8 +321,8 @@ const ENGLISCH: Fassung = {
       passung: 0.94,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
-      satz: 'Sound tells the story too — it decides whether yours carries. I hear what is not there yet: sound design, editing and mixing.',
-      betont: 'Sound tells the story too — it decides whether yours carries.',
+      satz: 'Sound tells the story too — it decides whether the story carries. I hear what is not there yet: sound design, editing and mixing.',
+      betont: 'Sound tells the story too — it decides whether the story carries.',
       fussnote: 'The full body of work',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
@@ -330,8 +334,8 @@ const ENGLISCH: Fassung = {
       passung: 0.84,
       akzent: 'var(--ocker)',
       zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
-      satz: 'Custom audio cables for the pros among us, plus recording rigs for DJ booths and festivals. Built because they have to be useful.',
-      betont: 'Custom audio cables for the pros among us',
+      satz: 'I build cables and recording rigs for DJ booths and festivals. Out of passion, but above all because they have to be useful.',
+      betont: 'I build cables and recording rigs for DJ booths and festivals.',
       fussnote: 'Drawing and parts list come with it',
       link: { text: 'How it is built', ziel: '/en/rig', art: 'ebene' }
     },
@@ -343,8 +347,8 @@ const ENGLISCH: Fassung = {
       passung: 0.93,
       akzent: 'var(--verdigris)',
       zeilen: [{ text: 'Music', klasse: 'ton' }],
-      satz: 'Need your DJ set mastered? I can help. For fifteen years I have played music and organised events in the cultural scene.',
-      betont: 'Need your DJ set mastered? I can help.',
+      satz: 'For fifteen years I have played music and organised events in the cultural scene. I build the rigs for booths I stand in myself.',
+      betont: 'For fifteen years I have played music and organised events in the cultural scene.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -356,9 +360,9 @@ const ENGLISCH: Fassung = {
       passung: 0.92,
       akzent: 'var(--knochen)',
       zeilen: [{ text: 'Field' }, { text: 'Recording' }],
-      satz: 'Need a recording that does not exist yet? Tell me the place — on a glacier as much as in a rehearsal room.',
-      betont: 'Tell me the place',
-      fussnote: 'Recordings to order',
+      satz: 'I record what otherwise goes unrecorded — on a glacier as much as in a rehearsal room. The same ears that mix the film.',
+      betont: 'I record what otherwise goes unrecorded',
+      fussnote: 'Thirty-one places so far',
       link: { text: 'Have a listen', ziel: '/en/recordings', art: 'ebene' }
     }
   ],
@@ -430,8 +434,7 @@ const ENGLISCH: Fassung = {
             { was: 'Where', wert: 'mauriziozulli.com/paranoid-qc' }
           ]
         }
-      ],
-      handlung: { text: 'Build me one', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Build%20a%20rig' }
+      ]
     },
     {
       schluessel: 'recordings',
@@ -460,8 +463,7 @@ const ENGLISCH: Fassung = {
         { was: 'Loudest', wert: 'cable car under load' },
         { was: 'Available', wert: 'single or as a pack, for anyone' },
         { was: 'To order', wert: 'tell me the place' }
-      ],
-      handlung: { text: 'Order a recording', ziel: 'mailto:maurizio@mauriziozulli.com?subject=Field%20recording' }
+      ]
     }
   ],
   fuss: {

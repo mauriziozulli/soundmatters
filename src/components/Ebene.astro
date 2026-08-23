@@ -77,6 +77,8 @@ const { e, offen = false, beschriftung } = Astro.props;
       </section>
     )}
 
-    <a class="ebene__handlung" href={e.handlung.ziel}>{e.handlung.text} →</a>
+    {e.handlung && (
+      <a class="ebene__handlung" href={e.handlung.ziel}>{e.handlung.text} →</a>
+    )}
   </div>
 </div>

@@ -58,7 +58,9 @@ Unterschieden werden die Abschnitte über **Farbe, Balken und Kontur**, nicht
    einer Ebene weiternavigiert, ist ein Menü entstanden — und Menüs waren
    ausdrücklich unerwünscht.
 2. **Pro Ebene ein Ausgang und höchstens eine Weiterführung.** Oben
-   „Schliessen", unten eine Handlung. Keine Reiter, keine Unterpunkte.
+   „Schliessen", unten höchstens eine Handlung. Keine Reiter, keine
+   Unterpunkte. **«Höchstens» heisst auch: keine.** `handlung` ist optional,
+   und beide Ebenen kommen ohne aus.
 
 Dazu die Pfeil-Konvention: **↗ führt von der Seite weg, → öffnet die Ebene
 darüber.** Damit weiss man vorher, ob man soundmatters.audio verlässt.
@@ -124,6 +126,11 @@ Nur bei deutlich hellerem Bild `kontrast` in `src/data/bilder.ts` nachziehen.
   Polster sitzt die Schrift sichtbar daneben. Die Werte in `.balken` sind
   ausgemessen; wer die Zeilenhöhe ändert, muss sie neu messen. Dasselbe gilt
   für den Aufkleber.
+- **Die Hervorhebung im Satz läuft über die Farbe — ausser wo die Leitfarbe
+  die Textfarbe IST.** Abschnitt 04 führt Knochen, also stand die
+  Hervorhebung dort Ton auf Ton und war schlicht unsichtbar. Solche Abschnitte
+  tragen `data-tonauf-ton`; dann tritt der Rest des Satzes im Hellwert zurück.
+  Wer einem Abschnitt Knochen als Leitfarbe gibt, braucht das Merkmal auch.
 - **Der Höhendeckel muss die gemessene Höhe deckeln, nicht den Schriftgrad.**
   Zeilenhöhe, Polster und Balken zählen mit: ein Schriftbild mit Zeilenhöhe
   über 1 sprengt sonst den Abschnitt, obwohl ein Deckel gesetzt ist. `schrift.ts`
@@ -196,6 +203,45 @@ Mass»). Die Belege stehen unten.
 
 **«die Booth», nicht «der Booth».** In Zusammensetzungen entscheidet das zweite
 Wort: «der Booth-Recorder», «am Booth-Ausgang» sind richtig.
+
+### Das Plakat bietet nichts an
+
+Der wichtigste Ton-Entscheid, und der, der am leichtesten zurückrutscht.
+
+Eine Fassung hatte in drei von fünf Abschnitten ein Angebot an «dich» —
+«Custom Audio-Kabel für die Profis unter uns», «DJ-Set mastern? Da kann ich
+dir helfen», «Sag mir den Ort» — und am Fuss der beiden Ebenen je einen Knopf,
+der als Mail mit vorbereitetem Betreff aufging: «Bau mir eins», «Aufnahme
+bestellen». Zusammen war das ein Bestellformular.
+
+Das Problem ist nicht der Verkauf an sich, sondern die Lücke: Wer vom Aufkleber
+kommt, erwartet «hier war jemand» und findet eine Preisliste ohne Preise. Diese
+Lücke liest sich als Masche — und zwar besonders bei Leuten vom Fach, also
+genau beim Publikum dieser Seite.
+
+Kommerziell macht eine Seite nicht ihr Aufbau, sondern **Angebot,
+Handlungsaufforderung und Nutzen-für-dich.** Fünf Vollbilder mit je einem Satz
+sind eine Plakatform, keine Verkaufsform.
+
+Was jetzt gilt:
+
+- **Kein Angebot, keine Aufforderung, kein Nutzenversprechen auf dem Plakat.**
+  Aussagen in der ersten Person, sonst nichts. Auch keine Frage an den Leser
+  («Du brauchst …?»).
+- **Kein «dein».** «ob die Geschichte trägt», nicht «ob deine Geschichte trägt».
+- **Keine Bestellknöpfe auf den Ebenen.** Die Adresse steht im Fuss der Seite,
+  das genügt. Wer das Kabelblatt gelesen hat, findet sie.
+- Die Ebenen selbst bleiben, wie sie sind. Dort steht das Konkrete, und dort
+  darf eine Datenzeile auch sagen, dass es etwas zu haben gibt.
+
+Der Gedanke dahinter steht schon oben: Aufträge entstehen als Nebenwirkung,
+nicht als Ziel. Überzeugend ist die Datenliste — Mogami, Neutrik, jede Ader
+durchgemessen, vier Grad unter null —, nicht der Knopf darunter.
+
+**Und gegen «verspielter, chaotischer»:** gewollte Unordnung ist auch nur ein
+Stil, und zwar der von jeder zweiten Agenturseite. Die Kraft dieser Seite ist
+Präzision. Merkwürdiger Inhalt in strenger Form überzeugt weit mehr als
+chaotische Form mit Verkaufsinhalt.
 
 ### Der Ton ist zweimal umgeschlagen
 

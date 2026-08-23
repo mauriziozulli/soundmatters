@@ -17,7 +17,16 @@ const danach = stelle >= 0 ? a.satz.slice(stelle + a.betont!.length) : '';
 const pfeil = a.link?.art === 'extern' ? '↗' : '→';
 ---
 
-<section class="abschnitt" data-eingriff={eingriff} style={`--akzent: ${a.akzent}`}>
+{/* Ist die Leitfarbe des Abschnitts die Textfarbe selbst (04, Knochen),
+    kann die Hervorhebung im Satz nicht über den Farbton führen — sie wäre
+    Ton auf Ton und damit unsichtbar. Das Merkmal schaltet in global.css
+    auf den Hellwert um. */}
+<section
+  class="abschnitt"
+  data-eingriff={eingriff}
+  data-tonauf-ton={a.akzent === 'var(--knochen)' ? 'true' : null}
+  style={`--akzent: ${a.akzent}`}
+>
   <canvas class="abschnitt__flaeche" data-bild={a.bild} aria-hidden="true"></canvas>
 
   <div class="abschnitt__oben">

@@ -187,61 +187,30 @@ Katalogwörter wie «High End», «Premium» oder «professionell» kommen nicht
 Die Qualität belegt die Datenliste auf der Ebene — Mogami, Neutrik, jede Ader
 durchgemessen. Das überzeugt vom Fach mehr als ein Adjektiv.
 
-Konkrete Beispiele gehören auf die Ebene, nicht aufs Plakat. Oben steht, worum
-es geht und warum; die Belege stehen unten.
+**Grundsatz statt Aufzählung.** Konkrete Beispiele gehören auf die Ebene, nicht
+aufs Plakat. Eine Zwischenfassung listete oben Geräte und Orte auf — Hydrophon,
+Kontaktmikro, Stereopaar, «zehn nach sechs». Das war zu kleinteilig. Auf dem
+Plakat steht je Abschnitt, worum es geht und warum; konkret bleibt nur, was die
+Kategorie benennt («Recording-Rigs für DJ-Booths und Festivals, Kabel nach
+Mass»). Die Belege stehen unten.
 
-## Zwei Sprachen
+**«die Booth», nicht «der Booth».** In Zusammensetzungen entscheidet das zweite
+Wort: «der Booth-Recorder», «am Booth-Ausgang» sind richtig.
 
-Deutsch liegt unter `/`, Englisch unter `/en`. Beide sind **echte, vorgebaute
-Seiten** — kein Umschalten im Kopf des Browsers. Damit ist jede Fassung
-verschickbar und auffindbar, aus demselben Grund, aus dem die Detail-Ebenen
-eigene Adressen haben. Beide kennen einander über `hreflang`.
+### Der Ton ist zweimal umgeschlagen
 
-Die englischen Ebenen haben eigene Adressen: `/en/rig` und `/en/recordings`.
-Der Schalter unten in der Mitte führt auf dieselbe Ebene in der anderen
-Sprache, sonst auf die Startseite.
+Die Texte sind mehrfach in die eine und wieder in die andere Richtung
+geschrieben worden. Damit das nicht ein drittes Mal im Kreis läuft, hier beide
+verworfenen Enden:
 
-**Der Schalter gehört zum ersten Abschnitt und scrollt mit ihm weg.** Er steht
-absolut im Fluss, nicht fest im Fenster — die Sprache wählt man beim
-Eintreten, nicht auf jedem Abschnitt neu. Kein JavaScript nötig. Der Wert
-`top: calc(100svh - …)` hängt an der Abschnittshöhe: wer die ändert, muss ihn
-mitziehen.
+- **Zu viel «ich».** Eine Fassung stand in sieben von fünf Sätzen in «ich» und
+  «mein» und las sich angeberisch — «ich weiss, was um vier Uhr wirklich
+  passiert». Verworfen.
+- **Gar kein «ich».** Die Gegenfassung schrieb dieselben Sätze unpersönlich —
+  «Wer selber in der Booth steht, baut sie anders», «Wer damit arbeitet, baut
+  anders als wer sie verkauft». Als kühl verworfen.
 
-Er liegt zudem unter der Detail-Ebene (kleinerer z-index): sobald eine Ebene
-offen ist, ist er verdeckt. Sonst hätte die Ebene einen Ausgang, eine
-Weiterführung *und* einen Sprachwechsel — einer zu viel für die zweite Regel.
-
-Eigennamen bleiben auch im Englischen stehen (Am Bach Festival, Schwing und
-Stampf) — übersetzt wären sie unauffindbar.
-
-## Sprache
-
-Deutsch, Schweizer Rechtschreibung (**ss statt ß**). Das gilt für Inhalt,
-Kommentare im Code, Dateinamen und Commit-Nachrichten. Bezeichner im Code sind
-ebenfalls deutsch (`abschnitt`, `ebene`, `zeiger`) — konsequent bleiben.
-
-Der Ton der Texte: direkt, keine Werbesprache. Lieber ein Fehler zugeben als
-eine Fähigkeit behaupten.
-
-**Die erste Person ist bewusst zurückgenommen.** Eine frühere Fassung stand in
-sieben von fünf Sätzen in «ich» und «mein» und las sich angeberisch — «ich
-weiss, was um vier Uhr wirklich passiert». Jetzt führt die Sache, nicht die
-Person: «Wer selber im Booth steht, baut sie anders.» Dieselbe Behauptung,
-ohne sie sich anzuheften — der Leser zieht den Schluss selber.
-
-Ein «ich» ist absichtlich geblieben: die Begrüssung in 00. Überall sonst nicht
-wieder einbauen.
-
-**Und: Grundsatz statt Aufzählung.** Eine Zwischenfassung listete Geräte und
-Orte auf — Hydrophon, Kontaktmikro, Stereopaar, «zehn nach sechs». Das war zu
-kleinteilig fürs Plakat; die Beispiele gehören auf die Ebene darunter, wo Platz
-für sie ist. Auf dem Plakat steht jetzt je Abschnitt, worum es geht, und dann
-ein Satz, der sagt warum. Konkret bleibt nur, was die Kategorie benennt
-(«Recording-Rigs für DJ-Booths und Festivals, Kabel nach Mass»).
-
-Katalogwörter wie «High End», «Premium» oder «professionell» kommen nicht vor.
-Die Qualität belegt die Datenliste auf der Ebene — Mogami, Neutrik, jede Ader
-durchgemessen. Das überzeugt vom Fach mehr als ein Adjektiv.
+Was blieb, liegt dazwischen — siehe die zwei Absätze oben.
 
 ## Stand und was offen ist
 

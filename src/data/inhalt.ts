@@ -187,7 +187,7 @@ const DEUTSCH: Fassung = {
           text: 'Ein Tascam SS-R250N im Case, fest am Booth-Ausgang. Er läuft die ganze Nacht und sichert laufend mit — zieht jemand den Stecker, ist die Aufnahme bis kurz davor da und läuft danach von selbst weiter. Übersteuert ein Set, setzt er den Marker automatisch. Und wer sein eigenes Set mitnehmen will, hängt seinen Recorder ans durchgeschleifte Signal.',
           daten: [
             { was: 'Herz', wert: 'Tascam SS-R250N' },
-            { was: 'Kanäle', wert: '2, Stereo-Summe aus dem Booth' },
+            { was: 'Kanäle', wert: '2, Stereo-Summe aus der Booth' },
             { was: 'Nach Stromausfall', wert: 'gesicherte Datei, Aufnahme läuft weiter' },
             { was: 'Sicherung', wert: 'laufend, zwei SD-Karten parallel' },
             { was: 'Marker', wert: 'automatisch bei Übersteuerung, dazu von Hand' },

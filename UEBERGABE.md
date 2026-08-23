@@ -248,16 +248,42 @@ durchgemessen. Das überzeugt vom Fach mehr als ein Adjektiv.
 Gebaut, Build läuft, sechs Seiten (`/`, `/rig`, `/aufnahmen` und dieselben
 unter `/en`), kein externer Abruf.
 
-- [ ] **Foto vom Peli-Case** in die Rig-Ebene: Datei unter `public/fotos/`
-      ablegen und den Pfad im Stück «Das Gletscher-Case» als `bild` eintragen,
-      etwa `bild: '/fotos/peli-case.jpg'`. Beide Sprachen.
-- [ ] **Eigene Fotos** statt der Platzhalter — mit Abstand der grösste Hebel
+- [x] Netlify verbunden, Domain `soundmatters.audio` aufgeschaltet
+- [x] Fotos vom Peli-Case und von den Kabeln sind drin
+- [ ] **Eigene Fotos** statt der Platzhalter in den fünf Abschnitten —
+      mit Abstand der grösste Hebel
 - [ ] Echte Links zu SoundCloud und Instagram in `src/data/inhalt.ts`
       (aktuell `https://soundcloud.com` als Platzhalter)
 - [ ] Bild fürs Teilen (Open Graph), 1200 × 630
-- [ ] Netlify verbinden, Domain `soundmatters.audio` aufschalten
 - [ ] Aufkleber drucken: drei Fassungen, je zweifarbig, rund 80 mm, matt —
       Farben und Fassungen stehen in `FARBEN.md`
+
+
+### Fotos zu einem Stück hinzufügen
+
+Jedes Stück in `stuecke` nimmt eine Liste `bilder`, je Bild eine Datei und
+eine Zeile darunter. Beide Sprachen eintragen, sonst fehlt die Zeile auf
+der englischen Seite.
+
+```ts
+bilder: [
+  { datei: '/fotos/kabel-mid-side.jpg', text: 'Fünfpolig für Mid/Side, auf Länge konfektioniert' },
+],
+```
+
+Zwei Dinge sind dabei wichtig:
+
+**Format 4:3, quer.** Die Bilder werden im Raster auf 4:3 beschnitten
+(`object-fit: cover`). Ein Hochformat verliert dabei oben und unten je
+rund ein Viertel — das ist kein Fehler, sondern hält die Reihe gerade.
+Wer den Ausschnitt selber bestimmen will, schneidet die Datei vorher auf
+1200 × 900 zu. Das Skript dafür liegt nicht im Repo; es beschneidet mit
+einem von Hand gesetzten Fokuswert, weil kein Algorithmus weiss, wo das
+Kabel liegt.
+
+**Menge.** Ab etwa fünf Bildern wird die Reihe unruhig. Dann lieber ein
+eigenes Stück je Bauform anlegen als die Reihe verlängern. Eine dritte
+Ebene bleibt trotzdem verboten.
 
 Kontakt ist gesetzt: `maurizio@mauriziozulli.com`, mit eigenem Betreff je
 Abschnitt, damit in der Mail steht, woher die Anfrage kam.

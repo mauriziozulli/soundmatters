@@ -212,7 +212,9 @@ const DEUTSCH: Fassung = {
           titel: 'Kabel nach Mass',
           einordnung: 'Location Sound · Bag · Angel',
           bilder: [
-            { datei: '/fotos/kabel.jpg', text: 'Fünfpolig für Mid/Side, Breakout 5 → 2 × 3 fürs Bag' },
+            { datei: '/fotos/kabel-mid-side.jpg', text: 'Fünfpolig für Mid/Side, auf Länge konfektioniert' },
+            { datei: '/fotos/kabel-stecker.jpg', text: 'Fünf Pol auf drei Pol, flach gebaut fürs Bag' },
+            { datei: '/fotos/kabel.jpg', text: 'Angelkabel und Breakout, wie sie im Case liegen' },
             { datei: '/fotos/kabel-adapter.jpg', text: 'Adapter zwischen Steckerwelten, ebenfalls nach Mass' }
           ],
           text: 'Mogami-Kabel, Neutrik-Stecker, von Hand gelötet und jede Ader einzeln durchgemessen. Fünfpolig für Mid/Side an der Angel, Breakout von fünf Pol auf zwei dreipolige Flachstecker fürs Recording-Bag, Verlängerungen für Ambisonics-Rigs, dazu Adapter zwischen Steckerwelten, die nicht zusammenpassen wollten. Mogami, weil es im Bag kaum Griffgeräusche überträgt und auch nach hundert Drehtagen noch weich in der Hand liegt.',
@@ -400,7 +402,9 @@ const ENGLISCH: Fassung = {
           titel: 'Cables to Measure',
           einordnung: 'Location sound · Bag · Boom',
           bilder: [
-            { datei: '/fotos/kabel.jpg', text: 'Five-pin for mid/side, breakout 5 → 2 × 3 for the bag' },
+            { datei: '/fotos/kabel-mid-side.jpg', text: 'Five-pin for mid/side, cut to length' },
+            { datei: '/fotos/kabel-stecker.jpg', text: 'Five-pin to three-pin, low profile for the bag' },
+            { datei: '/fotos/kabel.jpg', text: 'Boom cable and breakout, as they sit in the case' },
             { datei: '/fotos/kabel-adapter.jpg', text: 'Adapters between connector worlds, also made to measure' }
           ],
           text: 'Mogami cable, Neutrik connectors, soldered by hand and every core measured individually. Five-pin for mid/side on the boom, a breakout from five-pin to two low-profile three-pin connectors for the recording bag, extensions for ambisonic rigs, plus adapters between connector worlds that refused to fit. Mogami, because it passes on almost no handling noise inside a bag and still lies soft in the hand after a hundred shooting days.',

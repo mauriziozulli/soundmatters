@@ -1,0 +1,39 @@
+---
+/**
+ * Der Balken mit dem ausgestanzten Wort — das Motiv des Aufklebers.
+ *
+ * Das Wort steht nicht auf dem Balken, es ist aus ihm herausgeschnitten;
+ * was durch die Buchstaben scheint, ist die zweite Druckfarbe. Gezeichnet
+ * wird auf einem Canvas, siehe `src/scripts/spuren.ts`.
+ *
+ * Das Wort steht ZUSÄTZLICH als Text daneben, nur für Vorlesegeräte und
+ * Suchmaschinen. Ein Canvas ist ein Bild; ohne diesen Text hätte die Seite
+ * keine lesbare Überschrift mehr.
+ */
+import type { Farbsatz, Spurart } from '../data/inhalt';
+
+interface Props {
+  wort: string;
+  spur: Spurart;
+  saat: number;
+  farben: Farbsatz;
+  /** Auf der Ebene steht die Spur still: ein Detailblatt soll nicht mit
+   *  sich selber konkurrieren. */
+  statisch?: boolean;
+}
+const { wort, spur, saat, farben, statisch = false } = Astro.props;
+---
+
+<span
+  class="balken"
+  style={`--bar: ${farben.bar}; --wort: ${farben.wort}; --kontur: ${farben.kontur}`}
+>
+  <canvas
+    data-balken
+    data-wort={wort.toUpperCase()}
+    data-spur={spur}
+    data-saat={String(saat)}
+    data-statisch={statisch ? '1' : null}
+    aria-hidden="true"></canvas>
+</span>
+<span class="nur-vorlesen">{wort}</span>

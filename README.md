@@ -29,18 +29,19 @@ npm run build
 ```
 src/
   data/
-    inhalt.ts      ALLE Texte, Links, Reihenfolge, beide Sprachen — hier änderst du
-    bilder.ts      wie aus jedem Foto eine Fläche wird
+    inhalt.ts      ALLE Texte, Links, Farben, Reihenfolge, beide Sprachen —
+                   hier änderst du
   styles/
     tokens.css     Farben und Schriften, einzige Quelle
-    global.css     Layout, die fünf Schriftbilder, die Detail-Ebene
+    global.css     Layout, der Balken, die Spur, die Detail-Ebene
   components/
     Abschnitt.astro   ein bildschirmfüllender Abschnitt
+    Balken.astro      der Balken mit dem ausgestanzten Wort
+    Spur.astro        Timecode und Pegel am unteren Rand
     Ebene.astro       eine Detail-Ebene
     Seite.astro       alles zusammen
   scripts/
-    flaeche.ts     Foto → Fläche (Zug, Raster, Versatz, Zweiklang)
-    schrift.ts     Überschriften auf volle Breite rechnen
+    spuren.ts      was in den Balken läuft — fünf Spuren, eine je Thema
     ebene.ts       Ebene öffnen/schliessen samt Adresse
     zeiger.ts      der Mauszeiger
   pages/
@@ -49,9 +50,24 @@ src/
     en/index.astro    /en
     en/[ebene].astro  /en/rig, /en/recordings
 public/
-  fotos/         die fünf Hintergrundbilder (Platzhalter, siehe QUELLEN.md)
-  schriften/     Poster (Bebas Neue) und Heavy (Archivo Black)
+  fotos/         eigene Fotos für die Stücke auf den Ebenen, 4:3 quer
+  schriften/     Fett (Archivo Black) und Mono (Space Mono)
 ```
+
+## Der Balken
+
+Das Motiv kommt vom gedruckten Aufkleber: ein Wort, aus einer Farbfläche
+ausgespart. Auf der Seite ist die Fläche ein Canvas, und darin läuft eine
+**Spur, die zum Thema des Abschnitts gehört** — ein Pegel, ein Filmstreifen
+mit Tonspur, ein verdrilltes Kabel, ein Spektrum mit Kick, ein
+Spektrogramm. Der Rahmen bleibt überall gleich, der Inhalt wechselt.
+
+Aufbau in drei Lagen: der Balken trägt die Wortfarbe als Fläche, das Canvas
+malt die Balkenfarbe und die Spur hinein, das Wort wird ausgestanzt. Was
+durch die Buchstaben scheint, ist die Fläche — genau wie im Zweifarbendruck.
+
+Ohne Bewegung (Systemeinstellung) stehen alle Spuren still und zeigen
+trotzdem ihr Bild. Nichts hängt an der Animation.
 
 ## Die zwei Regeln, die das Ding zusammenhalten
 
@@ -73,10 +89,9 @@ neu statt zu überblenden, aber nichts geht verloren.
 
 ## Was noch offen ist
 
-- [ ] **Eigene Fotos** statt der Platzhalter — grösster Hebel. Querformat,
-      eher dunkel; je unschärfer das Motiv, desto besser trägt die Schrift.
-      Datei unter `public/fotos/` gleichnamig ersetzen, fertig. Nur bei
-      deutlich hellerem Bild `kontrast` in `src/data/bilder.ts` nachziehen.
+- [ ] **Fotos hinter die Balken**, falls die Abschnitte Bilder bekommen
+      sollen: als Grund, nicht als Ersatz. Dann trägt das Bild die Fläche
+      und der Pegel die Schrift. Noch nicht gebaut.
 - [x] Mailadresse gesetzt: `maurizio@mauriziozulli.com`, mit eigenem Betreff
       je Abschnitt — so ist in der Mail sofort sichtbar, woher die Anfrage kam
 - [ ] Echte Links zu SoundCloud und Instagram in `src/data/inhalt.ts`

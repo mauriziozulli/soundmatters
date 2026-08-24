@@ -1,64 +1,56 @@
 ---
+/**
+ * Ein Abschnitt: eine Bildschirmhöhe, oben die Einordnung, in der Mitte
+ * der Balken mit dem ausgestanzten Wort, unten Fussnote und höchstens eine
+ * Weiterführung.
+ *
+ * Der hervorgehobene Teil des Satzes wird als Textstelle gesucht, nicht
+ * als eigenes Feld gepflegt. **`betont` muss darum wörtlich in `satz`
+ * vorkommen** — sonst verschwindet die Hervorhebung stillschweigend.
+ */
+import Balken from './Balken.astro';
 import type { Abschnitt } from '../data/inhalt';
-import { BEHANDLUNG } from '../data/bilder';
 
 interface Props { a: Abschnitt }
 const { a } = Astro.props;
 
-const eingriff = BEHANDLUNG[a.bild]?.eingriff ?? 'zugX';
-
-/* Den betonten Teil aus dem Satz herausschneiden, statt ihn im Inhalt mit
-   Markup zu verkleben — so bleibt inhalt.ts reiner Text. */
 const stelle = a.betont ? a.satz.indexOf(a.betont) : -1;
 const davor = stelle >= 0 ? a.satz.slice(0, stelle) : a.satz;
 const betont = stelle >= 0 ? a.betont! : '';
 const danach = stelle >= 0 ? a.satz.slice(stelle + a.betont!.length) : '';
 
 const pfeil = a.link?.art === 'extern' ? '↗' : '→';
+/* Name für die Spur unten: was oben im Balken steht, plus die Zeile
+   darunter. Steht das Wort allein, genügt das Wort. */
+const name = [a.wort, a.zweite].filter(Boolean).join(' ');
 ---
 
-{/* Ist die Leitfarbe des Abschnitts die Textfarbe selbst (04, Knochen),
-    kann die Hervorhebung im Satz nicht über den Farbton führen — sie wäre
-    Ton auf Ton und damit unsichtbar. Das Merkmal schaltet in global.css
-    auf den Hellwert um. */}
 <section
   class="abschnitt"
-  data-eingriff={eingriff}
-  data-tonauf-ton={a.akzent === 'var(--knochen)' ? 'true' : null}
-  style={`--akzent: ${a.akzent}`}
+  data-abschnitt
+  data-name={name}
+  style={`--boden: ${a.farben.boden}; --bar: ${a.farben.bar}; --zweit: ${a.farben.zweit}`}
 >
-  <canvas class="abschnitt__flaeche" data-bild={a.bild} aria-hidden="true"></canvas>
+  {/* Nur wo eine Spur nach aussen wirkt (03 pumpt auf dem Schlag). Die
+      Fläche liegt hinter allem und wird vom Skript gesteuert. */}
+  {a.spur === 'spektrum' && <span class="puls" data-puls aria-hidden="true"></span>}
 
-  <div class="abschnitt__oben">
+  <div class="kopf">
     <span>{a.nummer}</span>
     <span>{a.einordnung}</span>
   </div>
 
-  <div class="abschnitt__mitte">
-    <h2 class={`wort griff-${a.griff}`} data-passung={a.passung}>
-      {a.zeilen.map((z) => {
-        /* `balken` steuert nur die innere Fläche — die äussere Zeile darf die
-           Klasse nicht auch tragen, sonst wird der Rahmen zweimal gezeichnet. */
-        const imBalken = z.klasse?.includes('balken');
-        const aussen = (z.klasse ?? '').replace('balken', '').trim();
-        return (
-          <span class={`zeile ${aussen}`}>
-            {imBalken ? <span class="balken">{z.text}</span> : z.text}
-          </span>
-        );
-      })}
-    </h2>
-    <p class="abschnitt__satz">{davor}{betont && <b>{betont}</b>}{danach}</p>
+  <div class="mitte">
+    <h1 class="wortmarke">
+      <Balken wort={a.wort} spur={a.spur} saat={a.saat} farben={a.farben} />
+      {a.zweite && <span class="zweite">{a.zweite}</span>}
+    </h1>
+
+    <p class="satz">{davor}{betont && <b>{betont}</b>}{danach}</p>
   </div>
 
-  <div class="abschnitt__unten">
+  <div class="fuss-abschnitt">
     <span>{a.fussnote}</span>
-    {a.link && (
-      <a
-        class="abschnitt__link"
-        href={a.link.ziel}
-        rel={a.link.art === 'extern' ? 'noopener' : undefined}
-      >{a.link.text} {pfeil}</a>
-    )}
+    {a.link && <a class="weiter" href={a.link.ziel}>{a.link.text} {pfeil}</a>}
   </div>
 </section>

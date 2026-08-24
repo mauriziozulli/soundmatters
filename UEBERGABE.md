@@ -27,30 +27,37 @@ jeder Abschnitt genau einen Satz, der die Verbindung zu den anderen nennt.
 
 ## Aufbau
 
-Fünf bildschirmfüllende Abschnitte, danach eine zweite Ebene für Vertiefungen.
+Fünf bildschirmfüllende Abschnitte, danach eine zweite Ebene für
+Vertiefungen.
 
-| | Abschnitt | Schrift | Schriftbild | Leitfarbe |
+| | Abschnitt | Wort im Balken | Spur | Balken / Wort |
 |---|---|---|---|---|
-| 00 | Sound is what matters. | Grotesk | Zeile 1 Knochen, Zeile 2 im Balken | Verdigris |
-| 01 | Sound and Picture | Antiqua | zwei Zeilen, zweite kursiv | Ocker |
-| 02 | Custom Gear | Grotesk | beide Zeilen im Balken | Ocker |
-| 03 | Musik | Grotesk | flächig gefüllt | Verdigris |
-| 04 | Field Recording | Antiqua | nur Kontur | Knochen |
+| 00 | Sound Matters | Sound | Pegel | Verdigris / Knochen |
+| 01 | Sound and Picture | Sound | Bild und Ton | Ocker / Russ |
+| 02 | Custom Gear | Custom | Sternvierer | Verdigris / Knochen |
+| 03 | Musik | Musik | Spektrum mit Kick | Rost / Knochen |
+| 04 | Field Recording | Field | Spektrogramm | Knochen / Tiefgrün |
 
-**Die Seite spricht die Sprache des Aufklebers.** Fette Grotesk als
-Leitschrift, der Balken mit harter Kontur als Motiv, die Mono für alles Kleine
-— genau wie die Adresse unter dem Wortlaut des Klebers. Abschnitt 00 ist der
-Kleber, aufgezogen auf Bildschirmgrösse.
+**Die Seite spricht die Sprache des Aufklebers.** Der Balken mit dem
+ausgesparten Wort, die harte Kontur, die Mono-Zeile, die gedruckten
+Farben — alles von dort. Kein Aufkleber liegt auf der Seite: es geht um
+die Sprache, nicht um die Nachahmung. Ein erster Entwurf hat Kleber
+nachgebaut und wurde verworfen — Kleber auf einer Seite bleiben Kleber.
 
-Zwischenzeitlich hatte jeder Abschnitt eine **eigene Schriftfamilie** (fünf
-Stück) und **keine Farbe kam zweimal vor**. Beides ist bewusst zurückgenommen:
-Der Kleber spricht eine Sprache, fünf Schriften sprechen fünf. Jetzt tragen
-eine Leitschrift und eine Gegenstimme die Seite, und Ocker und Verdigris
-führen — sie dürfen sich wiederholen, weil sie die gedruckten Fassungen sind.
-Rost und Staubblau sind nur noch im Farbklima der Fotos vorhanden.
+**Neu ist, was der Balken tut.** Ein Balken heisst in dieser Branche
+Pegel, also zeigt er einen. Was im Balken läuft, gehört zum Thema des
+Abschnitts; beschrieben ist jede Spur in `src/scripts/spuren.ts`.
 
-Unterschieden werden die Abschnitte über **Farbe, Balken und Kontur**, nicht
-über die Schriftfamilie. Nicht wieder auseinanderziehen.
+Zwischenzeitlich hatte jeder Abschnitt eine **eigene Schriftfamilie**
+(fünf Stück), **keine Farbe kam zweimal vor**, und hinter der Schrift lag
+ein **im Browser abstrahiertes Foto**. Alles drei ist zurückgenommen: Der
+Kleber spricht eine Sprache, fünf Schriften sprechen fünf. Jetzt trägt
+eine Leitschrift die Seite, Ocker und Verdigris führen — sie dürfen sich
+wiederholen, weil sie die gedruckten Fassungen sind —, und die Fläche
+trägt Farbe statt Bild.
+
+Unterschieden werden die Abschnitte über **Farbe und Spur**, nicht über
+die Schriftfamilie. Nicht wieder auseinanderziehen.
 
 ## Die zwei Regeln
 
@@ -93,48 +100,74 @@ Ausführlich samt Herleitung in `FARBEN.md`. Werte stehen in
 
 ## Bilder
 
-Die Fotos werden **im Browser abstrahiert**: Eingriff (Zug, Raster, Versatz),
-danach ein Zweiklang aus zwei Farbpolen. Der helle Pol ist eine gedämpfte,
-dunklere Verwandte der Leitfarbe — nie die Leitfarbe selbst, sonst stünde die
-Schrift auf einer Fläche ihrer eigenen Farbe. Dadurch wird das Foto Textur statt
-Motiv, und der Kontrast zur Schrift ist gesetzt statt vom Motiv abhängig.
-Gerechnet wird in ~460 px Breite, CSS zieht hoch — schnell genug fürs Handy.
+**Die Abschnitte haben keine.** Die Fläche trägt die Farbe, der Balken
+trägt die Spur. Die fünf abstrahierten Platzhalterfotos und das Skript
+dazu sind entfernt; die Geschichte steht in `QUELLEN.md`.
 
-Die fünf Bilder unter `public/fotos/` sind **Platzhalter** (CC0, Herkunft in
-`QUELLEN.md`). Zum Austauschen genügt es, die Datei gleichnamig zu ersetzen.
-Nur bei deutlich hellerem Bild `kontrast` in `src/data/bilder.ts` nachziehen.
+Fotos gibt es nur noch auf den Ebenen, bei den einzelnen Stücken. Alle im
+Format 4:3 quer — wie man sie hinzufügt, steht weiter unten.
+
+Der nächste Schritt, falls eigene Fotos dazukommen sollen: **als Grund
+hinter den Balken**, nicht als Ersatz für ihn. Dann trägt das Bild die
+Fläche und der Pegel die Schrift. Noch nicht gebaut.
 
 ## Fallen, die schon einmal zugeschlagen haben
 
-- **Prozent-Polster auf runden oder quadratischen Elementen** beziehen sich auf
-  die Breite des *Elters*, nicht des Elements. Hat Elemente von 250 auf 336 px
-  aufgeblasen.
+Die meisten davon kosten nur dann Zeit, wenn man sie nicht kennt. Alle sind
+hier wirklich passiert.
+
+**Am Balken und am Canvas**
+
+- **Mit Zugabe malen.** `clientWidth` rundet auf ganze Pixel, die wirkliche
+  Fläche ist oft einen Bruchteil breiter. Wer exakt bis zur Breite füllt,
+  bekommt am Rand eine helle Haarlinie, durch die der Untergrund des
+  Balkens scheint. `malen()` malt darum zwei Pixel über jeden Rand hinaus —
+  dasselbe Mittel wie im Druck, gegen dasselbe Problem.
+- **Die Breite nie am transformierten Element messen.** Der Balken steht
+  beim Aufbau auf `scaleX(.04)`, dem Auftritt. `getBoundingClientRect()`
+  liefert dann vier Prozent der Breite, und das Canvas zieht einen Streifen
+  zum Schmier auseinander. `clientWidth` kennt die Transformation nicht.
+- **Vor dem Ausstanzen die Füllfarbe zurücksetzen.** `destination-out`
+  radiert mit der Alpha der Quelle. Steht sie noch auf der halbdurch-
+  sichtigen Spurfarbe, wird das Wort nur zu einem Fünftel freigestellt und
+  sieht aus wie ein Druckfehler.
+- **Die Leitschrift heisst «Fett», nicht «Archivo Black».** Sie liegt lokal
+  und ist in `tokens.css` so benannt. Wer im Canvas den Originalnamen
+  einsetzt, stanzt mit der Ersatzschrift aus — das Wort sitzt dann sichtbar
+  schmaler im Balken als die Zeile darunter.
+- **Farben über `color` lesen, nicht über `getPropertyValue`.** Die Werte
+  stehen als `var(--verdigris)` in der Auszeichnung, damit `tokens.css` die
+  einzige Quelle bleibt. Ein Custom Property liefert je nach Browser den
+  unaufgelösten Text zurück; `color` ist immer eine fertige Farbe.
+- **Erst nach `document.fonts.ready` zeichnen.** Sonst wird mit der
+  Ersatzschrift ausgestanzt und alles sitzt daneben.
+- **Eine Spur mit Gedächtnis muss vorgefüllt werden.** Das Spektrogramm
+  baute seine Geschichte erst auf, während man hinschaut — die halbe Fläche
+  blieb leer. Vorfüllen aber nicht über das Schieben: das kopierte je Spalte
+  die ganze Leinwand, tausendmal. Spalten direkt an ihren Platz malen.
+- **Bei stillstehender Spur die Bewegung ganz weglassen.** Die
+  Durchgangsprüfung klebte sonst mit ihrem Punkt bei Null am linken Rand.
+- **Rauschen muss mit der Lage abfallen.** Lag es gleichmässig auf allen
+  Frequenzlagen, lief der Balken als graue Fläche zu — bei einer
+  Feldaufnahme ist oben aber fast nichts.
+
+**Am Text und am Layout**
+
+- **`betont` muss wörtlich in `satz` vorkommen.** Die Hervorhebung wird als
+  Textstelle gesucht. Passt sie nicht, verschwindet sie stillschweigend —
+  kein Fehler, keine Warnung. Nach jeder Textänderung prüfen.
 - **Raster-Kinder haben `min-width: auto`** und können das Raster aufziehen.
-  `.abschnitt__mitte` hat darum `min-width: 0` und `overflow: hidden` als
-  Sicherheitsnetz — nicht entfernen.
-- **Breite messen:** ein Block-Element ist immer so breit wie sein Elter. Zum
-  Messen der Textbreite kurz auf `inline-block` schalten (`schrift.ts`).
-- **Jedes Schriftbild braucht seinen eigenen Sicherheitsabstand** (`passung` in
-  `inhalt.ts`): Kontur, Sperrung und negative Laufweite ragen über die gemessene
-  Textbreite hinaus. Balken brauchen am meisten (0.82), Kontur am wenigsten.
-- **Deutsche Versalien brauchen Zeilenhöhe.** Bei zu engem Wert stossen Umlaute
-  in die Zeile darüber.
-- **Nach `document.fonts.ready` neu rechnen** — die Ersatzschrift ist schmaler
-  als die geladene.
-- **Balken brauchen ungleiches Polster oben und unten.** Versalien stehen auf
-  der Grundlinie, der Raum für Unterlängen darunter bleibt leer — bei gleichem
-  Polster sitzt die Schrift sichtbar daneben. Die Werte in `.balken` sind
-  ausgemessen; wer die Zeilenhöhe ändert, muss sie neu messen. Dasselbe gilt
-  für den Aufkleber.
-- **Die Hervorhebung im Satz läuft über die Farbe — ausser wo die Leitfarbe
-  die Textfarbe IST.** Abschnitt 04 führt Knochen, also stand die
-  Hervorhebung dort Ton auf Ton und war schlicht unsichtbar. Solche Abschnitte
-  tragen `data-tonauf-ton`; dann tritt der Rest des Satzes im Hellwert zurück.
-  Wer einem Abschnitt Knochen als Leitfarbe gibt, braucht das Merkmal auch.
-- **Der Höhendeckel muss die gemessene Höhe deckeln, nicht den Schriftgrad.**
-  Zeilenhöhe, Polster und Balken zählen mit: ein Schriftbild mit Zeilenhöhe
-  über 1 sprengt sonst den Abschnitt, obwohl ein Deckel gesetzt ist. `schrift.ts`
-  misst darum bei 100px Breite *und* Höhe.
+  `.mitte` hat darum `min-width: 0` — nicht entfernen.
+- **Prozent-Polster auf runden oder quadratischen Elementen** beziehen sich
+  auf die Breite des *Elters*, nicht des Elements. Hat Elemente von 250 auf
+  336 px aufgeblasen.
+- **Deutsche Versalien brauchen Zeilenhöhe.** Bei zu engem Wert stossen
+  Umlaute in die Zeile darüber.
+- **Balken brauchen ungleiches Polster oben und unten.** Versalien stehen
+  auf der Grundlinie, der Raum für Unterlängen darunter bleibt leer — bei
+  gleichem Polster sitzt die Schrift sichtbar daneben. Gilt auf der Seite
+  wie auf dem Aufkleber; `malen()` richtet darum die gemessene Versalhöhe
+  aus, nicht die Zeile.
 
 ## Geräte auf der Ebene
 

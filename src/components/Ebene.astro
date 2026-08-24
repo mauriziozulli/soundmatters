@@ -1,4 +1,5 @@
 ---
+import Balken from './Balken.astro';
 import type { Ebene, Fassung } from '../data/inhalt';
 
 interface Props { e: Ebene; offen?: boolean; beschriftung: Fassung['beschriftung'] }
@@ -18,7 +19,12 @@ const { e, offen = false, beschriftung } = Astro.props;
 
   <div class="ebene__in">
     <div class="ebene__kicker">{e.kicker}</div>
-    <h1 class="ebene__titel">{e.titel}</h1>
+
+    {/* Dieselbe Balkensprache wie auf dem Plakat, nur still: eine Ebene
+        ist ein Detailblatt und soll nicht mit sich selber konkurrieren. */}
+    <h1 class="ebene__titel">
+      <Balken wort={e.titel} spur={e.spur} saat={e.saat} farben={e.farben} statisch />
+    </h1>
     <p class="ebene__vorspann">{e.vorspann}</p>
 
     {/* Kein Bild, keine Lücke: ein sichtbarer Platzhalter auf einer

@@ -38,7 +38,7 @@ const andererPfad = gegenstueck(sprache, pfad);
     <!-- Leitschrift und Gegenstimme tragen die Überschriften — vor allem
          anderen holen. Die Mono kommt erst in der Fusszeile zum Zug. -->
     <link rel="preload" as="font" type="font/woff2" href="/schriften/heavy.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/schriften/serif.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/schriften/mono.woff2" crossorigin />
 
     <meta name="theme-color" content="#101014" />
   </head>
@@ -50,29 +50,16 @@ const andererPfad = gegenstueck(sprache, pfad);
     <slot />
 
     <script>
-      import { flaechenAufbauen, flaechenNeuZeichnen } from '../scripts/flaeche';
-      import { schriftPassen } from '../scripts/schrift';
+      import { spurenAufbauen } from '../scripts/spuren';
       import { ebenenAufbauen } from '../scripts/ebene';
       import { zeigerAufbauen } from '../scripts/zeiger';
 
-      /* Schrift zuerst passen, damit nichts springt; Flächen kommen nach,
-         sobald die Fotos da sind. */
-      schriftPassen();
       ebenenAufbauen();
       zeigerAufbauen();
-      flaechenAufbauen();
 
-      /* Die geladene Schrift ist breiter als die Ersatzschrift — danach neu. */
-      document.fonts?.ready.then(schriftPassen);
-
-      let wartet: number;
-      addEventListener('resize', () => {
-        clearTimeout(wartet);
-        wartet = window.setTimeout(() => {
-          flaechenNeuZeichnen();
-          schriftPassen();
-        }, 200);
-      });
+      /* Die Spuren warten intern auf die Leitschrift: mit der Ersatzschrift
+         ausgestanzt sässe das Wort sichtbar daneben. */
+      spurenAufbauen();
     </script>
   </body>
 </html>

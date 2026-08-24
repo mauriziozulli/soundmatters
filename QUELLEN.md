@@ -1,37 +1,35 @@
-# Bildquellen der Konzeptstudie
-
-Alle fünf Hintergrundbilder sind **Platzhalter** und werden durch Maurizios
-eigene Fotos ersetzt. Sie sind klein gerechnet (820–900 px breit) und als
-Data-URI in `index.html` eingebettet, damit die Seite ohne externen Abruf läuft.
-
-Alle stehen unter **CC0** (Public Domain Dedication) — keine Namensnennung
-nötig, kommerzielle Nutzung erlaubt. Gefunden über die Openverse-Suche.
-
-| Abschnitt | Motiv | Quelle |
-|---|---|---|
-| 00 — Sound is what matters | Nachtlichter, unscharf | StockSnap, „Blurry Lights" |
-| 01 — Sound and Picture | Filmset mit Kamera | StockSnap, „People Man" |
-| 02 — Custom Gear | Mischpult, Nahaufnahme | WordPress Photo Directory (pd.w.org) |
-| 03 — Musik | Konzertpublikum, Licht und Nebel | StockSnap, „Music Concert" |
-| 04 — Field Recording | Gletscher, blaues Eis | Flickr, „blue ice" |
-
-## Was mit den Bildern passiert
-
-Jedes Bild wird im Browser abstrahiert, damit es Textur wird statt Motiv —
-und damit der Kontrast zur Schrift vorhersagbar ist statt vom Foto abhängig:
-
-- **00** waagrechter Zug, kühler Zweiklang
-- **01** senkrechter Zug, warmer Zweiklang
-- **02** Verpixelung, fast einfarbig kühl
-- **03** versetzte Bänder, Magenta
-- **04** leichter Zug, Eisblau
-
-Beim Austausch gegen echte Fotos bleibt die Behandlung gleich — nur die
-Data-URI in `IMAGES` und gegebenenfalls die beiden Farbpole in `SHOTS`
-müssen angepasst werden.
+# Bildquellen
 
 ## Eigene Fotos
 
-`peli-case.jpg` — Maurizio Zulli, Griesgletscher 2025. Das ausgebaute
-Peli 1400 mit dem Merging Anubis SPS Premium im Feld. Eigenes Bild, keine
-Fremdlizenz nötig.
+Alles unter `public/fotos/` stammt von Maurizio Zulli. Keine Fremdlizenz
+nötig, keine Namensnennung.
+
+| Datei | Motiv |
+|---|---|
+| `peli-case.jpg` | Peli 1400 mit dem Merging Anubis SPS Premium, Griesgletscher 2025 |
+| `kabel.jpg` | Angelkabel und Breakout, wie sie im Case liegen |
+| `kabel-mid-side.jpg` | Fünfpoliges Mid/Side-Kabel, auf Länge konfektioniert |
+| `kabel-stecker.jpg` | Die Enden des Breakouts, fünf Pol auf drei Pol |
+| `kabel-adapter.jpg` | Adapterkabel nach Mass |
+
+Alle liegen als 4:3 quer, 1200 × 900, damit die Bildreihe auf der Ebene
+gerade bleibt. Wie man weitere hinzufügt, steht in `UEBERGABE.md`.
+
+## Was es nicht mehr gibt
+
+Bis zur Umstellung auf die Balken lagen unter `public/fotos/` fünf
+**Platzhalter** für die Abschnittshintergründe (CC0, über Openverse
+gefunden): Nachtlichter, ein Filmset, ein Mischpult, Konzertpublikum und
+blaues Eis. Sie wurden im Browser abstrahiert, damit sie Textur wurden
+statt Motiv.
+
+Beides ist weg. Die Abschnitte haben keine Fotos mehr — die Fläche trägt
+die Farbe, der Balken trägt die Spur. Wer Fotos zurückholen will, findet
+die Dateien und das Abstraktionsskript (`src/scripts/flaeche.ts`,
+`src/data/bilder.ts`) in der Geschichte des Repos.
+
+**Wenn eigene Fotos dazukommen**, ist der vorgesehene Weg nicht, die
+Platzhalter zu ersetzen, sondern das Foto als Grund HINTER den Balken zu
+legen: dann trägt das Bild die Fläche und der Pegel die Schrift. Das ist
+noch nicht gebaut.

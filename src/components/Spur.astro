@@ -1,0 +1,21 @@
+---
+/**
+ * Die Spur am unteren Rand: Timecode, Abspielkopf, Pegel und der Name der
+ * Stelle, an der man gerade ist.
+ *
+ * **Sie ist kein Menü.** Man kann sie nicht anklicken, sie hat keine Ziele
+ * und keine Tastaturfokusse. Damit bleibt die Regel «keine Menüs»
+ * unangetastet, und die Seite bekommt trotzdem, was ihr sonst fehlt: ein
+ * Gefühl für ihre Länge.
+ *
+ * Der Pegel wird von der Spur getrieben, die gerade im Bild ist — ein
+ * Bauteil, fünf Charaktere.
+ */
+---
+
+<div class="spur" aria-hidden="true">
+  <span class="spur__code" data-code>00:00:00:00</span>
+  <span class="spur__bahn" data-bahn><span class="spur__kopf" data-kopf></span></span>
+  <span class="spur__pegel"><i data-fuellung></i><b data-spitze></b></span>
+  <span class="spur__wo" data-wo></span>
+</div>

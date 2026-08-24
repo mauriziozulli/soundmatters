@@ -7,6 +7,7 @@
 import Abschnitt from './Abschnitt.astro';
 import Ebene from './Ebene.astro';
 import Sprache from './Sprache.astro';
+import Spur from './Spur.astro';
 import { INHALT, type Sprache as SpracheTyp } from '../data/inhalt';
 
 interface Props { sprache?: SpracheTyp; offen?: string | null }
@@ -22,6 +23,11 @@ const { abschnitte, ebenen, fuss, beschriftung } = INHALT[sprache];
       wählt man beim Eintreten, nicht auf jedem Abschnitt neu. */}
   <Sprache sprache={sprache} pfad={Astro.url.pathname} />
 </main>
+
+{/* Liegt fest am unteren Rand und gilt für die ganze Seite, darum hier
+    und nicht im Abschnitt. Unter der Ebene (z-index), damit eine offene
+    Ebene sie verdeckt. */}
+<Spur />
 
 <footer class="fuss">
   <span>{fuss.wer}</span>

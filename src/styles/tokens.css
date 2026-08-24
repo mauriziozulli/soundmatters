@@ -40,6 +40,13 @@
   --rost:      #B4562E;   /* 03 */
   --verdigris: #2F8F7A;   /* 04 — Hauptfassung des Aufklebers */
 
+  /* Die zwei gedruckten Konturfarben. Sie standen bisher nur in der
+     Druckdatei des Aufklebers; seit die Seite dieselben Balken zeigt,
+     gehören sie hierher. Nicht durch Tinte ersetzen — Tinte ist neutral,
+     diese beiden tragen den Farbstich ihrer Fassung. */
+  --tiefgruen: #1C3A34;   /* Kontur der Fassungen A, B, C, D, F */
+  --tiefbraun: #1E1310;   /* Kontur der Fassung E */
+
   /* --- Grundwerte ------------------------------------------------------- */
   --tinte:  #101014;
   --papier: var(--knochen);
@@ -70,6 +77,8 @@
 
   /* --- Masse ------------------------------------------------------------ */
   --rand: 26px;
+  /* Höhe der festen Spur unten. Abschnitte halten sie unten frei. */
+  --spur: 46px;
   --lesebreite: 42ch;
   --schwung: cubic-bezier(.22, 1, .36, 1);
 }

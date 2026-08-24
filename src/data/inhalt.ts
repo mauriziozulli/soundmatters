@@ -14,23 +14,49 @@ export type Sprache = (typeof SPRACHEN)[number];
 /** Adress-Vorsilbe je Sprache. Deutsch liegt an der Wurzel. */
 export const BASIS: Record<Sprache, string> = { de: '', en: '/en' };
 
+/**
+ * Was im Balken läuft. Der Balken ist überall derselbe Rahmen — die Spur
+ * darin gehört zum Thema, sonst wären es fünf Effekte statt einer Idee.
+ * Beschrieben sind sie in `src/scripts/spuren.ts`.
+ */
+export type Spurart = 'pegel' | 'bildton' | 'sternvierer' | 'spektrum' | 'spektrogramm';
+
+/**
+ * Die vier Farben eines Abschnitts. Immer aus `tokens.css`, nie als Hexwert
+ * hier — und immer ein Paar, das es gedruckt gibt: was auf dem Aufkleber
+ * nicht vorkommt, kommt auch auf der Seite nicht vor.
+ */
+export type Farbsatz = {
+  /** Grund des ganzen Abschnitts */
+  boden: string;
+  /** Fläche des Balkens */
+  bar: string;
+  /** Das ausgestanzte Wort — und alles, was sich im Balken abheben soll:
+   *  Spitzenhaltung, Schnittkante, Prüfpunkt, Marke. Zweite Druckfarbe. */
+  wort: string;
+  /** Kontur des Balkens */
+  kontur: string;
+  /** Zeile unter dem Balken und die Hervorhebung im Satz */
+  zweit: string;
+};
+
 export type Abschnitt = {
-  /** Kürzel, muss zum Dateinamen unter public/fotos/ passen */
-  bild: string;
   /** Ecke oben links: Nummer oder Hinweis */
   nummer: string;
-  /** Ecke oben rechts */
+  /** Ecke oben rechts. Leer lassen, wenn nichts dort stehen soll. */
   einordnung: string;
-  /** Schriftbild: Leitschrift, Gegenstimme oder Kontur */
-  griff: 'grotesk' | 'serif' | 'hohl';
-  /** Sicherheitsabstand beim Breitrechnen der Zeilen, siehe schrift.ts */
-  passung: number;
-  /** Akzentfarbe des Abschnitts (CSS-Variable) */
-  akzent: string;
-  /** Zeilen der Überschrift. `balken` legt die Zeile in eine Farbfläche,
-   *  `ton` setzt sie in die Leitfarbe. `schmal`/`breit` blenden je nach
-   *  Fensterbreite. */
-  zeilen: { text: string; klasse?: string }[];
+  /** Das Wort, das aus dem Balken ausgestanzt wird. Versalien im Bild,
+   *  hier normal schreiben — die Schrift macht die Versalien. */
+  wort: string;
+  /** Die Zeile unter dem Balken. Weglassen, wenn das Wort allein steht;
+   *  eine Zeile, die nur den Satz darunter doppelt, ist keine. */
+  zweite?: string;
+  /** Welche Spur im Balken läuft */
+  spur: Spurart;
+  /** Saat der Spur. Gleiche Saat, gleiches Bild bei jedem Besuch —
+   *  die Seite soll nicht bei jedem Laden anders aussehen. */
+  saat: number;
+  farben: Farbsatz;
   /** Der eine Satz, der den Zusammenhang zu den anderen Welten nennt */
   satz: string;
   /** Der Teil des Satzes, der farbig hervorgehoben wird */
@@ -50,7 +76,14 @@ export type Ebene = {
   schluessel: string;
   farbe: string;
   kicker: string;
+  /** Steht im Balken der Ebene und zugleich als Überschrift im Text.
+   *  Kurz halten — was breiter ist als der Balken, wird klein gerechnet. */
   titel: string;
+  /** Spur im Balken der Ebene. Sie steht still: ein Detailblatt soll
+   *  nicht mit sich selber konkurrieren. */
+  spur: Spurart;
+  saat: number;
+  farben: Farbsatz;
   vorspann: string;
   /** Bild oben in der Ebene; leer lassen, solange keins da ist */
   bild?: string;
@@ -114,64 +147,80 @@ const DEUTSCH: Fassung = {
   },
   abschnitte: [
     {
-      bild: 'intro',
       nummer: 'soundmatters.audio',
-      einordnung: 'Luzern',
-      griff: 'grotesk',
-      passung: 0.9,
-      akzent: 'var(--verdigris)',
-      zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
+      einordnung: '',
+      wort: 'Sound',
+      zweite: 'Matters',
+      spur: 'pegel',
+      saat: 7,
+      farben: {
+        boden: 'var(--grund-00)', bar: 'var(--verdigris)', wort: 'var(--knochen)',
+        kontur: 'var(--tiefgruen)', zweit: 'var(--knochen)'
+      },
       satz: 'Schön, dass du da bist. Dir ist Ton also wichtig — dann bist du hier richtig. Komm und schau.',
       betont: 'Dir ist Ton also wichtig — dann bist du hier richtig.',
       fussnote: 'Runterscrollen'
     },
     {
-      bild: 'film',
       nummer: '01',
       einordnung: 'Film · Video · Werbung',
-      griff: 'serif',
-      passung: 0.94,
-      akzent: 'var(--ocker)',
-      zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
+      wort: 'Sound',
+      zweite: 'and Picture',
+      spur: 'bildton',
+      saat: 19,
+      farben: {
+        boden: 'var(--grund-01)', bar: 'var(--ocker)', wort: 'var(--grund-01)',
+        kontur: 'var(--grund-01)', zweit: 'var(--ocker)'
+      },
       satz: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt. Ich höre, was noch nicht da ist: Sounddesign, Schnitt und Mischung.',
       betont: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt.',
       fussnote: 'Die ganze Werkschau',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
     {
-      bild: 'gear',
       nummer: '02',
       einordnung: 'Rigs · Kabel · Bühne',
-      griff: 'grotesk',
-      passung: 0.84,
-      akzent: 'var(--ocker)',
-      zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
+      wort: 'Custom',
+      zweite: 'Gear',
+      spur: 'sternvierer',
+      saat: 31,
+      farben: {
+        boden: 'var(--grund-04)', bar: 'var(--verdigris)', wort: 'var(--knochen)',
+        kontur: 'var(--tiefgruen)', zweit: 'var(--verdigris)'
+      },
       satz: 'Ich baue Kabel und Recording-Rigs für DJ-Booths und Festivals. Aus Leidenschaft, aber vor allem, weil sie nützlich sein müssen.',
       betont: 'Ich baue Kabel und Recording-Rigs für DJ-Booths und Festivals.',
       fussnote: "Zeichnung und Teileliste gibt's dazu",
       link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
     },
     {
-      bild: 'club',
       nummer: '03',
       einordnung: 'House · Techno · Festival',
-      griff: 'grotesk',
-      passung: 0.93,
-      akzent: 'var(--verdigris)',
-      zeilen: [{ text: 'Musik', klasse: 'ton' }],
+      /* Keine zweite Zeile: «Musik» steht allein. Eine Zeile wie
+         «Fünfzehn Jahre» würde nur den Satz darunter doppeln. */
+      wort: 'Musik',
+      spur: 'spektrum',
+      saat: 53,
+      farben: {
+        boden: 'var(--grund-03)', bar: 'var(--rost)', wort: 'var(--knochen)',
+        kontur: 'var(--tiefbraun)', zweit: 'var(--rost)'
+      },
       satz: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene. Die Rigs baue ich für Booths, in denen ich selber stehe.',
       betont: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
     {
-      bild: 'ice',
       nummer: '04',
       einordnung: 'Gletscher · Seilbahn · leere Räume',
-      griff: 'hohl',
-      passung: 0.92,
-      akzent: 'var(--knochen)',
-      zeilen: [{ text: 'Field' }, { text: 'Recording' }],
+      wort: 'Field',
+      zweite: 'Recording',
+      spur: 'spektrogramm',
+      saat: 71,
+      farben: {
+        boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
+        kontur: 'var(--knochen)', zweit: 'var(--knochen)'
+      },
       satz: 'Ich nehme auf, was sonst nicht aufgenommen wird — auf dem Gletscher wie im Proberaum. Dieselben Ohren, die den Film mischen.',
       betont: 'Ich nehme auf, was sonst nicht aufgenommen wird',
       fussnote: 'Bisher einunddreissig Orte',
@@ -182,6 +231,12 @@ const DEUTSCH: Fassung = {
     {
       schluessel: 'rig',
       farbe: 'var(--ocker)',
+      spur: 'sternvierer',
+      saat: 97,
+      farben: {
+        boden: 'var(--grund-04)', bar: 'var(--ocker)', wort: 'var(--tiefgruen)',
+        kontur: 'var(--knochen)', zweit: 'var(--knochen)'
+      },
       kicker: '02 — Custom Gear',
       titel: 'Was ich baue',
       vorspann:
@@ -251,6 +306,12 @@ const DEUTSCH: Fassung = {
     {
       schluessel: 'aufnahmen',
       farbe: 'var(--knochen)',
+      spur: 'spektrogramm',
+      saat: 113,
+      farben: {
+        boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
+        kontur: 'var(--knochen)', zweit: 'var(--tiefgruen)'
+      },
       kicker: '04 — Field Recording',
       titel: 'Die Aufnahmen',
       vorspann:
@@ -302,64 +363,78 @@ const ENGLISCH: Fassung = {
   },
   abschnitte: [
     {
-      bild: 'intro',
       nummer: 'soundmatters.audio',
-      einordnung: 'Lucerne',
-      griff: 'grotesk',
-      passung: 0.9,
-      akzent: 'var(--verdigris)',
-      zeilen: [{ text: 'Sound is what' }, { text: 'matters.', klasse: 'balken' }],
+      einordnung: '',
+      wort: 'Sound',
+      zweite: 'Matters',
+      spur: 'pegel',
+      saat: 7,
+      farben: {
+        boden: 'var(--grund-00)', bar: 'var(--verdigris)', wort: 'var(--knochen)',
+        kontur: 'var(--tiefgruen)', zweit: 'var(--knochen)'
+      },
       satz: 'Good to have you here. So sound matters to you — then you are in the right place. Come and have a look.',
       betont: 'So sound matters to you — then you are in the right place.',
       fussnote: 'Scroll down'
     },
     {
-      bild: 'film',
       nummer: '01',
       einordnung: 'Film · Video · Advertising',
-      griff: 'serif',
-      passung: 0.94,
-      akzent: 'var(--ocker)',
-      zeilen: [{ text: 'Sound' }, { text: 'and Picture', klasse: 'ton' }],
+      wort: 'Sound',
+      zweite: 'and Picture',
+      spur: 'bildton',
+      saat: 19,
+      farben: {
+        boden: 'var(--grund-01)', bar: 'var(--ocker)', wort: 'var(--grund-01)',
+        kontur: 'var(--grund-01)', zweit: 'var(--ocker)'
+      },
       satz: 'Sound tells the story too — it decides whether the story carries. I hear what is not there yet: sound design, editing and mixing.',
       betont: 'Sound tells the story too — it decides whether the story carries.',
       fussnote: 'The full body of work',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
     },
     {
-      bild: 'gear',
       nummer: '02',
       einordnung: 'Rigs · Cables · Stage',
-      griff: 'grotesk',
-      passung: 0.84,
-      akzent: 'var(--ocker)',
-      zeilen: [{ text: 'Custom', klasse: 'balken' }, { text: 'Gear', klasse: 'balken' }],
+      wort: 'Custom',
+      zweite: 'Gear',
+      spur: 'sternvierer',
+      saat: 31,
+      farben: {
+        boden: 'var(--grund-04)', bar: 'var(--verdigris)', wort: 'var(--knochen)',
+        kontur: 'var(--tiefgruen)', zweit: 'var(--verdigris)'
+      },
       satz: 'I build cables and recording rigs for DJ booths and festivals. Out of passion, but above all because they have to be useful.',
       betont: 'I build cables and recording rigs for DJ booths and festivals.',
       fussnote: 'Drawing and parts list come with it',
       link: { text: 'How it is built', ziel: '/en/rig', art: 'ebene' }
     },
     {
-      bild: 'club',
       nummer: '03',
       einordnung: 'House · Techno · Festival',
-      griff: 'grotesk',
-      passung: 0.93,
-      akzent: 'var(--verdigris)',
-      zeilen: [{ text: 'Music', klasse: 'ton' }],
+      wort: 'Music',
+      spur: 'spektrum',
+      saat: 53,
+      farben: {
+        boden: 'var(--grund-03)', bar: 'var(--rost)', wort: 'var(--knochen)',
+        kontur: 'var(--tiefbraun)', zweit: 'var(--rost)'
+      },
       satz: 'For fifteen years I have played music and organised events in the cultural scene. I build the rigs for booths I stand in myself.',
       betont: 'For fifteen years I have played music and organised events in the cultural scene.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
     {
-      bild: 'ice',
       nummer: '04',
       einordnung: 'Glaciers · Cable cars · Empty rooms',
-      griff: 'hohl',
-      passung: 0.92,
-      akzent: 'var(--knochen)',
-      zeilen: [{ text: 'Field' }, { text: 'Recording' }],
+      wort: 'Field',
+      zweite: 'Recording',
+      spur: 'spektrogramm',
+      saat: 71,
+      farben: {
+        boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
+        kontur: 'var(--knochen)', zweit: 'var(--knochen)'
+      },
       satz: 'I record what otherwise goes unrecorded — on a glacier as much as in a rehearsal room. The same ears that mix the film.',
       betont: 'I record what otherwise goes unrecorded',
       fussnote: 'Thirty-one places so far',
@@ -370,6 +445,12 @@ const ENGLISCH: Fassung = {
     {
       schluessel: 'rig',
       farbe: 'var(--ocker)',
+      spur: 'sternvierer',
+      saat: 97,
+      farben: {
+        boden: 'var(--grund-04)', bar: 'var(--ocker)', wort: 'var(--tiefgruen)',
+        kontur: 'var(--knochen)', zweit: 'var(--knochen)'
+      },
       kicker: '02 — Custom Gear',
       titel: 'What I Build',
       vorspann:
@@ -439,6 +520,12 @@ const ENGLISCH: Fassung = {
     {
       schluessel: 'recordings',
       farbe: 'var(--knochen)',
+      spur: 'spektrogramm',
+      saat: 113,
+      farben: {
+        boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
+        kontur: 'var(--knochen)', zweit: 'var(--tiefgruen)'
+      },
       kicker: '04 — Field Recording',
       titel: 'The Recordings',
       vorspann:

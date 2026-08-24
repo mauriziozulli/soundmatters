@@ -235,8 +235,14 @@ const DEUTSCH: Fassung = {
          eine Aufnahme braucht, hat oft nichts mit Film zu tun. Und «was
          sonst nicht aufgenommen wird» klang nach Anspruch statt nach
          Arbeit. Jetzt trägt der Satz die Bandbreite. */
-      satz: 'Auf dem Gletscher wie im Proberaum: Ambisonics, Band, Sprecher, ganze Räume. Ich nehme seit Jahren auf, und selten zweimal dasselbe.',
-      betont: 'Ambisonics, Band, Sprecher, ganze Räume.',
+      /* Ohne Ortsbeispiele: die stehen in der Ecke oben rechts und auf
+         der Ebene, hier hätten sie den Satz verengt. Und ohne «für
+         spezielle Ansprüche» — dasselbe Katalogregister wie «High End»,
+         das hier schon einmal rausgeflogen ist. Gemeint ist ohnehin
+         etwas anderes: nicht ein höherer Anspruch, sondern eine Idee,
+         für die es die Aufnahme noch nicht gibt. */
+      satz: 'Ich nehme viel auf — meistens für eine Idee, die noch keinen Klang hat. Genau dort fangen die meisten Projekte an.',
+      betont: 'meistens für eine Idee, die noch keinen Klang hat',
       fussnote: 'Bisher einunddreissig Orte',
       link: { text: 'Reinhören', ziel: '/aufnahmen', art: 'ebene' }
     }
@@ -448,8 +454,8 @@ const ENGLISCH: Fassung = {
         boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
         kontur: 'var(--knochen)', zweit: 'var(--knochen)'
       },
-      satz: 'On a glacier or in a rehearsal room: ambisonics, a band, a voice, whole rooms. I have been recording for years, and rarely the same thing twice.',
-      betont: 'ambisonics, a band, a voice, whole rooms',
+      satz: 'I record a lot — mostly for an idea that has no sound yet. That is where most projects begin.',
+      betont: 'mostly for an idea that has no sound yet',
       fussnote: 'Thirty-one places so far',
       link: { text: 'Have a listen', ziel: '/en/recordings', art: 'ebene' }
     }

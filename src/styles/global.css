@@ -495,27 +495,27 @@ a { color: inherit; }
 /* Fotos eines Geräts. Stehen zwischen Text und Datenliste, damit sie das
    Stück belegen statt es zu bebildern. Ein Bild steht allein, mehrere
    nebeneinander — unter jedem eine Zeile, die benennt, was zu sehen ist. */
-.stueck__bilder {
+.bildreihe {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 14px;
   margin-bottom: 18px;
 }
-.stueck__bild { margin: 0; }
+.bildreihe__bild { margin: 0; }
 
 /* Alle Bilder auf dasselbe Format beschnitten. Sonst zieht ein
    Hochformat neben einem Querformat die Reihe schief: die eine Spalte
    endet auf halber Höhe, die Unterschriften stehen nicht mehr auf einer
    Linie. Der Beschnitt kostet Rand, das ist der Preis für die Ordnung —
    Fotos also mittig aufnehmen. */
-.stueck__bild img {
+.bildreihe__bild img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
   border-radius: 4px;
 }
-.stueck__bild figcaption {
+.bildreihe__bild figcaption {
   font-family: var(--mono);
   font-size: 11px; letter-spacing: .1em;
   color: var(--leise);

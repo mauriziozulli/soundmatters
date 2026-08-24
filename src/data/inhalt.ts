@@ -87,6 +87,11 @@ export type Ebene = {
   vorspann: string;
   /** Bild oben in der Ebene; leer lassen, solange keins da ist */
   bild?: string;
+  /** Bildreihe unter dem Vorspann, je mit einer Zeile darunter. Dasselbe
+   *  Format wie bei den Stücken: 4:3 quer, sonst steht die Reihe schief.
+   *  Für Situationen gedacht — was zu sehen ist, soll die Arbeit zeigen,
+   *  nicht die Person. */
+  bilder?: { datei: string; text: string }[];
   /** Fliesstext-Bloecke. Weglassen, wenn die Stuecke den Inhalt tragen. */
   bloecke?: { titel: string; text: string }[];
   daten?: { was: string; wert: string }[];
@@ -246,7 +251,7 @@ const DEUTSCH: Fassung = {
       satz: 'Kein Mix rettet eine schlechte Aufnahme — alles entscheidet sich am Ort. Gletscher, Seilbahn, Filmset: je schwieriger, desto lieber.',
       betont: 'Kein Mix rettet eine schlechte Aufnahme',
       fussnote: 'Bisher einunddreissig Orte',
-      link: { text: 'Reinhören', ziel: '/aufnahmen', art: 'ebene' }
+      link: { text: 'Wo ich aufnehme', ziel: '/aufnahmen', art: 'ebene' }
     }
   ],
   ebenen: [
@@ -336,8 +341,17 @@ const DEUTSCH: Fassung = {
       },
       kicker: '04 — Field Recording',
       titel: 'Die Aufnahmen',
+      /* Kein «hör rein» mehr: hier liegt kein Ton. Was hier liegt, sind
+         Bilder von der Arbeit — und ein Vorspann, der die Bandbreite
+         nennt, statt sie nur anzudeuten. */
       vorspann:
-        'Orte klingen nie zweimal gleich. Das hier sind die, bei denen es sich gelohnt hat, das Zeug hochzuschleppen — hör rein.',
+        'Ich nehme auf, was gebraucht wird: Filmton am Set, Sprecher, Atmosphären und Naturgeräusche draussen, ganze Festivalnächte am Stück. Der Ort bestimmt das Rig, nicht umgekehrt.',
+      bilder: [
+        { datei: '/fotos/ort-gletscherbach.jpg', text: 'Stereopaar über dem Gletscherbach, Recorder im Case' },
+        { datei: '/fotos/ort-gletscher.jpg', text: 'Am Gletscher: setzen, hören, verschieben' },
+        { datei: '/fotos/ort-strasse.jpg', text: 'Filmton in der Stadt — Angel, Bag, Funkstrecken' },
+        { datei: '/fotos/ort-strand.jpg', text: 'Dreh am Meer, Angel gegen den Wind' }
+      ],
       bloecke: [
         {
           titel: 'Eis, das arbeitet',
@@ -356,7 +370,6 @@ const DEUTSCH: Fassung = {
         { was: 'Bisher', wert: 'einunddreissig Orte' },
         { was: 'Am kältesten', wert: 'Rhonegletscher, minus vier' },
         { was: 'Am lautesten', wert: 'Seilbahn unter Last' },
-        { was: 'Zu haben', wert: 'einzeln oder als Paket, für alle' },
         { was: 'Auf Bestellung', wert: 'sag mir den Ort' }
       ]
     }
@@ -459,7 +472,7 @@ const ENGLISCH: Fassung = {
       satz: 'No mix saves a bad recording — everything is decided on location. A glacier, a cable car, a film set: the harder, the better.',
       betont: 'No mix saves a bad recording',
       fussnote: 'Thirty-one places so far',
-      link: { text: 'Have a listen', ziel: '/en/recordings', art: 'ebene' }
+      link: { text: 'Where I record', ziel: '/en/recordings', art: 'ebene' }
     }
   ],
   ebenen: [
@@ -550,7 +563,13 @@ const ENGLISCH: Fassung = {
       kicker: '04 — Field Recording',
       titel: 'The Recordings',
       vorspann:
-        'Places never sound the same twice. These are the ones where hauling the gear up there paid off — have a listen.',
+        'I record what is needed: location sound on set, voice-over, atmospheres and nature outdoors, whole festival nights in one go. The place decides the rig, not the other way round.',
+      bilder: [
+        { datei: '/fotos/ort-gletscherbach.jpg', text: 'Stereo pair over a glacial stream, recorder in the case' },
+        { datei: '/fotos/ort-gletscher.jpg', text: 'On the glacier: place it, listen, move it again' },
+        { datei: '/fotos/ort-strasse.jpg', text: 'Location sound in the city — boom, bag, radio links' },
+        { datei: '/fotos/ort-strand.jpg', text: 'A shoot by the sea, boom against the wind' }
+      ],
       bloecke: [
         {
           titel: 'Ice at work',
@@ -569,7 +588,6 @@ const ENGLISCH: Fassung = {
         { was: 'So far', wert: 'thirty-one places' },
         { was: 'Coldest', wert: 'Rhone Glacier, minus four' },
         { was: 'Loudest', wert: 'cable car under load' },
-        { was: 'Available', wert: 'single or as a pack, for anyone' },
         { was: 'To order', wert: 'tell me the place' }
       ]
     }

@@ -27,6 +27,17 @@ const { e, offen = false, beschriftung } = Astro.props;
     </h1>
     <p class="ebene__vorspann">{e.vorspann}</p>
 
+    {e.bilder && e.bilder.length > 0 && (
+      <div class="bildreihe">
+        {e.bilder.map((f) => (
+          <figure class="bildreihe__bild">
+            <img src={f.datei} alt="" loading="lazy" decoding="async" />
+            <figcaption>{f.text}</figcaption>
+          </figure>
+        ))}
+      </div>
+    )}
+
     {/* Kein Bild, keine Lücke: ein sichtbarer Platzhalter auf einer
         veröffentlichten Seite liest sich als Baustelle. Was fehlt, steht
         in der Übergabe, nicht auf der Seite. */}
@@ -61,9 +72,9 @@ const { e, offen = false, beschriftung } = Astro.props;
             <h3 class="stueck__titel">{st.titel}</h3>
             <p class="stueck__text">{st.text}</p>
             {st.bilder && st.bilder.length > 0 && (
-              <div class="stueck__bilder" data-anzahl={st.bilder.length}>
+              <div class="bildreihe" data-anzahl={st.bilder.length}>
                 {st.bilder.map((f) => (
-                  <figure class="stueck__bild">
+                  <figure class="bildreihe__bild">
                     <img src={f.datei} alt="" loading="lazy" decoding="async" />
                     <figcaption>{f.text}</figcaption>
                   </figure>

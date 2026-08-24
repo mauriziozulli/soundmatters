@@ -210,8 +210,13 @@ const DEUTSCH: Fassung = {
         boden: 'var(--grund-03)', bar: 'var(--rost)', wort: 'var(--knochen)',
         kontur: 'var(--tiefbraun)', zweit: 'var(--rost)'
       },
-      satz: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene. Die Rigs baue ich für Booths, in denen ich selber stehe.',
-      betont: 'Seit fünfzehn Jahren spiele ich Musik und organisiere Events in der Kulturszene.',
+      /* Die Rigs standen hier einmal als Verbindung zu 02 — Bauen gehört
+         aber nicht zur Musik. Die Verbindung läuft jetzt übers Pult, und
+         die Rigs tauchen dort auf, wo sie zählen: bei den Aufnahmen.
+         «Organisiere Events» ist weggefallen, ohne Verlust: die Fusszeile
+         darunter nennt Am Bach Festival und Schwing und Stampf. */
+      satz: 'Seit fünfzehn Jahren spiele ich Musik. Vom Audio Engineering kommt der Rest: Ich mische und mastere Tracks und Sets.',
+      betont: 'Seit fünfzehn Jahren spiele ich Musik.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -226,8 +231,12 @@ const DEUTSCH: Fassung = {
         boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
         kontur: 'var(--knochen)', zweit: 'var(--knochen)'
       },
-      satz: 'Ich nehme auf, was sonst nicht aufgenommen wird — auf dem Gletscher wie im Proberaum. Dieselben Ohren, die den Film mischen.',
-      betont: 'Ich nehme auf, was sonst nicht aufgenommen wird',
+      /* «Dieselben Ohren, die den Film mischen» verengte auf Film — wer
+         eine Aufnahme braucht, hat oft nichts mit Film zu tun. Und «was
+         sonst nicht aufgenommen wird» klang nach Anspruch statt nach
+         Arbeit. Jetzt trägt der Satz die Bandbreite. */
+      satz: 'Auf dem Gletscher wie im Proberaum: Ambisonics, Band, Sprecher, ganze Räume. Ich nehme seit Jahren auf, und selten zweimal dasselbe.',
+      betont: 'Ambisonics, Band, Sprecher, ganze Räume.',
       fussnote: 'Bisher einunddreissig Orte',
       link: { text: 'Reinhören', ziel: '/aufnahmen', art: 'ebene' }
     }
@@ -423,8 +432,8 @@ const ENGLISCH: Fassung = {
         boden: 'var(--grund-03)', bar: 'var(--rost)', wort: 'var(--knochen)',
         kontur: 'var(--tiefbraun)', zweit: 'var(--rost)'
       },
-      satz: 'For fifteen years I have played music and organised events in the cultural scene. I build the rigs for booths I stand in myself.',
-      betont: 'For fifteen years I have played music and organised events in the cultural scene.',
+      satz: 'I have been playing music for fifteen years. The rest comes from audio engineering: I mix and master tracks and sets.',
+      betont: 'I have been playing music for fifteen years.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     },
@@ -439,8 +448,8 @@ const ENGLISCH: Fassung = {
         boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
         kontur: 'var(--knochen)', zweit: 'var(--knochen)'
       },
-      satz: 'I record what otherwise goes unrecorded — on a glacier as much as in a rehearsal room. The same ears that mix the film.',
-      betont: 'I record what otherwise goes unrecorded',
+      satz: 'On a glacier or in a rehearsal room: ambisonics, a band, a voice, whole rooms. I have been recording for years, and rarely the same thing twice.',
+      betont: 'ambisonics, a band, a voice, whole rooms',
       fussnote: 'Thirty-one places so far',
       link: { text: 'Have a listen', ziel: '/en/recordings', art: 'ebene' }
     }

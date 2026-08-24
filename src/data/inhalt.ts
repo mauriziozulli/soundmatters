@@ -164,8 +164,12 @@ const DEUTSCH: Fassung = {
     {
       nummer: '01',
       einordnung: 'Film · Video · Werbung',
-      wort: 'Sound',
-      zweite: 'and Picture',
+      /* Nicht «Sound»: das Wort stünde dann zweimal in einem Balken auf
+         derselben Seite. Umgedreht ist es ausserdem die Paarung, die im
+         Filmton wirklich gesagt wird — und genau das, was die Spur
+         darunter zeigt: Einzelbilder oben, Tonspur unten, im Gleichlauf. */
+      wort: 'Bild',
+      zweite: 'und Ton',
       spur: 'bildton',
       saat: 19,
       farben: {
@@ -380,8 +384,8 @@ const ENGLISCH: Fassung = {
     {
       nummer: '01',
       einordnung: 'Film · Video · Advertising',
-      wort: 'Sound',
-      zweite: 'and Picture',
+      wort: 'Picture',
+      zweite: 'and Sound',
       spur: 'bildton',
       saat: 19,
       farben: {

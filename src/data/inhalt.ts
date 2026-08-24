@@ -163,20 +163,21 @@ const DEUTSCH: Fassung = {
     },
     {
       nummer: '01',
-      einordnung: 'Film · Video · Werbung',
-      /* Nicht «Sound»: das Wort stünde dann zweimal in einem Balken auf
-         derselben Seite. Umgedreht ist es ausserdem die Paarung, die im
-         Filmton wirklich gesagt wird — und genau das, was die Spur
-         darunter zeigt: Einzelbilder oben, Tonspur unten, im Gleichlauf. */
-      wort: 'Bild',
-      zweite: 'und Ton',
+      /* Oben die Handwerke, nicht das Feld: das Feld steht schon im
+         Balken. Dasselbe Muster wie bei 02, wo «Rigs · Kabel · Bühne»
+         aufzählt, was dabei herauskommt. */
+      einordnung: 'Sounddesign · Schnitt · Mischung',
+      /* «Film» steht allein, wie «Musik» in 03. Vorher stand hier «Sound»
+         — dann kam das Wort zweimal im Balken vor, einmal in 00 und
+         einmal hier. Der Seitenname ist gesetzt, also weicht dieser. */
+      wort: 'Film',
       spur: 'bildton',
       saat: 19,
       farben: {
         boden: 'var(--grund-01)', bar: 'var(--ocker)', wort: 'var(--grund-01)',
         kontur: 'var(--grund-01)', zweit: 'var(--ocker)'
       },
-      satz: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt. Ich höre, was noch nicht da ist: Sounddesign, Schnitt und Mischung.',
+      satz: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt. Ich höre, was noch nicht da ist.',
       betont: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt.',
       fussnote: 'Die ganze Werkschau',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
@@ -383,16 +384,15 @@ const ENGLISCH: Fassung = {
     },
     {
       nummer: '01',
-      einordnung: 'Film · Video · Advertising',
-      wort: 'Picture',
-      zweite: 'and Sound',
+      einordnung: 'Sound design · Editing · Mixing',
+      wort: 'Film',
       spur: 'bildton',
       saat: 19,
       farben: {
         boden: 'var(--grund-01)', bar: 'var(--ocker)', wort: 'var(--grund-01)',
         kontur: 'var(--grund-01)', zweit: 'var(--ocker)'
       },
-      satz: 'Sound tells the story too — it decides whether the story carries. I hear what is not there yet: sound design, editing and mixing.',
+      satz: 'Sound tells the story too — it decides whether the story carries. I hear what is not there yet.',
       betont: 'Sound tells the story too — it decides whether the story carries.',
       fussnote: 'The full body of work',
       link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }

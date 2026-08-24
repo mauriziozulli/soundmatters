@@ -278,20 +278,6 @@ const DEUTSCH: Fassung = {
           ]
         },
         {
-          titel: 'Das Gletscher-Case',
-          einordnung: 'Feld · Expedition · Eis',
-          bilder: [{ datei: '/fotos/peli-case.jpg', text: 'Peli 1400 mit dem Anubis, am Griesgletscher' }],
-          text: 'Ein Peli 1400, ausgebaut für den Merging Anubis SPS Premium — Vorverstärker und Monitorcontroller in einem, mitgenommen auf den Griesgletscher. Der Strom kommt aus SWIT-NP-1-Akkus; über einen powerCON läuft und lädt das Case gleichzeitig, und im Feld übernimmt der Akku nahtlos. Zwei Wege, eine Aufnahme.',
-          daten: [
-            { was: 'Case', wert: 'Peli 1400, selber ausgebaut' },
-            { was: 'Herz', wert: 'Merging Anubis SPS Premium' },
-            { was: 'Aufnahme', wert: 'Zoom F3 mit LOM-Ucho-Mikrofonen' },
-            { was: 'Strom', wert: 'SWIT NP-1, powerCON für Netzbetrieb' },
-            { was: 'Redundanz', wert: 'nahtlose Übernahme auf Akku' },
-            { was: 'Verkabelung', wert: 'Mogami, innen wie aussen selbst gebaut' }
-          ]
-        },
-        {
           titel: 'Kabel nach Mass',
           einordnung: 'Location Sound · Bag · Angel',
           bilder: [
@@ -321,6 +307,20 @@ const DEUTSCH: Fassung = {
             { was: 'Ergebnis', wert: 'Pass, Warnung oder Fehler — mit Timecode' },
             { was: 'Bericht', wert: 'HTML, CSV oder Text' },
             { was: 'Zu finden', wert: 'mauriziozulli.com/paranoid-qc' }
+          ]
+        },
+        {
+          titel: 'Das Gletscher-Case',
+          einordnung: 'Feld · Expedition · Eis',
+          bilder: [{ datei: '/fotos/peli-case.jpg', text: 'Peli 1400 mit dem Anubis, am Griesgletscher' }],
+          text: 'Ein Peli 1400, ausgebaut für den Merging Anubis SPS Premium — Vorverstärker und Monitorcontroller in einem, mitgenommen auf den Griesgletscher. Der Strom kommt aus SWIT-NP-1-Akkus; über einen powerCON läuft und lädt das Case gleichzeitig, und im Feld übernimmt der Akku nahtlos. Zwei Wege, eine Aufnahme.',
+          daten: [
+            { was: 'Case', wert: 'Peli 1400, selber ausgebaut' },
+            { was: 'Herz', wert: 'Merging Anubis SPS Premium' },
+            { was: 'Aufnahme', wert: 'Zoom F3 mit LOM-Ucho-Mikrofonen' },
+            { was: 'Strom', wert: 'SWIT NP-1, powerCON für Netzbetrieb' },
+            { was: 'Redundanz', wert: 'nahtlose Übernahme auf Akku' },
+            { was: 'Verkabelung', wert: 'Mogami, innen wie aussen selbst gebaut' }
           ]
         }
       ]
@@ -491,20 +491,6 @@ const ENGLISCH: Fassung = {
           ]
         },
         {
-          titel: 'The Glacier Case',
-          einordnung: 'Field · Expedition · Ice',
-          bilder: [{ datei: '/fotos/peli-case.jpg', text: 'Peli 1400 with the Anubis, on the Gries Glacier' }],
-          text: 'A Peli 1400 built out for the Merging Anubis SPS Premium — preamp and monitor controller in one, carried up the Gries Glacier. Power comes from SWIT NP-1 batteries; a powerCON lets the case run and charge at once, and in the field the battery takes over seamlessly. Two paths, one recording.',
-          daten: [
-            { was: 'Case', wert: 'Peli 1400, built out by hand' },
-            { was: 'Heart', wert: 'Merging Anubis SPS Premium' },
-            { was: 'Capture', wert: 'Zoom F3 with LOM Ucho microphones' },
-            { was: 'Power', wert: 'SWIT NP-1, powerCON for mains' },
-            { was: 'Redundancy', wert: 'seamless battery takeover' },
-            { was: 'Cabling', wert: 'Mogami, inside and out, self-built' }
-          ]
-        },
-        {
           titel: 'Cables to Measure',
           einordnung: 'Location sound · Bag · Boom',
           bilder: [
@@ -534,6 +520,20 @@ const ENGLISCH: Fassung = {
             { was: 'Result', wert: 'pass, warning or fail — with timecode' },
             { was: 'Report', wert: 'HTML, CSV or text' },
             { was: 'Where', wert: 'mauriziozulli.com/paranoid-qc' }
+          ]
+        },
+        {
+          titel: 'The Glacier Case',
+          einordnung: 'Field · Expedition · Ice',
+          bilder: [{ datei: '/fotos/peli-case.jpg', text: 'Peli 1400 with the Anubis, on the Gries Glacier' }],
+          text: 'A Peli 1400 built out for the Merging Anubis SPS Premium — preamp and monitor controller in one, carried up the Gries Glacier. Power comes from SWIT NP-1 batteries; a powerCON lets the case run and charge at once, and in the field the battery takes over seamlessly. Two paths, one recording.',
+          daten: [
+            { was: 'Case', wert: 'Peli 1400, built out by hand' },
+            { was: 'Heart', wert: 'Merging Anubis SPS Premium' },
+            { was: 'Capture', wert: 'Zoom F3 with LOM Ucho microphones' },
+            { was: 'Power', wert: 'SWIT NP-1, powerCON for mains' },
+            { was: 'Redundancy', wert: 'seamless battery takeover' },
+            { was: 'Cabling', wert: 'Mogami, inside and out, self-built' }
           ]
         }
       ]

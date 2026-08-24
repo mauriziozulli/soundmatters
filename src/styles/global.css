@@ -84,9 +84,10 @@ a { color: inherit; }
 }
 
 /* --- Der Balken -------------------------------------------------------
-   Drei Lagen, von hinten nach vorn: der Balken trägt die WORTFARBE als
-   Fläche, das Canvas malt die Balkenfarbe und die Spur hinein, das Wort
-   wird ausgestanzt. Was durch die Buchstaben scheint, ist die Fläche.
+   Alles Farbige liegt im Canvas: Balkenfarbe und Spur, das Wort daraus
+   ausgestanzt, und ganz zuletzt die Wortfarbe darunter gelegt. Damit ist
+   das Canvas lückenlos deckend, und die Fläche des Balkens muss nur noch
+   dieselbe Farbe haben wie der Balken selbst.
 
    `color` trägt hier die Farben doppelt: sichtbar wird sie nicht (es steht
    kein Text darin), aber das Skript liest sie aus. Custom Properties
@@ -105,7 +106,13 @@ a { color: inherit; }
   display: block;
   width: 100%;
   max-width: 1180px;
-  background: var(--wort);
+  /* Die Fläche trägt die BALKENFARBE, nicht die Wortfarbe. Das Wort wird
+     im Canvas selbst hinterlegt (siehe spuren.ts). Läge hier die helle
+     Wortfarbe, liesse jede halbdurchsichtige Kante des Canvas einen
+     hellen Haarstrich durch — auf Geräten mit dritteln Pixeln, etwa dem
+     iPhone, ist das sichtbar. So ist die Kante Balkenfarbe auf
+     Balkenfarbe und fällt nicht auf. */
+  background: var(--bar);
   color: var(--wort);
   border: clamp(4px, .55vw, 7px) solid var(--kontur);
   border-radius: clamp(9px, 1.2vw, 15px);

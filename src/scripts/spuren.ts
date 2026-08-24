@@ -428,7 +428,9 @@ export function spurenAufbauen() {
     if (!breite) return;
     w.dpr = Math.min(devicePixelRatio || 1, 2);
     /* Höhenverhältnis vom gedruckten Kleber übernommen. */
-    const hoehe = Math.max(70, Math.min(breite * .24, 260));
+    /* Ganze Pixel: eine gebrochene Höhe ergibt auf dem Gerät eine
+       gebrochene Kante, und die wird weichgezeichnet. */
+    const hoehe = Math.round(Math.max(70, Math.min(breite * .24, 260)));
     w.breite = breite;
     w.hoehe = hoehe;
     w.leinwand.style.height = hoehe + 'px';
@@ -472,6 +474,15 @@ export function spurenAufbauen() {
     const oben = m.actualBoundingBoxAscent || grad * .72;
     const unten = m.actualBoundingBoxDescent || 0;
     z.fillText(w.wort, B / 2, (H + oben - unten) / 2);
+
+    /* Lage 4: die zweite Druckfarbe UNTER alles legen. Sie füllt das
+       ausgestanzte Wort — und macht das Canvas zugleich lückenlos
+       deckend. Früher lag diese Farbe als Hintergrund des Balkens; dann
+       schien sie an jeder halbdurchsichtigen Kante als heller Haarstrich
+       durch. `destination-over` malt hinter das Vorhandene. */
+    z.globalCompositeOperation = 'destination-over';
+    z.fillStyle = w.wortFarbe;
+    z.fillRect(-2, -2, B + 4, H + 4);
     z.globalCompositeOperation = 'source-over';
   }
 

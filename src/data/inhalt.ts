@@ -193,8 +193,8 @@ const DEUTSCH: Fassung = {
         boden: 'var(--grund-04)', bar: 'var(--verdigris)', wort: 'var(--knochen)',
         kontur: 'var(--tiefgruen)', zweit: 'var(--verdigris)'
       },
-      satz: 'Ich baue Kabel und Recording-Rigs für DJ-Booths und Festivals. Aus Leidenschaft, aber vor allem, weil sie nützlich sein müssen.',
-      betont: 'Ich baue Kabel und Recording-Rigs für DJ-Booths und Festivals.',
+      satz: 'Ich baue Kabel und Rigs nach Mass — Recorder, die eine Festivalnacht durchlaufen, Breakout-Kabel fürs Recording-Bag. Aus Leidenschaft, aber vor allem, weil sie nützlich sein müssen.',
+      betont: 'Ich baue Kabel und Rigs nach Mass',
       fussnote: "Zeichnung und Teileliste gibt's dazu",
       link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
     },
@@ -408,8 +408,8 @@ const ENGLISCH: Fassung = {
         boden: 'var(--grund-04)', bar: 'var(--verdigris)', wort: 'var(--knochen)',
         kontur: 'var(--tiefgruen)', zweit: 'var(--verdigris)'
       },
-      satz: 'I build cables and recording rigs for DJ booths and festivals. Out of passion, but above all because they have to be useful.',
-      betont: 'I build cables and recording rigs for DJ booths and festivals.',
+      satz: 'I build cables and rigs to measure — recorders that run through a festival night, breakout cables for the recording bag. Out of passion, but above all because they have to be useful.',
+      betont: 'I build cables and rigs to measure',
       fussnote: 'Drawing and parts list come with it',
       link: { text: 'How it is built', ziel: '/en/rig', art: 'ebene' }
     },

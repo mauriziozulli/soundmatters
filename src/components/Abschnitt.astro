@@ -47,10 +47,12 @@ const name = [a.wort, a.zweite].filter(Boolean).join(' ');
     </h1>
 
     <p class="satz">{davor}{betont && <b>{betont}</b>}{danach}</p>
-  </div>
 
-  <div class="fuss-abschnitt">
-    <span>{a.fussnote}</span>
+    {/* Fussnote und Weiterführung stehen MITTIG, nicht am unteren Rand.
+        Dort lagen sie einmal — und wurden auf dem iPhone von Safaris
+        schwebender Adressleiste und der Spur überdeckt. Unten steht jetzt
+        nichts mehr, was abgeschnitten werden kann. */}
+    <p class="fussnote">{a.fussnote}</p>
     {a.link && <a class="weiter" href={a.link.ziel}>{a.link.text} {pfeil}</a>}
   </div>
 </section>

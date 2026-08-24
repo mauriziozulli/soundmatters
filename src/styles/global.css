@@ -31,8 +31,10 @@ a { color: inherit; }
 
 /* =========================================================================
    EIN ABSCHNITT
-   Eine Bildschirmhöhe. Oben die Einordnung, in der Mitte der Balken mit
-   dem ausgestanzten Wort, unten Fussnote und höchstens eine Weiterführung.
+   Eine Bildschirmhöhe. Oben die Einordnung, alles andere in der Mitte:
+   Balken, Zeile, Satz, Fussnote und höchstens eine Weiterführung.
+   Am unteren Rand steht nichts — dort liegt die Spur, und auf dem iPhone
+   zusätzlich Safaris schwebende Adressleiste.
    ========================================================================= */
 
 .abschnitt {
@@ -40,7 +42,9 @@ a { color: inherit; }
   min-height: 100svh;
   scroll-snap-align: start;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  /* Nur zwei Zeilen: Kopf und Mitte. Was früher unten stand, steht jetzt
+     in der Mitte — siehe Abschnitt.astro. */
+  grid-template-rows: auto 1fr;
   gap: 24px;
   padding: clamp(24px, 5vw, 48px) var(--rand) calc(var(--spur) + clamp(24px, 5vw, 48px));
   isolation: isolate;
@@ -57,22 +61,33 @@ a { color: inherit; }
 }
 @media (prefers-reduced-motion: reduce) { .puls { display: none; } }
 
-/* Harte Linien oben und unten — der Rahmen des Klebers, aufgeklappt. */
-.kopf,
-.fuss-abschnitt {
+/* Die harte Linie oben — der Rahmen des Klebers, aufgeklappt. Die
+   Gegenlinie unten ist entfallen: dort steht nichts mehr. */
+.kopf {
   display: flex; flex-wrap: wrap; gap: 8px 22px;
   align-items: baseline; justify-content: space-between;
   font-family: var(--mono);
   font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--leise);
+  border-bottom: 2px solid rgba(239, 230, 210, .3);
+  padding-bottom: 12px;
 }
-.kopf { border-bottom: 2px solid rgba(239, 230, 210, .3); padding-bottom: 12px; }
-.fuss-abschnitt { border-top: 2px solid rgba(239, 230, 210, .3); padding-top: 13px; }
+
+.fussnote {
+  font-family: var(--mono);
+  font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--leise);
+  text-align: center;
+  margin-top: clamp(6px, 1.4vw, 14px);
+}
 
 .weiter {
   color: var(--zweit, var(--papier)); text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase;
   border-bottom: 3px solid currentColor;
-  padding-bottom: 3px;
+  padding-bottom: 4px;
+  justify-self: center;
 }
 
 .mitte {
@@ -164,7 +179,8 @@ a { color: inherit; }
 .abschnitt .balken { transform: scaleX(.04); opacity: 0; }
 .abschnitt .zweite,
 .abschnitt .satz,
-.abschnitt .fuss-abschnitt { opacity: 0; transform: translateY(10px); }
+.abschnitt .fussnote,
+.abschnitt .weiter { opacity: 0; transform: translateY(10px); }
 
 .abschnitt[data-an='true'] .balken {
   transform: scaleX(1); opacity: 1;
@@ -172,18 +188,21 @@ a { color: inherit; }
 }
 .abschnitt[data-an='true'] .zweite,
 .abschnitt[data-an='true'] .satz,
-.abschnitt[data-an='true'] .fuss-abschnitt {
+.abschnitt[data-an='true'] .fussnote,
+.abschnitt[data-an='true'] .weiter {
   opacity: 1; transform: none;
   transition: opacity .5s ease .34s, transform .6s cubic-bezier(.16, 1, .3, 1) .34s;
 }
 .abschnitt[data-an='true'] .satz { transition-delay: .42s; }
-.abschnitt[data-an='true'] .fuss-abschnitt { transition-delay: .5s; }
+.abschnitt[data-an='true'] .fussnote,
+.abschnitt[data-an='true'] .weiter { transition-delay: .5s; }
 
 @media (prefers-reduced-motion: reduce) {
   .abschnitt .balken,
   .abschnitt .zweite,
   .abschnitt .satz,
-  .abschnitt .fuss-abschnitt { transform: none; opacity: 1; transition: none; }
+  .abschnitt .fussnote,
+  .abschnitt .weiter { transform: none; opacity: 1; transition: none; }
 }
 
 /* =========================================================================

@@ -222,7 +222,10 @@ const DEUTSCH: Fassung = {
     },
     {
       nummer: '04',
-      einordnung: 'Gletscher · Seilbahn · leere Räume',
+      /* Die Orte stehen im Satz, also stehen hier die Werkzeuge — sonst
+         doppelt sich beides. Alle drei kommen wörtlich auf der Ebene
+         darunter vor, damit die Ecke belegt, was das Plakat behauptet. */
+      einordnung: 'Hydrophon · Kontaktmikro · Stereopaar',
       wort: 'Field',
       zweite: 'Recording',
       spur: 'spektrogramm',
@@ -235,14 +238,13 @@ const DEUTSCH: Fassung = {
          eine Aufnahme braucht, hat oft nichts mit Film zu tun. Und «was
          sonst nicht aufgenommen wird» klang nach Anspruch statt nach
          Arbeit. Jetzt trägt der Satz die Bandbreite. */
-      /* Ohne Ortsbeispiele: die stehen in der Ecke oben rechts und auf
-         der Ebene, hier hätten sie den Satz verengt. Und ohne «für
-         spezielle Ansprüche» — dasselbe Katalogregister wie «High End»,
-         das hier schon einmal rausgeflogen ist. Gemeint ist ohnehin
-         etwas anderes: nicht ein höherer Anspruch, sondern eine Idee,
-         für die es die Aufnahme noch nicht gibt. */
-      satz: 'Ich nehme viel auf — meistens für eine Idee, die noch keinen Klang hat. Genau dort fangen die meisten Projekte an.',
-      betont: 'meistens für eine Idee, die noch keinen Klang hat',
+      /* Eine Handwerkswahrheit statt einer Künstlerpose. Vorgänger war
+         «meistens für eine Idee, die noch keinen Klang hat» — das
+         posierte, und der Auftraggeber ist Profi, nicht Poet.
+         «Je schwieriger, desto lieber» ist die Lust an schwierigen Orten,
+         ohne das Wort «Herausforderung», das nach Bewerbung klingt. */
+      satz: 'Kein Mix rettet eine schlechte Aufnahme — alles entscheidet sich am Ort. Gletscher, Seilbahn, Filmset: je schwieriger, desto lieber.',
+      betont: 'Kein Mix rettet eine schlechte Aufnahme',
       fussnote: 'Bisher einunddreissig Orte',
       link: { text: 'Reinhören', ziel: '/aufnahmen', art: 'ebene' }
     }
@@ -445,7 +447,7 @@ const ENGLISCH: Fassung = {
     },
     {
       nummer: '04',
-      einordnung: 'Glaciers · Cable cars · Empty rooms',
+      einordnung: 'Hydrophone · Contact mic · Stereo pair',
       wort: 'Field',
       zweite: 'Recording',
       spur: 'spektrogramm',
@@ -454,8 +456,8 @@ const ENGLISCH: Fassung = {
         boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
         kontur: 'var(--knochen)', zweit: 'var(--knochen)'
       },
-      satz: 'I record a lot — mostly for an idea that has no sound yet. That is where most projects begin.',
-      betont: 'mostly for an idea that has no sound yet',
+      satz: 'No mix saves a bad recording — everything is decided on location. A glacier, a cable car, a film set: the harder, the better.',
+      betont: 'No mix saves a bad recording',
       fussnote: 'Thirty-one places so far',
       link: { text: 'Have a listen', ziel: '/en/recordings', art: 'ebene' }
     }

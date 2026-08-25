@@ -12,7 +12,7 @@ nötig, keine Namensnennung.
 | `kabel-mid-side.jpg` | Fünfpoliges Mid/Side-Kabel, auf Länge konfektioniert |
 | `kabel-stecker.jpg` | Die Enden des Breakouts, fünf Pol auf drei Pol |
 | `kabel-adapter.jpg` | Adapterkabel nach Mass |
-| `ort-gletscherbach.jpg` | Stereopaar über einem Gletscherbach, Recorder im Case |
+| `ort-gletscherbach.jpg` | Stereopaar vor der Gletscherspalte, Recorder im Case |
 | `ort-gletscher.jpg` | Mikrofone setzen an der Gletscherspalte |
 | `ort-strasse.jpg` | Filmton in der Stadt, Angel und Bag |
 | `ort-strand.jpg` | Dreh am Meer |

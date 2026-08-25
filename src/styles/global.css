@@ -495,6 +495,35 @@ a { color: inherit; }
 /* Fotos eines Geräts. Stehen zwischen Text und Datenliste, damit sie das
    Stück belegen statt es zu bebildern. Ein Bild steht allein, mehrere
    nebeneinander — unter jedem eine Zeile, die benennt, was zu sehen ist. */
+/* Bilder in Gruppen: eine Zeile für mehrere Aufnahmen derselben Sache.
+   Die Gruppen liegen untereinander, damit die Bilder gross bleiben und
+   klar ist, worauf sich die Zeile bezieht. */
+.bildgruppen {
+  display: grid;
+  gap: clamp(22px, 3.4vw, 34px);
+  margin: 30px 0 44px;
+}
+.bildgruppe { margin: 0; }
+.bildgruppe__bilder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.bildgruppe img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+.bildgruppe figcaption {
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .1em;
+  color: var(--leise);
+  margin-top: 10px;
+  line-height: 1.45;
+}
+
 .bildreihe {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

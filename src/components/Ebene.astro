@@ -27,12 +27,14 @@ const { e, offen = false, beschriftung } = Astro.props;
     </h1>
     <p class="ebene__vorspann">{e.vorspann}</p>
 
-    {e.bilder && e.bilder.length > 0 && (
-      <div class="bildreihe">
-        {e.bilder.map((f) => (
-          <figure class="bildreihe__bild">
-            <img src={f.datei} alt="" loading="lazy" decoding="async" />
-            <figcaption>{f.text}</figcaption>
+    {e.bildgruppen && e.bildgruppen.length > 0 && (
+      <div class="bildgruppen">
+        {e.bildgruppen.map((g) => (
+          <figure class="bildgruppe">
+            <div class="bildgruppe__bilder">
+              {g.dateien.map((d) => <img src={d} alt="" loading="lazy" decoding="async" />)}
+            </div>
+            <figcaption>{g.text}</figcaption>
           </figure>
         ))}
       </div>

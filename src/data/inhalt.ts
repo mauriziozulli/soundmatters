@@ -87,11 +87,15 @@ export type Ebene = {
   vorspann: string;
   /** Bild oben in der Ebene; leer lassen, solange keins da ist */
   bild?: string;
-  /** Bildreihe unter dem Vorspann, je mit einer Zeile darunter. Dasselbe
-   *  Format wie bei den Stücken: 4:3 quer, sonst steht die Reihe schief.
-   *  Für Situationen gedacht — was zu sehen ist, soll die Arbeit zeigen,
-   *  nicht die Person. */
-  bilder?: { datei: string; text: string }[];
+  /** Bilder in Gruppen unter dem Vorspann: mehrere Aufnahmen, EINE Zeile
+   *  darunter. Alle im Format 4:3 quer, sonst steht die Reihe schief.
+   *
+   *  **Die Zeile sagt, was ich tue — nicht, was zu sehen ist.** «Stereopaar
+   *  über dem Gletscherbach» beschreibt ein Foto; «Aufnahmen für Forschung,
+   *  Dokumentarfilm und Sound Libraries» beschreibt die Arbeit, und nur das
+   *  nützt jemandem, der überlegt, ob er anfragt. Darum die Gruppen: zwei
+   *  Bilder derselben Sache teilen sich eine Aussage. */
+  bildgruppen?: { dateien: string[]; text: string }[];
   /** Fliesstext-Bloecke. Weglassen, wenn die Stuecke den Inhalt tragen. */
   bloecke?: { titel: string; text: string }[];
   daten?: { was: string; wert: string }[];
@@ -346,24 +350,24 @@ const DEUTSCH: Fassung = {
          nennt, statt sie nur anzudeuten. */
       vorspann:
         'Ich nehme auf, was gebraucht wird: Filmton am Set, Sprecher, Atmosphären und Naturgeräusche draussen, ganze Festivalnächte am Stück. Der Ort bestimmt das Rig, nicht umgekehrt.',
-      bilder: [
-        { datei: '/fotos/ort-gletscherbach.jpg', text: 'Stereopaar über dem Gletscherbach, Recorder im Case' },
-        { datei: '/fotos/ort-gletscher.jpg', text: 'Am Gletscher: setzen, hören, verschieben' },
-        { datei: '/fotos/ort-strasse.jpg', text: 'Filmton in der Stadt — Angel, Bag, Funkstrecken' },
-        { datei: '/fotos/ort-strand.jpg', text: 'Dreh am Meer, Angel gegen den Wind' }
+      bildgruppen: [
+        {
+          dateien: ['/fotos/ort-gletscherbach.jpg', '/fotos/ort-gletscher.jpg'],
+          text: 'Aufnahmen für Forschung, Dokumentarfilm und Sound Libraries'
+        },
+        {
+          dateien: ['/fotos/ort-strasse.jpg', '/fotos/ort-strand.jpg'],
+          text: 'Filmton für Dokumentarfilm und Werbung'
+        }
       ],
       bloecke: [
         {
-          titel: 'Eis, das arbeitet',
-          text: 'Hydrophon in einer Gletschermühle, vier Grad unter null. Eis knirscht nicht nur, es knallt — der tiefste Ton kam aus zwölf Metern Tiefe und war auf dem Kopfhörer kaum auszuhalten.'
+          titel: 'Was ich aufnehme',
+          text: 'Stereo und Mid/Side, Resonanzen mit Kontaktmikrofonen, Atmosphären und Naturgeräusche, Foley und Soundeffekte, Sprecher und Podcast — und Konzerte, Events und ganze Festivals.'
         },
         {
           titel: 'Seilbahn, hängend',
           text: 'Kontaktmikro am Tragseil. Ein Kilometer gespanntes Stahlseil ist eine Saite, man muss sie nur anfassen. Klingt wie ein Bass, den niemand gebaut hat.'
-        },
-        {
-          titel: 'Zehn nach sechs',
-          text: 'Stereopaar in der Mitte des leeren Clubs, wenn alle weg sind. Der schönste Moment einer Nacht ist der, in dem der Raum wieder er selbst ist.'
         }
       ],
       daten: [
@@ -564,24 +568,24 @@ const ENGLISCH: Fassung = {
       titel: 'The Recordings',
       vorspann:
         'I record what is needed: location sound on set, voice-over, atmospheres and nature outdoors, whole festival nights in one go. The place decides the rig, not the other way round.',
-      bilder: [
-        { datei: '/fotos/ort-gletscherbach.jpg', text: 'Stereo pair over a glacial stream, recorder in the case' },
-        { datei: '/fotos/ort-gletscher.jpg', text: 'On the glacier: place it, listen, move it again' },
-        { datei: '/fotos/ort-strasse.jpg', text: 'Location sound in the city — boom, bag, radio links' },
-        { datei: '/fotos/ort-strand.jpg', text: 'A shoot by the sea, boom against the wind' }
+      bildgruppen: [
+        {
+          dateien: ['/fotos/ort-gletscherbach.jpg', '/fotos/ort-gletscher.jpg'],
+          text: 'Recordings for research, documentary and sound libraries'
+        },
+        {
+          dateien: ['/fotos/ort-strasse.jpg', '/fotos/ort-strand.jpg'],
+          text: 'Location sound for documentary and commercials'
+        }
       ],
       bloecke: [
         {
-          titel: 'Ice at work',
-          text: "Hydrophone in a glacier mill, four below zero. Ice doesn't just creak, it cracks — the lowest note came from twelve metres down and was barely bearable on headphones."
+          titel: 'What I record',
+          text: 'Stereo and mid/side, resonances with contact mics, atmospheres and nature, foley and sound effects, voice-over and podcast — and concerts, events and whole festivals.'
         },
         {
           titel: 'Cable car, hanging',
           text: 'Contact mic on the carrying rope. A kilometre of tensioned steel cable is a string, you only have to touch it. Sounds like a bass nobody ever built.'
-        },
-        {
-          titel: 'Ten past six',
-          text: 'Stereo pair in the middle of the empty club, once everyone has gone. The finest moment of a night is the one where the room becomes itself again.'
         }
       ],
       daten: [

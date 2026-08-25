@@ -329,6 +329,23 @@ Wer den Ausschnitt selber bestimmen will, schneidet die Datei vorher auf
 einem von Hand gesetzten Fokuswert, weil kein Algorithmus weiss, wo das
 Kabel liegt.
 
+**Auf der Ebene selbst: Gruppen.** Neben den Stücken kann eine Ebene
+`bildgruppen` tragen — mehrere Bilder, EINE Zeile darunter:
+
+```ts
+bildgruppen: [
+  { dateien: ['/fotos/ort-gletscherbach.jpg', '/fotos/ort-gletscher.jpg'],
+    text: 'Aufnahmen für Forschung, Dokumentarfilm und Sound Libraries' },
+],
+```
+
+Der Unterschied ist nicht die Form, sondern was die Zeile sagt. Bei den
+Stücken beschreibt sie das Bauteil. Bei den Gruppen beschreibt sie **die
+Arbeit, nicht das Bild**: «Stereopaar über dem Gletscherbach» sagt einem
+Auftraggeber nichts, «Aufnahmen für Forschung, Dokumentarfilm und Sound
+Libraries» sagt ihm alles. Darum teilen sich zwei Bilder derselben Sache
+eine Aussage.
+
 **Menge.** Ab etwa fünf Bildern wird die Reihe unruhig. Dann lieber ein
 eigenes Stück je Bauform anlegen als die Reihe verlängern. Eine dritte
 Ebene bleibt trotzdem verboten.

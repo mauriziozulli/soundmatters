@@ -172,65 +172,6 @@ const DEUTSCH: Fassung = {
     },
     {
       nummer: '01',
-      /* Oben die Handwerke, nicht das Feld: das Feld steht schon im
-         Balken. Dasselbe Muster wie bei 02, wo «Rigs · Kabel · Bühne»
-         aufzählt, was dabei herauskommt. */
-      einordnung: 'Sounddesign · Schnitt · Mischung',
-      /* «Film» steht allein, wie «Musik» in 03. Vorher stand hier «Sound»
-         — dann kam das Wort zweimal im Balken vor, einmal in 00 und
-         einmal hier. Der Seitenname ist gesetzt, also weicht dieser. */
-      wort: 'Film',
-      spur: 'bildton',
-      saat: 19,
-      farben: {
-        boden: 'var(--grund-01)', bar: 'var(--ocker)', wort: 'var(--grund-01)',
-        kontur: 'var(--grund-01)', zweit: 'var(--ocker)'
-      },
-      satz: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt. Ich höre, was noch nicht da ist.',
-      betont: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt.',
-      fussnote: 'Die ganze Werkschau',
-      link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
-    },
-    {
-      nummer: '02',
-      einordnung: 'Rigs · Kabel · Bühne',
-      wort: 'Custom',
-      zweite: 'Gear',
-      spur: 'sternvierer',
-      saat: 31,
-      farben: {
-        boden: 'var(--grund-04)', bar: 'var(--verdigris)', wort: 'var(--knochen)',
-        kontur: 'var(--tiefgruen)', zweit: 'var(--verdigris)'
-      },
-      satz: 'Ich baue Kabel und Rigs nach Mass — Recorder, die eine Festivalnacht durchlaufen, Breakout-Kabel fürs Recording-Bag. Aus Leidenschaft, aber vor allem, weil sie nützlich sein müssen.',
-      betont: 'Ich baue Kabel und Rigs nach Mass',
-      fussnote: "Zeichnung und Teileliste gibt's dazu",
-      link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
-    },
-    {
-      nummer: '03',
-      einordnung: 'House · Techno · Festival',
-      /* Keine zweite Zeile: «Musik» steht allein. Eine Zeile wie
-         «Fünfzehn Jahre» würde nur den Satz darunter doppeln. */
-      wort: 'Musik',
-      spur: 'spektrum',
-      saat: 53,
-      farben: {
-        boden: 'var(--grund-03)', bar: 'var(--rost)', wort: 'var(--knochen)',
-        kontur: 'var(--tiefbraun)', zweit: 'var(--rost)'
-      },
-      /* Die Rigs standen hier einmal als Verbindung zu 02 — Bauen gehört
-         aber nicht zur Musik. Die Verbindung läuft jetzt übers Pult, und
-         die Rigs tauchen dort auf, wo sie zählen: bei den Aufnahmen.
-         «Organisiere Events» ist weggefallen, ohne Verlust: die Fusszeile
-         darunter nennt Am Bach Festival und Schwing und Stampf. */
-      satz: 'Seit fünfzehn Jahren spiele ich Musik. Vom Audio Engineering kommt der Rest: Ich mische und mastere Tracks und Sets.',
-      betont: 'Seit fünfzehn Jahren spiele ich Musik.',
-      fussnote: 'Am Bach Festival · Schwing und Stampf',
-      link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
-    },
-    {
-      nummer: '04',
       /* Die Orte stehen im Satz, also stehen hier die Werkzeuge — sonst
          doppelt sich beides. Alle drei kommen wörtlich auf der Ebene
          darunter vor, damit die Ecke belegt, was das Plakat behauptet. */
@@ -256,6 +197,65 @@ const DEUTSCH: Fassung = {
       betont: 'Kein Mix rettet eine schlechte Aufnahme',
       fussnote: 'Bisher einunddreissig Orte',
       link: { text: 'Wo ich aufnehme', ziel: '/aufnahmen', art: 'ebene' }
+    },
+    {
+      nummer: '02',
+      einordnung: 'Rigs · Kabel · Bühne',
+      wort: 'Custom',
+      zweite: 'Gear',
+      spur: 'sternvierer',
+      saat: 31,
+      farben: {
+        boden: 'var(--grund-04)', bar: 'var(--verdigris)', wort: 'var(--knochen)',
+        kontur: 'var(--tiefgruen)', zweit: 'var(--verdigris)'
+      },
+      satz: 'Ich baue Kabel und Rigs nach Mass — Recorder, die eine Festivalnacht durchlaufen, Breakout-Kabel fürs Recording-Bag. Aus Leidenschaft, aber vor allem, weil sie nützlich sein müssen.',
+      betont: 'Ich baue Kabel und Rigs nach Mass',
+      fussnote: "Zeichnung und Teileliste gibt's dazu",
+      link: { text: 'Wie es gebaut ist', ziel: '/rig', art: 'ebene' }
+    },
+    {
+      nummer: '03',
+      /* Oben die Handwerke, nicht das Feld: das Feld steht schon im
+         Balken. Dasselbe Muster wie bei 02, wo «Rigs · Kabel · Bühne»
+         aufzählt, was dabei herauskommt. */
+      einordnung: 'Sounddesign · Schnitt · Mischung',
+      /* «Film» steht allein, wie «Musik» in 03. Vorher stand hier «Sound»
+         — dann kam das Wort zweimal im Balken vor, einmal in 00 und
+         einmal hier. Der Seitenname ist gesetzt, also weicht dieser. */
+      wort: 'Film',
+      spur: 'bildton',
+      saat: 19,
+      farben: {
+        boden: 'var(--grund-01)', bar: 'var(--ocker)', wort: 'var(--grund-01)',
+        kontur: 'var(--grund-01)', zweit: 'var(--ocker)'
+      },
+      satz: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt. Ich höre, was noch nicht da ist.',
+      betont: 'Ton erzählt mit — er entscheidet, ob die Geschichte trägt.',
+      fussnote: 'Die ganze Werkschau',
+      link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
+    },
+    {
+      nummer: '04',
+      einordnung: 'House · Techno · Festival',
+      /* Keine zweite Zeile: «Musik» steht allein. Eine Zeile wie
+         «Fünfzehn Jahre» würde nur den Satz darunter doppeln. */
+      wort: 'Musik',
+      spur: 'spektrum',
+      saat: 53,
+      farben: {
+        boden: 'var(--grund-03)', bar: 'var(--rost)', wort: 'var(--knochen)',
+        kontur: 'var(--tiefbraun)', zweit: 'var(--rost)'
+      },
+      /* Die Rigs standen hier einmal als Verbindung zu 02 — Bauen gehört
+         aber nicht zur Musik. Die Verbindung läuft jetzt übers Pult, und
+         die Rigs tauchen dort auf, wo sie zählen: bei den Aufnahmen.
+         «Organisiere Events» ist weggefallen, ohne Verlust: die Fusszeile
+         darunter nennt Am Bach Festival und Schwing und Stampf. */
+      satz: 'Seit fünfzehn Jahren spiele ich Musik. Vom Audio Engineering kommt der Rest: Ich mische und mastere Tracks und Sets.',
+      betont: 'Seit fünfzehn Jahren spiele ich Musik.',
+      fussnote: 'Am Bach Festival · Schwing und Stampf',
+      link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
     }
   ],
   ebenen: [
@@ -418,18 +418,19 @@ const ENGLISCH: Fassung = {
     },
     {
       nummer: '01',
-      einordnung: 'Sound design · Editing · Mixing',
-      wort: 'Film',
-      spur: 'bildton',
-      saat: 19,
+      einordnung: 'Hydrophone · Contact mic · Stereo pair',
+      wort: 'Field',
+      zweite: 'Recording',
+      spur: 'spektrogramm',
+      saat: 71,
       farben: {
-        boden: 'var(--grund-01)', bar: 'var(--ocker)', wort: 'var(--grund-01)',
-        kontur: 'var(--grund-01)', zweit: 'var(--ocker)'
+        boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
+        kontur: 'var(--knochen)', zweit: 'var(--knochen)'
       },
-      satz: 'Sound tells the story too — it decides whether the story carries. I hear what is not there yet.',
-      betont: 'Sound tells the story too — it decides whether the story carries.',
-      fussnote: 'The full body of work',
-      link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
+      satz: 'No mix saves a bad recording — everything is decided on location. A glacier, a cable car, a film set: the harder, the better.',
+      betont: 'No mix saves a bad recording',
+      fussnote: 'Thirty-one places so far',
+      link: { text: 'Where I record', ziel: '/en/recordings', art: 'ebene' }
     },
     {
       nummer: '02',
@@ -449,6 +450,21 @@ const ENGLISCH: Fassung = {
     },
     {
       nummer: '03',
+      einordnung: 'Sound design · Editing · Mixing',
+      wort: 'Film',
+      spur: 'bildton',
+      saat: 19,
+      farben: {
+        boden: 'var(--grund-01)', bar: 'var(--ocker)', wort: 'var(--grund-01)',
+        kontur: 'var(--grund-01)', zweit: 'var(--ocker)'
+      },
+      satz: 'Sound tells the story too — it decides whether the story carries. I hear what is not there yet.',
+      betont: 'Sound tells the story too — it decides whether the story carries.',
+      fussnote: 'The full body of work',
+      link: { text: 'mauriziozulli.com', ziel: 'https://mauriziozulli.com', art: 'extern' }
+    },
+    {
+      nummer: '04',
       einordnung: 'House · Techno · Festival',
       wort: 'Music',
       spur: 'spektrum',
@@ -461,22 +477,6 @@ const ENGLISCH: Fassung = {
       betont: 'I have been playing music for fifteen years.',
       fussnote: 'Am Bach Festival · Schwing und Stampf',
       link: { text: 'SoundCloud', ziel: 'https://soundcloud.com/maurizio-zulli', art: 'extern' }
-    },
-    {
-      nummer: '04',
-      einordnung: 'Hydrophone · Contact mic · Stereo pair',
-      wort: 'Field',
-      zweite: 'Recording',
-      spur: 'spektrogramm',
-      saat: 71,
-      farben: {
-        boden: 'var(--grund-02)', bar: 'var(--knochen)', wort: 'var(--tiefgruen)',
-        kontur: 'var(--knochen)', zweit: 'var(--knochen)'
-      },
-      satz: 'No mix saves a bad recording — everything is decided on location. A glacier, a cable car, a film set: the harder, the better.',
-      betont: 'No mix saves a bad recording',
-      fussnote: 'Thirty-one places so far',
-      link: { text: 'Where I record', ziel: '/en/recordings', art: 'ebene' }
     }
   ],
   ebenen: [

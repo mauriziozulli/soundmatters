@@ -30,13 +30,35 @@ jeder Abschnitt genau einen Satz, der die Verbindung zu den anderen nennt.
 Fünf bildschirmfüllende Abschnitte, danach eine zweite Ebene für
 Vertiefungen.
 
-| | Abschnitt | Wort im Balken | Spur | Balken / Wort |
-|---|---|---|---|---|
-| 00 | Sound Matters | Sound | Pegel | Verdigris / Knochen |
-| 01 | Sound and Picture | Sound | Bild und Ton | Ocker / Russ |
-| 02 | Custom Gear | Custom | Sternvierer | Verdigris / Knochen |
-| 03 | Musik | Musik | Spektrum mit Kick | Rost / Knochen |
-| 04 | Field Recording | Field | Spektrogramm | Knochen / Tiefgrün |
+| | Abschnitt | Wort im Balken | Spur | Balken / Wort | Weiter |
+|---|---|---|---|---|---|
+| 00 | Sound Matters | Sound | Pegel | Verdigris / Knochen | — |
+| 01 | Field Recording | Field | Spektrogramm | Knochen / Tiefgrün | → Ebene |
+| 02 | Custom Gear | Custom | Sternvierer | Verdigris / Knochen | → Ebene |
+| 03 | Film | Film | Bild und Ton | Ocker / Russ | ↗ weg |
+| 04 | Musik | Musik | Spektrum mit Kick | Rost / Knochen | ↗ weg |
+
+**Die Reihenfolge ist nicht nach Umsatz sortiert, und das ist Absicht.**
+Filmton ist das Hauptgeschäft, stand aber einmal auf 01 und ist bewusst
+nach hinten gerückt. Drei Gründe, alle nachprüfbar:
+
+1. **Was selten ist, führt.** Filmton machen viele. Dass jemand ein
+   Hydrophon auf einen Gletscher schleppt, seine Kabel selber lötet und
+   seit fünfzehn Jahren auflegt — diese Kombination gibt es woanders
+   nicht. Sie verdient die Aufmerksamkeit, die man am Anfang geschenkt
+   bekommt.
+2. **Die Ausgänge liegen hinten.** Die zwei Abschnitte mit → bleiben auf
+   der Seite und stehen vorn; die zwei mit ↗ führen weg und stehen
+   hinten. Vorher war der erste inhaltliche Abschnitt ausgerechnet der
+   Ausgang zu `mauriziozulli.com`.
+3. **Es ist die Reihenfolge des Handwerks.** Erst aufnehmen, dann bauen,
+   wozu es das Rig braucht, dann mischen. «Kein Mix rettet eine
+   schlechte Aufnahme» in 01 bereitet den Filmton-Abschnitt vor, statt
+   ihn zu wiederholen.
+
+Wer Filmton wieder nach vorne holen will, soll wissen, was er dafür
+aufgibt. Und: Filmleute sind auf Bildschirm eins trotzdem angesprochen —
+der Satz in 01 nennt das Filmset ausdrücklich.
 
 **Die Seite spricht die Sprache des Aufklebers.** Der Balken mit dem
 ausgesparten Wort, die harte Kontur, die Mono-Zeile, die gedruckten

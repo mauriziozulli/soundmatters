@@ -11,7 +11,7 @@ import { INHALT } from '../data/inhalt';
 export function getStaticPaths() {
   return INHALT.de.ebenen.map((e) => ({
     params: { ebene: e.schluessel },
-    props: { titel: `${e.titel} — Sound Matters`, beschreibung: e.vorspann }
+    props: { titel: `${e.titel} — Sound Matters | Maurizio Zulli`, beschreibung: e.vorspann }
   }));
 }
 

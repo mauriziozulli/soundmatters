@@ -145,7 +145,11 @@ export type Fassung = {
 };
 
 const DEUTSCH: Fassung = {
-  titel: 'Sound Matters',
+  /* Der Name gehört in den Titel, nicht nur in die Beschreibung. Vorher
+     stand hier «Sound Matters» allein — für eine Suchmaschine war das eine
+     namenlose Seite, die zufällig so heisst. Wer «Maurizio Zulli» suchte,
+     fand sie nie. Warum das zusammenhängt: siehe data/person.ts. */
+  titel: 'Sound Matters — Maurizio Zulli, Luzern',
   beschreibung:
     'Maurizio Zulli aus Luzern: Ton für Film und Video, selbst gebaute Recording-Rigs, Musik und Feldaufnahmen.',
   wechsel: 'Auf Deutsch lesen',
@@ -391,7 +395,7 @@ const DEUTSCH: Fassung = {
  * und Stampf) — sie zu übersetzen würde sie unauffindbar machen.
  */
 const ENGLISCH: Fassung = {
-  titel: 'Sound Matters',
+  titel: 'Sound Matters — Maurizio Zulli, Lucerne',
   beschreibung:
     'Maurizio Zulli from Lucerne: sound for film and video, self-built recording rigs, music and field recordings.',
   wechsel: 'Read in English',

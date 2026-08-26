@@ -87,6 +87,28 @@ die Adresse direkt öffnet, landet sofort dort — dafür ist zu jeder Ebene ein
 echte Seite vorgebaut. Ohne JavaScript bleiben es normale Links: es lädt dann
 neu statt zu überblenden, aber nichts geht verloren.
 
+## Zwei Adressen, eine Person
+
+mauriziozulli.com ist, wo er gebucht wird: Credits, Auszeichnungen,
+Filmografie. Diese Seite hier ist, warum es sich lohnt: Rigs, Musik,
+Feldaufnahmen. Für eine Suchmaschine sind das trotzdem erst mal zwei
+fremde Adressen — und bis vor Kurzem stand hier nirgends, wer die Seite
+macht: im Titel «Sound Matters», in den strukturierten Daten nichts.
+
+Beide Seiten tragen darum jetzt dieselbe Person-Auszeichnung, und jede
+nennt die andere in `sameAs`. Das ist der Mechanismus, den schema.org
+dafür vorsieht: nicht «diese Seiten ähneln sich», sondern «dieselbe
+Person, andere Adresse». Die Liste steht in `src/data/person.ts` und
+**muss mit der auf mauriziozulli.com übereinstimmen** (dort in
+`src/layouts/Layout.astro`). Zwei Einträge, die sich widersprechen, sind
+schlechter als einer.
+
+Im Titel steht seither auch sein Name. Wer nach «Maurizio Zulli» sucht,
+soll in erster Linie das Portfolio finden — diese Seite rankt für andere
+Fragen (Recording Rig, Field Recording, Custom Gear), und beide dürfen
+nebeneinander stehen, sobald die Suchmaschine weiss, dass eine Person
+dahintersteht.
+
 ## Was noch offen ist
 
 - [ ] **Fotos hinter die Balken**, falls die Abschnitte Bilder bekommen

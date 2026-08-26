@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { BASIS, gegenstueck, mitStrich, type Sprache } from '../data/inhalt';
+import { personLd, seiteLd } from '../data/person';
 
 interface Props { sprache?: Sprache; titel?: string; beschreibung?: string }
 const {
@@ -12,6 +13,13 @@ const {
 const pfad = mitStrich(Astro.url.pathname);
 const andereSprache: Sprache = sprache === 'de' ? 'en' : 'de';
 const andererPfad = gegenstueck(sprache, pfad);
+
+/* Strukturierte Daten: sagen der Suchmaschine, dass hinter dieser Adresse
+   ein Mensch steht — derselbe wie hinter mauriziozulli.com. Ohne das ist
+   «Sound Matters» eine namenlose Seite. Warum das so gebaut ist und was
+   beim Ändern zu beachten wäre, steht in data/person.ts. */
+const person = personLd(sprache);
+const seite = seiteLd(sprache, new URL(pfad, Astro.site).toString());
 ---
 
 <!doctype html>
@@ -41,6 +49,9 @@ const andererPfad = gegenstueck(sprache, pfad);
     <link rel="preload" as="font" type="font/woff2" href="/schriften/mono.woff2" crossorigin />
 
     <meta name="theme-color" content="#101014" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+    <script type="application/ld+json" set:html={JSON.stringify(seite)} />
   </head>
 
   <body>

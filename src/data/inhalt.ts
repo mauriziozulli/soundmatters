@@ -281,6 +281,10 @@ const DEUTSCH: Fassung = {
           titel: 'Der Booth-Recorder',
           einordnung: 'Festival · DJ-Booth',
           text: 'Ein Tascam SS-R250N im Case, fest am Booth-Ausgang. Er läuft die ganze Nacht und sichert laufend mit — zieht jemand den Stecker, ist die Aufnahme bis kurz davor da und läuft danach von selbst weiter. Übersteuert ein Set, setzt er den Marker automatisch. Und wer sein eigenes Set mitnehmen will, hängt seinen Recorder ans durchgeschleifte Signal.',
+          bilder: [
+            { datei: '/fotos/booth-recorder-case.jpg', text: 'Das Case im Einsatz, beide SD-Schächte von vorn erreichbar' },
+            { datei: '/fotos/booth-recorder-anschluss.jpg', text: 'Das Anschlussfeld: In L/R aus der Booth, Out L/R durchgeschleift' }
+          ],
           daten: [
             { was: 'Herz', wert: 'Tascam SS-R250N' },
             { was: 'Kanäle', wert: '2, Stereo-Summe aus der Booth' },
@@ -502,6 +506,10 @@ const ENGLISCH: Fassung = {
           titel: 'The Booth Recorder',
           einordnung: 'Festival · DJ booth',
           text: "A Tascam SS-R250N in a case, wired straight to the booth output. It runs all night and keeps saving as it goes — pull the plug and the recording is there up to a moment before, then it picks up again by itself. If a set clips, it sets the marker automatically. And anyone who wants their own set can hang their recorder off the through signal.",
+          bilder: [
+            { datei: '/fotos/booth-recorder-case.jpg', text: 'The case in use, both SD slots reachable from the front' },
+            { datei: '/fotos/booth-recorder-anschluss.jpg', text: 'The connector panel: in L/R from the booth, out L/R passed through' }
+          ],
           daten: [
             { was: 'Heart', wert: 'Tascam SS-R250N' },
             { was: 'Channels', wert: '2, stereo sum from the booth' },

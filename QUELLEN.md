@@ -8,6 +8,8 @@ nötig, keine Namensnennung.
 | Datei | Motiv |
 |---|---|
 | `peli-case.jpg` | Peli 1400 mit dem Merging Anubis SPS Premium, Griesgletscher 2025 |
+| `booth-recorder-case.jpg` | Das Rackcase mit dem Tascam SS-R250N, am Festival aufgebaut |
+| `booth-recorder-anschluss.jpg` | Anschlussfeld des Booth-Recorders, In und Out beschriftet |
 | `kabel.jpg` | Angelkabel und Breakout, wie sie im Case liegen |
 | `kabel-mid-side.jpg` | Fünfpoliges Mid/Side-Kabel, auf Länge konfektioniert |
 | `kabel-stecker.jpg` | Die Enden des Breakouts, fünf Pol auf drei Pol |

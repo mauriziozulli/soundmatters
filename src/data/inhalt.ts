@@ -136,7 +136,7 @@ export type Fassung = {
   titel: string;
   beschreibung: string;
   /** Feste Beschriftungen der Oberfläche, damit nichts hartkodiert ist */
-  beschriftung: { schliessen: string; platzhalter: string; stuecke: string };
+  beschriftung: { schliessen: string; platzhalter: string; stuecke: string; technischeDaten: string };
   /** Beschriftung des Sprachschalters für die jeweils andere Fassung */
   wechsel: string;
   abschnitte: Abschnitt[];
@@ -156,7 +156,8 @@ const DEUTSCH: Fassung = {
   beschriftung: {
     schliessen: '✕ Schliessen',
     platzhalter: 'Hier kommt dein Foto hin',
-    stuecke: 'Vier Beispiele'
+    stuecke: 'Vier Beispiele',
+    technischeDaten: 'Technische Daten'
   },
   abschnitte: [
     {
@@ -278,20 +279,21 @@ const DEUTSCH: Fassung = {
         'Cases, Kabel und Software, die es so nicht zu kaufen gibt — gebaut für den Fall, den es zu lösen gab. Schau dir an, was im Einsatz ist.',
       stuecke: [
         {
-          titel: 'Der Booth-Recorder',
-          einordnung: 'Festival · DJ-Booth',
-          text: 'Ein Tascam SS-R250N im Case, fest am Booth-Ausgang. Er läuft die ganze Nacht und sichert laufend mit — zieht jemand den Stecker, ist die Aufnahme bis kurz davor da und läuft danach von selbst weiter. Übersteuert ein Set, setzt er den Marker automatisch. Und wer sein eigenes Set mitnehmen will, hängt seinen Recorder ans durchgeschleifte Signal.',
+          titel: 'Die Wrackbox MK1',
+          einordnung: 'Festival · Broadcast',
+          text: 'Ein ganzes Festival aufzunehmen ist ein Babysitting-Job. Jemand checkt das Laptop zwischen den Sets. Jemand wechselt um drei Uhr morgens die Karte. Jemand hofft, dass der Strom hält. Meistens war das ich — also habe ich eine Box gebaut, die mich nicht braucht. Strom rein, Audio rein, weggehen: Sie nimmt das ganze Wochenende von allein auf. Die Timetable geht einmal rein, für alle drei Tage — jeden Slot, jede Pause. Die Box folgt dem Plan von selbst, nimmt auf, was laufen soll, und bleibt still, wenn nichts läuft.',
           bilder: [
-            { datei: '/fotos/booth-recorder-case.jpg', text: 'Das Case im Einsatz, beide SD-Schächte von vorn erreichbar' },
-            { datei: '/fotos/booth-recorder-anschluss.jpg', text: 'Das Anschlussfeld: In L/R aus der Booth, Out L/R durchgeschleift' }
+            { datei: '/fotos/booth-recorder-case.jpg', text: 'Das Case im Einsatz, beide Kartenschächte von vorn erreichbar' },
+            { datei: '/fotos/booth-recorder-anschluss.jpg', text: 'Das Anschlussfeld: XLR- und RCA-Out, zwei Kartenslots parallel' }
           ],
           daten: [
-            { was: 'Herz', wert: 'Tascam SS-R250N' },
-            { was: 'Kanäle', wert: '2, Stereo-Summe aus der Booth' },
-            { was: 'Nach Stromausfall', wert: 'gesicherte Datei, Aufnahme läuft weiter' },
-            { was: 'Sicherung', wert: 'laufend, zwei SD-Karten parallel' },
-            { was: 'Marker', wert: 'automatisch bei Übersteuerung, dazu von Hand' },
-            { was: 'Für Künstler', wert: 'Signal durchgeschleift, eigener Recorder mithängbar' }
+            { was: 'Aufnahme', wert: '15 Tage auf zwei Karten, parallel' },
+            { was: 'Redundanz', wert: 'stirbt eine Karte, läuft das Set weiter' },
+            { was: 'Nach Stromausfall', wert: 'reboot von selbst, Aufnahme läuft weiter' },
+            { was: 'Dateien', wert: 'automatisch gesplittet, keine 300-GB-Monster' },
+            { was: 'Ausgänge', wert: 'XLR + RCA — Livestream, Radio, Broadcast' },
+            { was: 'Fernzugriff', wert: 'Status und Steuerung über LTE, von überall' },
+            { was: 'Timetable', wert: 'einmal programmiert, läuft automatisch über alle drei Tage' }
           ]
         },
         {
@@ -406,7 +408,8 @@ const ENGLISCH: Fassung = {
   beschriftung: {
     schliessen: '✕ Close',
     platzhalter: 'Your photo goes here',
-    stuecke: 'Four examples'
+    stuecke: 'Four examples',
+    technischeDaten: 'Tech Specs'
   },
   abschnitte: [
     {
@@ -503,20 +506,21 @@ const ENGLISCH: Fassung = {
         'Cases, cables and software you cannot buy like this — built for the problem that needed solving. Have a look at what is in use.',
       stuecke: [
         {
-          titel: 'The Booth Recorder',
-          einordnung: 'Festival · DJ booth',
-          text: "A Tascam SS-R250N in a case, wired straight to the booth output. It runs all night and keeps saving as it goes — pull the plug and the recording is there up to a moment before, then it picks up again by itself. If a set clips, it sets the marker automatically. And anyone who wants their own set can hang their recorder off the through signal.",
+          titel: 'The Wrackbox MK1',
+          einordnung: 'Festival · Broadcast',
+          text: "Recording a whole festival is a babysitting job. Someone checks the laptop between sets. Someone swaps the card at 3am. Someone hopes the power holds. Usually that someone was me — so I built a box that doesn't need me. Plug in power, plug in audio, walk away: it records the entire weekend on its own. The timetable goes in once, for all three days — every slot, every break. The box follows the plan by itself, records what should be recorded, and stays quiet when nothing's on.",
           bilder: [
-            { datei: '/fotos/booth-recorder-case.jpg', text: 'The case in use, both SD slots reachable from the front' },
-            { datei: '/fotos/booth-recorder-anschluss.jpg', text: 'The connector panel: in L/R from the booth, out L/R passed through' }
+            { datei: '/fotos/booth-recorder-case.jpg', text: 'The case in use, both card slots reachable from the front' },
+            { datei: '/fotos/booth-recorder-anschluss.jpg', text: 'The connector panel: XLR and RCA out, two card slots in parallel' }
           ],
           daten: [
-            { was: 'Heart', wert: 'Tascam SS-R250N' },
-            { was: 'Channels', wert: '2, stereo sum from the booth' },
-            { was: 'After power loss', wert: 'file saved, recording continues' },
-            { was: 'Backup', wert: 'continuous, two SD cards in parallel' },
-            { was: 'Markers', wert: 'automatic on clipping, plus manual' },
-            { was: 'For artists', wert: 'signal passed through, own recorder can hang off it' }
+            { was: 'Recording', wert: '15 days on two cards, running in parallel' },
+            { was: 'Redundancy', wert: 'one card dies, the set survives' },
+            { was: 'After a power cut', wert: 'reboots on its own, recording picks back up' },
+            { was: 'Files', wert: 'split automatically, no 300GB monsters' },
+            { was: 'Outputs', wert: 'XLR + RCA — livestream, radio, broadcast' },
+            { was: 'Remote access', wert: 'status and control over LTE, from anywhere' },
+            { was: 'Timetable', wert: 'programmed once, runs automatically across all three days' }
           ]
         },
         {

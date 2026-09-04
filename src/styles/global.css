@@ -472,6 +472,20 @@ a { color: inherit; }
   margin-bottom: 18px;
 }
 
+.stueck__specs { margin-bottom: 14px; }
+.stueck__specs summary {
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ef, var(--signal));
+  cursor: pointer;
+  padding: 9px 2px;
+  list-style: none;
+}
+.stueck__specs summary::-webkit-details-marker { display: none; }
+.stueck__specs summary::before { content: '+ '; }
+.stueck__specs[open] summary::before { content: '− '; }
+.stueck__specs[open] summary { border-bottom: 1px solid rgba(239, 230, 210, .16); }
+
 .stueck__daten { display: grid; margin: 0; }
 .stueck__zeile {
   display: grid; grid-template-columns: max-content 1fr; gap: 20px;

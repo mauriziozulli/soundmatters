@@ -83,14 +83,17 @@ const { e, offen = false, beschriftung } = Astro.props;
                 ))}
               </div>
             )}
-            <dl class="stueck__daten">
-              {st.daten.map((d) => (
-                <div class="stueck__zeile">
-                  <dt>{d.was}</dt>
-                  <dd>{d.wert}</dd>
-                </div>
-              ))}
-            </dl>
+            <details class="stueck__specs">
+              <summary>{beschriftung.technischeDaten}</summary>
+              <dl class="stueck__daten">
+                {st.daten.map((d) => (
+                  <div class="stueck__zeile">
+                    <dt>{d.was}</dt>
+                    <dd>{d.wert}</dd>
+                  </div>
+                ))}
+              </dl>
+            </details>
           </article>
         ))}
       </section>

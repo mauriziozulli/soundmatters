@@ -27,6 +27,21 @@ const { e, offen = false, beschriftung } = Astro.props;
     </h1>
     <p class="ebene__vorspann">{e.vorspann}</p>
 
+    {/* Wie eine Story: kurzer Titel, Bild, nächster Titel. */}
+    {e.abbildungen && e.abbildungen.length > 0 && (
+      <div class="abbildungen">
+        {e.abbildungen.map((b) => b.datei ? (
+          <figure class:list={['abbildung', { 'abbildung--schmal': b.schmal }]}>
+            {b.titel && <figcaption class="abbildung__titel">{b.titel}</figcaption>}
+            <img src={b.datei} alt={b.titel ?? b.text ?? ''} loading="lazy" decoding="async" />
+            {b.text && <p class="abbildung__text">{b.text}</p>}
+          </figure>
+        ) : (
+          <h2 class="abbildung__zwischen">{b.titel}</h2>
+        ))}
+      </div>
+    )}
+
     {e.bildgruppen && e.bildgruppen.length > 0 && (
       <div class="bildgruppen">
         {e.bildgruppen.map((g) => (
@@ -51,17 +66,6 @@ const { e, offen = false, beschriftung } = Astro.props;
         <p>{b.text}</p>
       </div>
     ))}
-
-    {e.abbildungen && e.abbildungen.length > 0 && (
-      <div class="abbildungen">
-        {e.abbildungen.map((b) => (
-          <figure class:list={['abbildung', { 'abbildung--schmal': b.schmal }]}>
-            <img src={b.datei} alt={b.text} loading="lazy" decoding="async" />
-            <figcaption>{b.text}</figcaption>
-          </figure>
-        ))}
-      </div>
-    )}
 
     {e.daten && e.daten.length > 0 && (
       <dl class="ebene__daten">

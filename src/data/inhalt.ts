@@ -98,9 +98,10 @@ export type Ebene = {
   bildgruppen?: { dateien: string[]; text: string }[];
   /** Bildschirmbilder einer App, in ihrem eigenen Format — anders als die
    *  Fotos NICHT auf 4:3 beschnitten, sonst fehlt die Hälfte des Fensters.
-   *  Freigestellt mit Schatten, als WebP unter public/. Eine Zeile darunter
-   *  sagt, was dort passiert. */
-  abbildungen?: { datei: string; text: string; schmal?: boolean }[];
+   *  Freigestellt mit Schatten, als WebP unter public/. Gelesen wird wie
+   *  eine Story: oben ein kurzer Titel, darunter das Bild. Ein Eintrag
+   *  ohne Datei ist ein Zwischentitel. */
+  abbildungen?: { titel?: string; datei?: string; text?: string; schmal?: boolean }[];
   /** Fliesstext-Bloecke. Weglassen, wenn die Stuecke den Inhalt tragen. */
   bloecke?: { titel: string; text: string }[];
   daten?: { was: string; wert: string }[];
@@ -411,40 +412,32 @@ const DEUTSCH: Fassung = {
         boden: 'var(--grund-03)', bar: 'var(--rost)', wort: 'var(--knochen)',
         kontur: 'var(--tiefbraun)', zweit: 'var(--rost)'
       },
-      kicker: 'Werkzeug · macOS · Testbuild',
+      kicker: 'Werkzeug · macOS · gratis',
       titel: 'SetSplitter',
-      vorspann:
-        'Hey DJ-People, kennt ihr das? Eine ganze Nacht aufgenommen — und dann fast zwei Wochen lang schneiden, angleichen, exportieren.',
+      vorspann: 'Hey DJ-People 👋 Ganze Nacht aufgenommen — und dann zwei Wochen schneiden? Kennt ihr.',
       abbildungen: [
-        { datei: '/setsplitter/hauptfenster.webp', text: 'Oben die ganze Nacht, darunter das Line-up, unten die Stelle, an der geschnitten wird' },
-        { datei: '/setsplitter/uebergang.webp', text: 'Ein Wechsel: Ausblende, zweieinhalb Sekunden Pause, Einblende' },
-        { datei: '/setsplitter/export.webp', text: 'Der Export: Format, Lautheit, Cover, Zielordner', schmal: true }
+        { titel: '22 Files vom Recorder.', datei: '/setsplitter/problem-files.webp' },
+        { titel: 'Alles von Hand in die DAW.', datei: '/setsplitter/problem-daw.webp' },
+        { titel: 'Stundenlang rendern.', datei: '/setsplitter/problem-rendern.webp', schmal: true },
+        { titel: 'Und jedes Set anders laut.', datei: '/setsplitter/problem-lautheit.webp', schmal: true },
+        { titel: 'Darum: SetSplitter 👇' },
+        { titel: '1 · Alle Files reinziehen', datei: '/setsplitter/schritt-reinziehen.webp' },
+        { titel: '2 · Line-up reinkopieren', datei: '/setsplitter/schritt-line-up.webp' },
+        { titel: '3 · Marker setzen sich selbst', datei: '/setsplitter/hauptfenster.webp' },
+        { titel: '4 · Übergänge anhören, Fades', datei: '/setsplitter/uebergang.webp' },
+        { titel: '5 · Alle gleich laut', datei: '/setsplitter/schritt-lautheit.webp', schmal: true },
+        { titel: '6 · Exportieren. Fertig.', datei: '/setsplitter/schritt-fertig.webp' }
       ],
       bloecke: [
-        {
-          titel: 'Warum es das gibt',
-          text: 'In letzter Zeit habe ich immer wieder ganze Nächte aufgenommen. Danach liegen zwanzig, dreissig Dateien auf der Karte — links und rechts getrennt, der Reihe nach nummeriert, und nirgends steht, wer wann gespielt hat. Alles in der DAW sample-genau aneinanderlegen, jeden Übergang suchen, jedes Set einzeln rendern: Das hat mich jedes Mal Tage gekostet. Also dachte ich, ein kleines Werkzeug dafür wäre cooler. Zusammen mit Vera als Testerin ist daraus ein Programm geworden.'
-        },
-        {
-          titel: 'Wie es geht',
-          text: 'Alle Dateien vom Recorder ins Fenster ziehen, getrennte Links-/Rechts-Spuren werden zu Stereo. Das Line-up aus dem Chat reinkopieren. Analysieren: Die App hört die Nacht durch und setzt die Marker dorthin, wo wirklich gewechselt wurde. Jeden Übergang kurz anhören, Fades ziehen, exportieren — jedes Set wird eine eigene Datei, sauber benannt und gleich laut.'
-        },
-        {
-          titel: 'Wer testen will',
-          text: 'Es ist ein Testbuild für den Mac und kostet nichts. Wer eine Nacht auf der Karte hat und es ausprobieren will: schreibt mir, ich schick euch den Link. Und sagt mir, was fehlt.'
-        }
+        { titel: 'Warum', text: 'Hab ich immer wieder von Hand gemacht. Jetzt nicht mehr. Getestet mit Vera.' }
       ],
       daten: [
-        { was: 'Rein', wert: 'ganze Nächte über viele Dateien, L/R getrennt oder Stereo' },
-        { was: 'Zeit', wert: 'aus BWF, Dateiname oder von Hand' },
-        { was: 'Line-up', wert: 'als Text oder CSV reinkopiert' },
-        { was: 'Schnitt', wert: 'Set-Grenzen aus Tempo, Pausen und Klang' },
-        { was: 'Raus', wert: 'WAV, AIFF, FLAC, MP3, AAC — mit Tags, Cover, .cue' },
-        { was: 'Lautheit', wert: 'linear auf −14 LUFS, oder wie aufgenommen' },
-        { was: 'Prüft', wert: 'Dual Mono, Verpolung, stummer Kanal, Clipping' },
-        { was: 'System', wert: 'macOS 14 oder neuer, ffmpeg ist eingebaut' }
+        { was: 'Für', wert: 'Mac, macOS 14 oder neuer' },
+        { was: 'Kostet', wert: 'nichts — Testbuild' },
+        { was: 'Rein', wert: 'alle Recorder-Files, auch L/R getrennt' },
+        { was: 'Raus', wert: 'ein File pro Set, WAV · FLAC · MP3' }
       ],
-      handlung: { text: 'Ich will testen', ziel: 'mailto:maurizio@mauriziozulli.com?subject=SetSplitter%20testen' }
+      handlung: { text: 'Test es selber', ziel: 'mailto:maurizio@mauriziozulli.com?subject=SetSplitter%20testen' }
     }
   ],
   fuss: {
@@ -679,40 +672,32 @@ const ENGLISCH: Fassung = {
         boden: 'var(--grund-03)', bar: 'var(--rost)', wort: 'var(--knochen)',
         kontur: 'var(--tiefbraun)', zweit: 'var(--rost)'
       },
-      kicker: 'Tool · macOS · test build',
+      kicker: 'Tool · macOS · free',
       titel: 'SetSplitter',
-      vorspann:
-        'Hey DJ people, sound familiar? A whole night recorded — and then almost two weeks of cutting, levelling, exporting.',
+      vorspann: 'Hey DJ people 👋 Recorded a whole night — and then two weeks of cutting? Sound familiar.',
       abbildungen: [
-        { datei: '/setsplitter/hauptfenster.webp', text: 'The whole night at the top, the line-up below, and at the bottom the spot being cut' },
-        { datei: '/setsplitter/uebergang.webp', text: 'A changeover: fade out, two and a half seconds of silence, fade in' },
-        { datei: '/setsplitter/export.webp', text: 'The export: format, loudness, cover art, destination', schmal: true }
+        { titel: '22 files from the recorder.', datei: '/setsplitter/problem-files.webp' },
+        { titel: 'Everything into the DAW by hand.', datei: '/setsplitter/problem-daw.webp' },
+        { titel: 'Hours of rendering.', datei: '/setsplitter/problem-rendern.webp', schmal: true },
+        { titel: 'And every set at a different level.', datei: '/setsplitter/problem-lautheit.webp', schmal: true },
+        { titel: 'So: SetSplitter 👇' },
+        { titel: '1 · Drop in all files', datei: '/setsplitter/schritt-reinziehen.webp' },
+        { titel: '2 · Paste the line-up', datei: '/setsplitter/schritt-line-up.webp' },
+        { titel: '3 · Markers place themselves', datei: '/setsplitter/hauptfenster.webp' },
+        { titel: '4 · Listen to changeovers, fades', datei: '/setsplitter/uebergang.webp' },
+        { titel: '5 · All at the same loudness', datei: '/setsplitter/schritt-lautheit.webp', schmal: true },
+        { titel: '6 · Export. Done.', datei: '/setsplitter/schritt-fertig.webp' }
       ],
       bloecke: [
-        {
-          titel: 'Why it exists',
-          text: 'Lately I have been recording whole nights again and again. Afterwards there are twenty, thirty files on the card — left and right split, numbered in order, and nowhere does it say who played when. Lining everything up sample by sample in the DAW, hunting for every changeover, rendering every set one by one: it cost me days every time. So I thought a small tool for it would be cooler. Together with Vera as tester, it turned into a program.'
-        },
-        {
-          titel: 'How it works',
-          text: 'Drop all the files from the recorder into the window; split left/right tracks become stereo. Paste the line-up from the chat. Analyse: the app listens through the night and puts the markers where the changeovers really happened. Listen to each changeover, pull the fades, export — every set becomes its own file, properly named and at the same loudness.'
-        },
-        {
-          titel: 'Who wants to test',
-          text: 'It is a test build for the Mac and it is free. If you have a night on a card and want to try it: write to me and I will send you the link. And tell me what is missing.'
-        }
+        { titel: 'Why', text: 'I kept doing this by hand. Not any more. Tested with Vera. The app speaks German for now.' }
       ],
       daten: [
-        { was: 'In', wert: 'whole nights across many files, L/R split or stereo' },
-        { was: 'Time', wert: 'from BWF, file name or by hand' },
-        { was: 'Line-up', wert: 'pasted as text or CSV' },
-        { was: 'Cutting', wert: 'set boundaries from tempo, pauses and sound' },
-        { was: 'Out', wert: 'WAV, AIFF, FLAC, MP3, AAC — with tags, cover art, .cue' },
-        { was: 'Loudness', wert: 'linear to −14 LUFS, or as recorded' },
-        { was: 'Checks', wert: 'dual mono, flipped phase, silent channel, clipping' },
-        { was: 'System', wert: 'macOS 14 or later, ffmpeg built in — the app speaks German for now' }
+        { was: 'For', wert: 'Mac, macOS 14 or later' },
+        { was: 'Costs', wert: 'nothing — test build' },
+        { was: 'In', wert: 'all recorder files, L/R split too' },
+        { was: 'Out', wert: 'one file per set, WAV · FLAC · MP3' }
       ],
-      handlung: { text: 'I want to test it', ziel: 'mailto:maurizio@mauriziozulli.com?subject=SetSplitter%20test' }
+      handlung: { text: 'Try it yourself', ziel: 'mailto:maurizio@mauriziozulli.com?subject=SetSplitter%20test' }
     }
   ],
   fuss: {

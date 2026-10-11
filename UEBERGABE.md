@@ -389,7 +389,7 @@ Zwei Dinge sind hier **bewusst anders als sonst**, auf ausdrücklichen Wunsch:
 - **Der Ton spricht die Leser direkt an** («Hey DJ-People, kennt ihr das?»).
   Auf dem Plakat bleibt das verboten. Hier ist es richtig, weil die Ebene
   einen Brief an eine bestimmte Szene ist und kein Plakat für alle.
-- **Es gibt eine Handlung «Ich will testen»** als Mail mit Betreff. Das ist
+- **Es gibt eine Handlung «Test es selber»** als Mail mit Betreff. Das ist
   kein Bestellknopf: es gibt nichts zu kaufen, gesucht sind Testerinnen und
   Tester für ein Gratis-Werkzeug. Sobald es einen öffentlichen Download gibt,
   kann der Knopf direkt dorthin zeigen.
@@ -399,5 +399,5 @@ Schnittkanten in der Wortfarbe — genau die Kanten, die das Werkzeug sucht.
 
 Die Bildschirmbilder (`public/setsplitter/*.webp`) sind Nachbauten aus dem
 Quellcode der App, freigestellt mit Schatten. Sie stehen im Feld
-`abbildungen` und werden **nicht** auf 4:3 beschnitten wie die Fotos —
+`abbildungen` und werden **nicht** auf 4:3 beschnitten wie die Fotos. Die Ebene liest sich wie eine Story: kurzer Titel, Bild, nächster Titel — kaum Fliesstext, auf Wunsch. Auch das ist anders als auf `/rig` —
 ein halbes Fenster erklärt nichts.

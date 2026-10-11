@@ -566,19 +566,34 @@ a { color: inherit; }
   line-height: 1.45;
 }
 
-/* Bildschirmbilder einer App (SetSplitter). Im eigenen Format, nicht auf
-   4:3 beschnitten: ein Fenster ohne seine Hälfte erklärt nichts. Die
-   Bilder bringen ihren Schatten als durchsichtigen Rand mit — darum kein
-   Rahmen und keine Rundung hier. */
-.abbildungen { display: grid; gap: 34px; margin: 10px 0 40px; }
+/* Bildschirmbilder einer App (SetSplitter), gelesen wie eine Story:
+   kurzer Titel, Bild, nächster Titel. Im eigenen Format, nicht auf 4:3
+   beschnitten. Die Bilder bringen ihren Schatten als durchsichtigen Rand
+   mit — darum kein Rahmen hier, und der Titel rückt nah heran. */
+.abbildungen { display: grid; gap: 26px; margin: 8px 0 40px; }
 .abbildung { margin: 0; }
-.abbildung img { display: block; width: 100%; height: auto; }
-/* Dialoge sind klein gebaut — über die volle Breite gezogen wirken sie aufgeblasen. */
-.abbildung--schmal img { max-width: 440px; }
-.abbildung figcaption {
-  margin-top: 8px;
+.abbildung img { display: block; width: 100%; height: auto; margin-top: -6px; }
+/* Dialoge und Listen sind klein gebaut — über die volle Breite gezogen
+   wirken sie aufgeblasen. */
+.abbildung--schmal img { max-width: 480px; }
+.abbildung__titel {
+  font-family: var(--fett);
+  font-size: clamp(1.35rem, 4.4vw, 1.9rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--knochen);
+}
+.abbildung__text {
+  margin-top: 6px;
   font-family: var(--mono);
   font-size: .78rem;
-  letter-spacing: .04em;
   color: rgba(239, 230, 210, .62);
+}
+.abbildung__zwischen {
+  margin: 34px 0 0;
+  font-family: var(--fett);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: var(--ef, var(--rost));
 }

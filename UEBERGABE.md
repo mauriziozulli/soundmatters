@@ -374,3 +374,30 @@ Ebene bleibt trotzdem verboten.
 
 Kontakt ist gesetzt: `maurizio@mauriziozulli.com`, mit eigenem Betreff je
 Abschnitt, damit in der Mail steht, woher die Anfrage kam.
+
+## Die SetSplitter-Ebene
+
+`/setsplitter` (englisch `/en/setsplitter`) ist eine dritte Detail-Ebene —
+aber die einzige, die **vom Plakat aus nicht verlinkt** ist. Sie ist für
+Leute gedacht, die über einen Link kommen (Instagram, eine Nachricht an die
+DJ-Szene). Wer sie schliesst, steht auf dem Plakat und sieht, woher das
+Werkzeug kommt. Damit bleibt das Plakat, wie es ist, und die zwei Regeln
+gelten weiter: eine Ebene, ein Ausgang, eine Weiterführung.
+
+Zwei Dinge sind hier **bewusst anders als sonst**, auf ausdrücklichen Wunsch:
+
+- **Der Ton spricht die Leser direkt an** («Hey DJ-People, kennt ihr das?»).
+  Auf dem Plakat bleibt das verboten. Hier ist es richtig, weil die Ebene
+  einen Brief an eine bestimmte Szene ist und kein Plakat für alle.
+- **Es gibt eine Handlung «Ich will testen»** als Mail mit Betreff. Das ist
+  kein Bestellknopf: es gibt nichts zu kaufen, gesucht sind Testerinnen und
+  Tester für ein Gratis-Werkzeug. Sobald es einen öffentlichen Download gibt,
+  kann der Knopf direkt dorthin zeigen.
+
+Die Spur im Balken heisst `nacht`: ein langer, gleichmässiger Pegel mit
+Schnittkanten in der Wortfarbe — genau die Kanten, die das Werkzeug sucht.
+
+Die Bildschirmbilder (`public/setsplitter/*.webp`) sind Nachbauten aus dem
+Quellcode der App, freigestellt mit Schatten. Sie stehen im Feld
+`abbildungen` und werden **nicht** auf 4:3 beschnitten wie die Fotos —
+ein halbes Fenster erklärt nichts.

@@ -565,3 +565,20 @@ a { color: inherit; }
   margin-top: 8px;
   line-height: 1.45;
 }
+
+/* Bildschirmbilder einer App (SetSplitter). Im eigenen Format, nicht auf
+   4:3 beschnitten: ein Fenster ohne seine Hälfte erklärt nichts. Die
+   Bilder bringen ihren Schatten als durchsichtigen Rand mit — darum kein
+   Rahmen und keine Rundung hier. */
+.abbildungen { display: grid; gap: 34px; margin: 10px 0 40px; }
+.abbildung { margin: 0; }
+.abbildung img { display: block; width: 100%; height: auto; }
+/* Dialoge sind klein gebaut — über die volle Breite gezogen wirken sie aufgeblasen. */
+.abbildung--schmal img { max-width: 440px; }
+.abbildung figcaption {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .04em;
+  color: rgba(239, 230, 210, .62);
+}

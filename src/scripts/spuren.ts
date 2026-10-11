@@ -104,6 +104,51 @@ export function spurenAufbauen() {
       },
     },
 
+    /* SetSplitter — eine ganze Nacht, in Sets geschnitten. Derselbe Pegel
+       wie in 00, aber lang und gleichmässig, wie eine Aufnahme von zehn
+       Stunden aussieht. Alle paar Takte ein Wechsel: der Pegel sinkt in
+       eine kurze Pause, und an der Stelle steht eine Schnittkante in der
+       Wortfarbe. Genau das tut das Werkzeug — die Kanten finden. */
+    nacht: {
+      bauen(w) {
+        const r = zufall(w.saat);
+        w.werte = [];
+        w.kanten = new Set();
+        let bisWechsel = 40 + Math.floor(r() * 30);
+        for (let i = 0; i < 360; i++) {
+          if (--bisWechsel <= 0) { w.kanten.add(i); bisWechsel = 45 + Math.floor(r() * 35); }
+          w.werte.push(.55 + r() * .3 + Math.sin(i / 9) * .06);
+        }
+        /* Die Pause um jede Kante: aus- und wieder einblenden. */
+        for (const k of w.kanten) {
+          for (let d = -4; d <= 3; d++) {
+            const j = k + d;
+            if (j < 0 || j >= w.werte.length) continue;
+            w.werte[j] *= d === 0 ? .04 : Math.min(1, Math.abs(d) / 4);
+          }
+        }
+      },
+      malen(w, z, B, H, t) {
+        const anzahl = Math.max(48, Math.round(B / 6));
+        const luecke = B / anzahl, dick = Math.max(1.5, luecke * .55);
+        let summe = 0;
+        z.fillStyle = 'rgba(0,0,0,.22)';
+        const kanten = [];
+        for (let i = 0; i < anzahl; i++) {
+          const k = Math.floor((i + w.phase) % w.werte.length);
+          const wackeln = w.statisch ? 1 : Math.sin(t / 700 + i * .28) * .08 + .96;
+          const wert = w.werte[k] * wackeln;
+          summe += wert;
+          const h = Math.max(2, wert * H * .76);
+          z.fillRect(i * luecke, (H - h) / 2, dick, h);
+          if (w.kanten.has(k)) kanten.push(i * luecke + dick / 2);
+        }
+        w.energie = summe / anzahl;
+        z.fillStyle = w.wortFarbe;
+        for (const x of kanten) z.fillRect(x - 1, 0, 2, H);
+      },
+    },
+
     /* 01 — Bild und Ton, aneinander gebunden. Oben die Einzelbilder mit
        ihrer Perforation, unten die Tonspur — beide mit derselben Phase,
        also im Gleichlauf. Genau das ist die Aussage des Abschnitts: Ton

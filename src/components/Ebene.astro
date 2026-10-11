@@ -52,6 +52,17 @@ const { e, offen = false, beschriftung } = Astro.props;
       </div>
     ))}
 
+    {e.abbildungen && e.abbildungen.length > 0 && (
+      <div class="abbildungen">
+        {e.abbildungen.map((b) => (
+          <figure class:list={['abbildung', { 'abbildung--schmal': b.schmal }]}>
+            <img src={b.datei} alt={b.text} loading="lazy" decoding="async" />
+            <figcaption>{b.text}</figcaption>
+          </figure>
+        ))}
+      </div>
+    )}
+
     {e.daten && e.daten.length > 0 && (
       <dl class="ebene__daten">
         {e.daten.map((d) => (
